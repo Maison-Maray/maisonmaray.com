@@ -21,14 +21,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-.contact-shell { padding-top: 140px; padding-bottom: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 96px); }
-@media (max-width: 880px) { .contact-shell { grid-template-columns: 1fr; padding-top: 120px; } }
-.contact-side h1 { max-width: 14ch; }
-.contact-side .reassure { margin-top: 48px; padding: 24px; background: var(--travertin); display: grid; gap: 12px; }
-.contact-side .reassure .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .55; }
-.contact-side .reassure ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 14px; }
-.contact-side .reassure ul li::before { content: "—"; opacity: .5; margin-right: 10px; }
-.contact-side .direct { margin-top: 32px; display: grid; gap: 10px; font-size: 15px; }
+/* ===== FORM-FIRST — funnel IS the hero ===== */
+.contact-bar { padding: clamp(110px, 13vh, 140px) var(--gutter-d) 18px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+@media (max-width: 720px) { .contact-bar { padding-inline: var(--gutter-m); } }
+.contact-bar .title { font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 2.4vw, 32px); line-height: 1; margin: 0; font-weight: 400; }
+.contact-bar .title .num { font-family: var(--font-mono); font-style: normal; font-size: 12px; letter-spacing: 0.18em; opacity: .55; margin-left: 14px; vertical-align: middle; }
+.contact-bar .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; display: flex; gap: 18px; flex-wrap: wrap; }
+.contact-bar .meta .dot { opacity: .35; }
+
+.contact-shell-v2 { padding: clamp(40px, 5vw, 64px) var(--gutter-d) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: 1fr 280px; gap: clamp(32px, 4vw, 64px); align-items: start; max-width: 1280px; margin: 0 auto; }
+@media (max-width: 880px) { .contact-shell-v2 { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
+
+.contact-aside { display: grid; gap: 28px; padding-top: 16px; font-size: 14px; line-height: 1.55; }
+.contact-aside .block { display: grid; gap: 8px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
+.contact-aside .block:last-child { border-bottom: 0; }
+.contact-aside .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.contact-aside a { color: inherit; }
+.contact-aside ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.contact-aside ul li::before { content: "—"; opacity: .4; margin-right: 8px; }
 
 /* funnel */
 .funnel { background: var(--ivoire); border: 1px solid var(--rule-strong); padding: clamp(20px, 5vw, 40px); min-height: 540px; display: flex; flex-direction: column; }
@@ -100,32 +110,19 @@
   <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
 </aside>
 
-<section class="bg-ivoire">
-  <div class="container contact-shell">
-    <div class="contact-side">
-      <span class="eyebrow reveal">Contact</span>
-      <h1 class="display italic-mix reveal delay-1" style="margin-top: 24px;">
-        Trois questions. Trente <em>minutes</em>.
-      </h1>
-      <p class="lede reveal delay-2" style="margin-top: 24px;">
-        Pas de formulaire-fleuve. Trois étapes — vous, votre projet, un créneau —
-        et nous reprenons contact sous 24 h.
-      </p>
-      <div class="reassure reveal delay-3">
-        <span class="label">Réassurance</span>
-        <ul>
-          <li>Réponse sous 24 h, ouvré ou non.</li>
-          <li>Devis gratuit, figé à la signature.</li>
-          <li>Délai garanti 3 à 6 mois selon surface.</li>
-          <li>58 rue de Monceau, ou en visio.</li>
-        </ul>
-      </div>
-      <div class="direct reveal delay-4">
-        <a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a>
-        <a href="tel:+33682327884">+33 6 82 32 78 84</a>
-      </div>
-    </div>
+<!-- Compact bar — title + meta -->
+<header class="bg-ivoire contact-bar">
+  <h1 class="title">Prendre rendez-vous<span class="num">— Trois étapes · 3 min</span></h1>
+  <span class="meta">
+    <span>Réponse sous 24h</span><span class="dot">·</span>
+    <span>Devis gratuit</span><span class="dot">·</span>
+    <span>Studio Monceau ou visio</span>
+  </span>
+</header>
 
+<!-- Form-first: the funnel IS the hero -->
+<section class="bg-ivoire">
+  <div class="contact-shell-v2">
     <!-- FUNNEL -->
     <form class="funnel reveal delay-1" data-funnel onsubmit="event.preventDefault(); this.querySelectorAll('.f-step').forEach(s=>s.classList.remove('on')); document.getElementById('f-done').classList.add('on');">
       <div class="funnel-head">
@@ -228,6 +225,27 @@
         <p style="opacity:.65; max-width: 36ch; margin: 0 auto;">Un email de confirmation est en route. À très vite.</p>
       </div>
     </form>
+
+    <!-- Right rail: alternatives + reassurance -->
+    <aside class="contact-aside">
+      <div class="block">
+        <span class="label">— Directement</span>
+        <a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a>
+        <a href="tel:+33682327884">+33 6 82 32 78 84</a>
+      </div>
+      <div class="block">
+        <span class="label">— Le studio</span>
+        <span>58 rue de Monceau<br>75008 Paris</span>
+      </div>
+      <div class="block">
+        <span class="label">— Engagements</span>
+        <ul>
+          <li>Réponse sous 24 h.</li>
+          <li>Devis figé à la signature.</li>
+          <li>Délai garanti 3–6 mois.</li>
+        </ul>
+      </div>
+    </aside>
   </div>
 </section>
 

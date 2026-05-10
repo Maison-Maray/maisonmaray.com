@@ -22,10 +22,29 @@
 <link rel="stylesheet" href="assets/site.css">
 
 <style>
-.inv-hero { padding-top: 140px; padding-bottom: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 6fr 6fr; gap: clamp(32px, 5vw, 96px); align-items: end; }
-.inv-hero .img-hover { aspect-ratio: 4 / 5; }
-@media (max-width: 880px) { .inv-hero { grid-template-columns: 1fr; padding-top: 120px; } .inv-hero .img-hover { aspect-ratio: 4 / 3; } }
-.inv-hero h1 { max-width: 14ch; }
+/* ===== NUMBERS-FIRST HERO ===== */
+.inv-hero-v2 { padding: clamp(120px, 14vh, 160px) var(--gutter-d) clamp(56px, 7vw, 96px); }
+@media (max-width: 720px) { .inv-hero-v2 { padding-inline: var(--gutter-m); } }
+.inv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px); padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+.inv-head .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.inv-h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 88px); line-height: 1; letter-spacing: -.01em; margin: 0; max-width: 14ch; }
+.inv-h1 em { font-style: italic; color: var(--laiton-deep); }
+.inv-lede { font-size: clamp(16px, 1.25vw, 20px); line-height: 1.5; max-width: 50ch; margin: clamp(20px, 2.5vw, 32px) 0 clamp(40px, 5vw, 72px); opacity: .8; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--noyer); border-bottom: 1px solid var(--noyer); }
+@media (max-width: 880px) { .kpi-row { grid-template-columns: 1fr; } }
+.kpi { padding: clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 32px); border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 14px; position: relative; }
+.kpi:last-child { border-right: 0; }
+@media (max-width: 880px) { .kpi { border-right: 0; border-bottom: 1px solid var(--rule); } .kpi:last-child { border-bottom: 0; } }
+.kpi-eyebrow { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.kpi-val { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-display); line-height: 0.92; letter-spacing: -.02em; }
+.kpi-sign { font-family: var(--font-mono); font-size: clamp(28px, 3.5vw, 48px); opacity: .55; align-self: flex-start; padding-top: .1em; }
+.kpi-num { font-family: var(--font-display); font-size: clamp(64px, 9vw, 152px); font-style: italic; }
+.kpi-unit { font-family: var(--font-mono); font-size: clamp(14px, 1.4vw, 20px); letter-spacing: 0.04em; opacity: .65; margin-left: 4px; align-self: flex-end; padding-bottom: .3em; }
+.kpi-note { font-size: 13px; line-height: 1.5; opacity: .65; max-width: 28ch; margin-top: auto; padding-top: 8px; }
+.kpi.is-highlight .kpi-num { color: var(--laiton-deep); }
+
+.inv-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: clamp(36px, 5vw, 56px); }
 
 .problem-resume { padding-block: clamp(72px, 9vw, 140px); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: center; }
 @media (max-width: 880px) { .problem-resume { grid-template-columns: 1fr; } }
@@ -106,29 +125,44 @@
   <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
 </aside>
 
-<!-- HERO -->
-<section class="bg-ivoire">
-  <div class="container inv-hero">
-    <div>
-      <span class="eyebrow reveal">Parcours · Investir</span>
-      <h1 class="display italic-mix reveal delay-1" style="margin: 24px 0 32px;">
-        Créer de la <em>valeur</em> avec l'œil d'un designer<br>
-        et la rigueur d'un stratège.
-      </h1>
-      <p class="lede reveal delay-2" style="max-width: 50ch;">
-        Le parcours Investir s'adresse aux particuliers, family offices et
-        clubs deals. Du sourcing off-market à la première quittance de loyer,
-        un seul interlocuteur, un seul reporting, une seule signature.
-      </p>
-      <div class="reveal delay-3" style="margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap;">
-        <a class="btn btn-solid" href="#dossier">Demander un dossier d'opportunité <span class="arr"></span></a>
-        <a class="btn btn-ghost" href="#brochure">Brochure investisseur PDF <span class="arr"></span></a>
-      </div>
+<!-- HERO — Numbers first -->
+<section class="bg-ivoire inv-hero-v2">
+  <div class="inv-head">
+    <span class="eyebrow">Parcours · Investir</span>
+    <span class="meta">Famille · Family office · Club deal</span>
+  </div>
+
+  <h1 class="inv-h1">Acheter. Transformer.<br><em>Valoriser.</em></h1>
+
+  <p class="inv-lede">Une seule signature, du sourcing off-market à la première quittance de loyer. Trois engagements chiffrés, contractualisés.</p>
+
+  <div class="kpi-row">
+    <div class="kpi is-highlight">
+      <span class="kpi-eyebrow">— TRI net visé</span>
+      <span class="kpi-val">
+        <span class="kpi-sign">+</span><span class="kpi-num" data-to="12" data-suffix="">0</span><span class="kpi-unit">% / an</span>
+      </span>
+      <span class="kpi-note">Moyenne sur les opérations livrées 2019 – 2024.</span>
     </div>
-    <div class="img-hover reveal delay-2">
-      <img class="img-fill" alt="Pied-à-terre parisien après valorisation, mobilier épuré, lumière naturelle"
-           src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80&auto=format&fit=crop">
+    <div class="kpi">
+      <span class="kpi-eyebrow">— Sourcing → livraison</span>
+      <span class="kpi-val">
+        <span class="kpi-num" data-to="60">0</span><span class="kpi-unit">jours</span>
+      </span>
+      <span class="kpi-note">Médiane, hors aléas administratifs ou copropriété.</span>
     </div>
+    <div class="kpi">
+      <span class="kpi-eyebrow">— Avenants surprise</span>
+      <span class="kpi-val">
+        <span class="kpi-num" data-to="0">0</span><span class="kpi-unit">€</span>
+      </span>
+      <span class="kpi-note">Budget figé à la signature, garanti contractuellement.</span>
+    </div>
+  </div>
+
+  <div class="inv-ctas">
+    <a class="btn btn-solid" href="#dossier">Demander un dossier d'opportunité <span class="arr"></span></a>
+    <a class="btn btn-ghost" href="#brochure">Brochure investisseur PDF <span class="arr"></span></a>
   </div>
 </section>
 
@@ -354,5 +388,32 @@
 </footer>
 
 <script src="assets/site.js"></script>
+<script>
+// KPI count-up on viewport entry
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nums = document.querySelectorAll('.kpi-num');
+  if (!nums.length) return;
+  const ease = (t) => 1 - Math.pow(1 - t, 3); // ease-out cubic
+  const animate = (el) => {
+    const target = parseInt(el.dataset.to || '0', 10);
+    if (reduced || target === 0) { el.textContent = String(target); return; }
+    const dur = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      el.textContent = String(Math.round(target * ease(t)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.4 });
+  nums.forEach(n => { n.textContent = '0'; io.observe(n); });
+})();
+</script>
 </body>
 </html>

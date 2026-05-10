@@ -22,27 +22,33 @@
 <link rel="stylesheet" href="assets/site.css">
 
 <style>
-/* ===== INDEX HEADER — minimal, magazine-style ===== */
-.proj-index-bar { padding: clamp(110px, 14vh, 150px) var(--gutter-d) 16px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
-@media (max-width: 720px) { .proj-index-bar { padding: 110px var(--gutter-m) 12px; grid-template-columns: 1fr; } }
+/* ===== INDEX HEADER ===== */
+.proj-index-bar { padding: clamp(110px, 14vh, 150px) var(--gutter-d) 28px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; border-bottom: 1px solid var(--rule); }
+@media (max-width: 720px) { .proj-index-bar { padding: 110px var(--gutter-m) 20px; grid-template-columns: 1fr; } }
 .proj-index-bar .title { font-family: var(--font-display); font-style: italic; font-size: clamp(24px, 2.4vw, 36px); line-height: 1; margin: 0; font-weight: 400; }
 .proj-index-bar .title .count { font-family: var(--font-mono); font-style: normal; font-size: 12px; letter-spacing: .15em; opacity: .55; margin-left: 14px; vertical-align: middle; }
 .proj-index-bar .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
 
-/* ===== FEATURED HERO PROJECT — full-bleed magazine cover ===== */
-.proj-feature { position: relative; overflow: hidden; aspect-ratio: 21 / 9; min-height: 380px; max-height: 70vh; display: block; color: var(--ivoire); }
-@media (max-width: 880px) { .proj-feature { aspect-ratio: 4 / 5; max-height: none; min-height: 480px; } }
-.proj-feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
-.proj-feature:hover img { transform: scale(1.03); }
-.proj-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,10,7,.2) 0%, rgba(15,10,7,0) 35%, rgba(15,10,7,.65) 100%); pointer-events: none; }
-.proj-feature .feat-ui { position: absolute; inset: auto var(--gutter-d) clamp(36px, 5vw, 64px); z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-@media (max-width: 720px) { .proj-feature .feat-ui { inset: auto var(--gutter-m) 32px; flex-direction: column; align-items: flex-start; } }
-.proj-feature .feat-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .85; margin-bottom: 12px; display: block; }
-.proj-feature h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(36px, 4vw, 64px); line-height: 1; margin: 0; max-width: 16ch; }
-.proj-feature h2 em { font-style: italic; }
-.proj-feature .feat-meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.15em; text-transform: uppercase; opacity: .85; display: flex; gap: 18px; flex-wrap: wrap; }
-.proj-feature .feat-cta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; background: rgba(245,241,234,.12); backdrop-filter: blur(8px); border: 1px solid rgba(245,241,234,.4); white-space: nowrap; transition: background .35s var(--ease), color .35s var(--ease); }
-.proj-feature:hover .feat-cta { background: var(--ivoire); color: var(--noyer); }
+/* ===== TYPOGRAPHIC INDEX — Dirand-style row list with hover-image ===== */
+.proj-list { padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(72px, 9vw, 120px); position: relative; }
+@media (max-width: 720px) { .proj-list { padding-inline: var(--gutter-m); } }
+.proj-row { display: grid; grid-template-columns: 60px 1fr 14ch 7ch 7ch auto; gap: clamp(16px, 2vw, 32px); align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; position: relative; transition: opacity .3s var(--ease); }
+@media (max-width: 880px) { .proj-row { grid-template-columns: 40px 1fr auto; row-gap: 4px; } .proj-row .col-loc, .proj-row .col-yr, .proj-row .col-area { display: none; } }
+.proj-row .col-num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; opacity: .5; }
+.proj-row .col-name { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.05; transition: transform .4s var(--ease); transform-origin: left; }
+.proj-row .col-loc, .proj-row .col-yr, .proj-row .col-area, .proj-row .col-cat { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: .55; }
+.proj-row .col-cat { padding: 4px 10px; border: 1px solid var(--rule); border-radius: 999px; }
+.proj-row::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--noyer); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
+.proj-row:hover { opacity: 1; }
+.proj-row:hover .col-name { transform: translateX(8px); }
+.proj-row:hover::after { transform: scaleX(1); }
+.proj-list:hover .proj-row:not(:hover) { opacity: .4; }
+
+/* hover-image — follows cursor */
+.proj-cursor-img { position: fixed; pointer-events: none; width: clamp(220px, 22vw, 340px); aspect-ratio: 4/5; z-index: 8; top: 0; left: 0; opacity: 0; transform: translate(-50%, -50%) scale(.9) rotate(-2deg); transition: opacity .25s var(--ease), transform .35s var(--ease); overflow: hidden; box-shadow: 0 30px 80px -25px rgba(42,31,24,.4); }
+.proj-cursor-img.in { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-2deg); }
+.proj-cursor-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (hover: none), (max-width: 880px) { .proj-cursor-img { display: none; } }
 
 /* ===== FILTERS ===== */
 .filters { display: flex; flex-wrap: wrap; gap: 14px 24px; padding: 24px var(--gutter-d); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); align-items: center; }
@@ -99,28 +105,11 @@
   <span class="meta">Sélection 2024 — 2026</span>
 </header>
 
-<!-- Featured project — magazine cover style -->
-<a class="proj-feature" href="projets/revelation-haussmannienne.html" aria-label="Voir Révélation Haussmannienne">
-  <img src="assets/hero-sam2.jpg" alt="Révélation Haussmannienne, Paris 7ᵉ — Maison Maray">
-  <div class="feat-ui">
-    <div>
-      <span class="feat-tag">— En vedette · Haussmannien</span>
-      <h2><em>Révélation</em> Haussmannienne.</h2>
-      <span class="feat-meta">
-        <span>Paris 7ᵉ</span><span>180 m²</span><span>Livré 2024</span>
-      </span>
-    </div>
-    <span class="feat-cta">Voir le projet
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </span>
-  </div>
-</a>
-
+<!-- Filters -->
 <section class="bg-ivoire" data-filter>
   <div class="filters">
-    <span class="label">Filtres</span>
     <div class="group">
-      <span class="label" style="opacity:.4">·</span>
+      <span class="label">Typologie</span>
       <button data-filter-btn="all" class="on">Tout</button>
       <button data-filter-btn="haussmann">Haussmannien</button>
       <button data-filter-btn="moderne">Moderne</button>
@@ -136,69 +125,109 @@
     </div>
   </div>
 
-  <div class="projets-grid">
-    <a class="proj" href="projets/revelation-haussmannienne.html" data-tag="haussmann monceau">
-      <img alt="Révélation Haussmannienne, salon double" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Révélation Haussmannienne</hh2><span class="meta">Paris 8ᵉ · 180 m²</span></div>
+  <!-- Typographic project index, hover reveals image -->
+  <div class="proj-list">
+    <a class="proj-row" data-tag="haussmann monceau" data-img="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=80&auto=format&fit=crop" href="projets/revelation-haussmannienne.html">
+      <span class="col-num">01</span>
+      <span class="col-name">Révélation Haussmannienne</span>
+      <span class="col-loc">Paris 8ᵉ</span>
+      <span class="col-area">180 m²</span>
+      <span class="col-yr">2024</span>
+      <span class="col-cat">Haussmannien</span>
     </a>
-    <a class="proj" href="#" data-tag="moderne marais">
-      <img alt="Le dîner miroir, salle à manger" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Le dîner miroir</hh2><span class="meta">Paris 16ᵉ · 95 m²</span></div>
+    <a class="proj-row" data-tag="moderne marais" data-img="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">02</span>
+      <span class="col-name">Le dîner miroir</span>
+      <span class="col-loc">Paris 16ᵉ</span>
+      <span class="col-area">95 m²</span>
+      <span class="col-yr">2024</span>
+      <span class="col-cat">Moderne</span>
     </a>
-    <a class="proj" href="#" data-tag="haussmann trocadero">
-      <img alt="Vue Eiffel, salon" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Un horizon privé face à la Tour Eiffel</hh2><span class="meta">Paris 7ᵉ · 220 m²</span></div>
+    <a class="proj-row" data-tag="haussmann trocadero" data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">03</span>
+      <span class="col-name">Un horizon privé face à la Tour Eiffel</span>
+      <span class="col-loc">Paris 7ᵉ</span>
+      <span class="col-area">220 m²</span>
+      <span class="col-yr">2024</span>
+      <span class="col-cat">Haussmannien</span>
     </a>
-    <a class="proj" href="#" data-tag="moderne batignolles">
-      <img alt="Cuisine ouverte, plan travertin" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Cuisine du nord</hh2><span class="meta">Paris 17ᵉ · 75 m²</span></div>
+    <a class="proj-row" data-tag="moderne batignolles" data-img="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">04</span>
+      <span class="col-name">Cuisine du nord</span>
+      <span class="col-loc">Paris 17ᵉ</span>
+      <span class="col-area">75 m²</span>
+      <span class="col-yr">2024</span>
+      <span class="col-cat">Moderne</span>
     </a>
-    <a class="proj" href="#" data-tag="haussmann monceau">
-      <img alt="Bibliothèque noyer fumé" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Bibliothèque de Monceau</hh2><span class="meta">Paris 8ᵉ · 110 m²</span></div>
+    <a class="proj-row" data-tag="haussmann monceau" data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">05</span>
+      <span class="col-name">Bibliothèque de Monceau</span>
+      <span class="col-loc">Paris 8ᵉ</span>
+      <span class="col-area">110 m²</span>
+      <span class="col-yr">2023</span>
+      <span class="col-cat">Haussmannien</span>
     </a>
-    <a class="proj" href="#" data-tag="locatif batignolles">
-      <img alt="Studio mansardé livré" src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Studio sous toit</hh2><span class="meta">Paris 9ᵉ · 38 m²</span></div>
+    <a class="proj-row" data-tag="locatif batignolles" data-img="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">06</span>
+      <span class="col-name">Studio sous toit</span>
+      <span class="col-loc">Paris 9ᵉ</span>
+      <span class="col-area">38 m²</span>
+      <span class="col-yr">2023</span>
+      <span class="col-cat">Locatif</span>
     </a>
-    <a class="proj" href="#" data-tag="pied marais">
-      <img alt="Pied-à-terre Marais" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Pied-à-terre du Marais</hh2><span class="meta">Paris 4ᵉ · 42 m²</span></div>
+    <a class="proj-row" data-tag="pied marais" data-img="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">07</span>
+      <span class="col-name">Pied-à-terre du Marais</span>
+      <span class="col-loc">Paris 4ᵉ</span>
+      <span class="col-area">42 m²</span>
+      <span class="col-yr">2023</span>
+      <span class="col-cat">Pied-à-terre</span>
     </a>
-    <a class="proj" href="#" data-tag="haussmann monceau">
-      <img alt="Salon Monceau, parquet point de Hongrie" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>L'enfilade rétablie</hh2><span class="meta">Paris 17ᵉ · 145 m²</span></div>
+    <a class="proj-row" data-tag="haussmann monceau" data-img="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">08</span>
+      <span class="col-name">L'enfilade rétablie</span>
+      <span class="col-loc">Paris 17ᵉ</span>
+      <span class="col-area">145 m²</span>
+      <span class="col-yr">2023</span>
+      <span class="col-cat">Haussmannien</span>
     </a>
-    <a class="proj" href="#" data-tag="moderne trocadero">
-      <img alt="Salle de bain travertin et laiton" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Salle d'eau Passy</hh2><span class="meta">Paris 16ᵉ · 9 m²</span></div>
+    <a class="proj-row" data-tag="moderne trocadero" data-img="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">09</span>
+      <span class="col-name">Salle d'eau Passy</span>
+      <span class="col-loc">Paris 16ᵉ</span>
+      <span class="col-area">9 m²</span>
+      <span class="col-yr">2022</span>
+      <span class="col-cat">Moderne</span>
     </a>
-    <a class="proj" href="#" data-tag="locatif marais">
-      <img alt="2 pièces locatif Marais" src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Deux pièces, rue des Tournelles</hh2><span class="meta">Paris 4ᵉ · 52 m²</span></div>
+    <a class="proj-row" data-tag="locatif marais" data-img="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">10</span>
+      <span class="col-name">Deux pièces, rue des Tournelles</span>
+      <span class="col-loc">Paris 4ᵉ</span>
+      <span class="col-area">52 m²</span>
+      <span class="col-yr">2022</span>
+      <span class="col-cat">Locatif</span>
     </a>
-    <a class="proj" href="#" data-tag="haussmann monceau">
-      <img alt="Chambre principale, lin écru" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Chambre du nord</hh2><span class="meta">Paris 8ᵉ · 28 m²</span></div>
+    <a class="proj-row" data-tag="haussmann monceau" data-img="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">11</span>
+      <span class="col-name">Chambre du nord</span>
+      <span class="col-loc">Paris 8ᵉ</span>
+      <span class="col-area">28 m²</span>
+      <span class="col-yr">2022</span>
+      <span class="col-cat">Haussmannien</span>
     </a>
-    <a class="proj" href="#" data-tag="moderne batignolles">
-      <img alt="Loft moderne Paris" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&q=80&auto=format&fit=crop">
-      <span class="veil"></span>
-      <div class="info"><h2>Loft Cardinet</hh2><span class="meta">Paris 17ᵉ · 165 m²</span></div>
+    <a class="proj-row" data-tag="moderne batignolles" data-img="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&auto=format&fit=crop" href="#">
+      <span class="col-num">12</span>
+      <span class="col-name">Loft Cardinet</span>
+      <span class="col-loc">Paris 17ᵉ</span>
+      <span class="col-area">165 m²</span>
+      <span class="col-yr">2021</span>
+      <span class="col-cat">Moderne</span>
     </a>
   </div>
 </section>
+
+<!-- Cursor-following preview image -->
+<div class="proj-cursor-img" id="projCursorImg" aria-hidden="true"><img alt=""></div>
 
 <section class="bg-travertin">
   <div class="container lookbook">
@@ -234,5 +263,55 @@
 </footer>
 
 <script src="assets/site.js"></script>
+<script>
+(() => {
+  // Filter buttons
+  const root = document.querySelector('[data-filter]');
+  if (root) {
+    const btns = root.querySelectorAll('button[data-filter-btn]');
+    const rows = root.querySelectorAll('.proj-row');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(o => o.classList.remove('on'));
+      b.classList.add('on');
+      const k = b.dataset.filterBtn;
+      rows.forEach(r => {
+        const tags = (r.dataset.tag || '').split(' ');
+        r.style.display = (k === 'all' || tags.includes(k)) ? '' : 'none';
+      });
+    }));
+  }
+
+  // Cursor-following preview image
+  const cImg = document.getElementById('projCursorImg');
+  if (!cImg) return;
+  const inner = cImg.querySelector('img');
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+  const loop = () => {
+    cx += (tx - cx) * 0.18;
+    cy += (ty - cy) * 0.18;
+    cImg.style.left = cx + 'px';
+    cImg.style.top  = cy + 'px';
+    raf = requestAnimationFrame(loop);
+  };
+  document.querySelectorAll('.proj-row').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      const src = row.dataset.img;
+      if (src && inner.src !== src) inner.src = src;
+      cImg.classList.add('in');
+      if (!raf) loop();
+    });
+    row.addEventListener('mouseleave', () => {
+      cImg.classList.remove('in');
+    });
+  });
+  document.querySelector('.proj-list')?.addEventListener('mousemove', e => {
+    tx = e.clientX; ty = e.clientY;
+  });
+  document.querySelector('.proj-list')?.addEventListener('mouseleave', () => {
+    cImg.classList.remove('in');
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+  });
+})();
+</script>
 </body>
 </html>

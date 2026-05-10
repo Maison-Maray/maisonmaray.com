@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Maison — Mohamed Maray, écosystème, manifeste — Maison Maray</title>
+<meta name="description" content="Mohamed Maray, fondateur. Paris/Le Caire, KEDGE, finance puis design. Manifeste en trois valeurs et écosystème : chasseurs, artisans, conciergeries.">
+<link rel="canonical" href="https://maisonmaray.com/studio.html">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Maison Maray">
+<meta property="og:title" content="La Maison — Mohamed Maray, écosystème & manifeste — Maison Maray">
+<meta property="og:description" content="Mohamed Maray, fondateur. Paris/Le Caire, KEDGE, finance puis design. Manifeste en trois valeurs.">
+<meta property="og:url" content="https://maisonmaray.com/studio.html">
+<meta property="og:image" content="https://maisonmaray.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maisonmaray.com/assets/og.jpg">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+
+<style>
+.studio-hero { padding-top: 140px; padding-bottom: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 96px); align-items: end; }
+@media (max-width: 880px) { .studio-hero { grid-template-columns: 1fr; padding-top: 120px; } }
+.studio-hero .portrait { aspect-ratio: 4 / 5; overflow: hidden; }
+.studio-hero .portrait img { width: 100%; height: 100%; object-fit: cover; }
+.studio-hero h1 { max-width: 14ch; }
+
+.bio-grid { padding-block: clamp(48px, 7vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
+@media (max-width: 880px) { .bio-grid { grid-template-columns: 1fr; } }
+.bio-grid .body { display: grid; gap: 20px; max-width: 64ch; font-size: 17px; line-height: 1.65; }
+
+.manifeste { padding-block: clamp(72px, 9vw, 140px); }
+.manifeste-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: 56px; align-items: end; }
+@media (max-width: 880px) { .manifeste-head { grid-template-columns: 1fr; } }
+.manifeste-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+@media (max-width: 880px) { .manifeste-grid { grid-template-columns: 1fr; } }
+.value { padding: 40px 32px; background: var(--ivoire); display: grid; gap: 16px; align-content: start; min-height: 380px; border: 1px solid var(--rule); }
+.value .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; opacity: .55; }
+.value h3 { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1; margin: 0; max-width: 14ch; }
+.value h3 em { font-style: italic; color: var(--laiton-deep); }
+.value p { max-width: 36ch; }
+
+.eco { padding-block: clamp(72px, 9vw, 140px); border-top: 1px solid var(--rule); }
+.eco-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: 56px; align-items: end; }
+@media (max-width: 880px) { .eco-head { grid-template-columns: 1fr; } }
+.eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+@media (max-width: 880px) { .eco-grid { grid-template-columns: 1fr; gap: 56px; } }
+.eco-col .img-hover { aspect-ratio: 4 / 5; margin-bottom: 24px; }
+.eco-col h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; margin: 0 0 12px; }
+.eco-col p { max-width: 38ch; }
+
+.press { padding-block: clamp(72px, 9vw, 140px); background: var(--travertin); }
+.press-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: 56px; align-items: end; }
+@media (max-width: 880px) { .press-head { grid-template-columns: 1fr; } }
+.press-rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+@media (max-width: 880px) { .press-rail { grid-template-columns: 1fr; } }
+.press-card { padding: 32px 0; border-top: 1px solid var(--noyer); }
+.press-card .src { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .65; margin-bottom: 16px; }
+.press-card blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 1.3; max-width: 28ch; }
+.press-card .date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; opacity: .55; margin-top: 16px; display: block; }
+</style>
+</head>
+<body data-screen-label="La Maison">
+
+<header class="site-header scrolled" id="siteHeader">
+  <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
+  <nav class="nav">
+    <a href="vivre.html" class="nav-link">Concevoir</a>
+    <a href="investir.html" class="nav-link">Investir</a>
+    <a href="projets.html" class="nav-link">Projets</a>
+    <a href="studio.html" class="nav-link active">La Maison</a>
+    <a href="journal.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="cta">Prendre rendez-vous</a>
+    <button class="nav-toggle"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<aside class="mobile-menu">
+  <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
+  <nav class="links"><a href="vivre.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="studio.html">La Maison</a><a href="journal.html">Journal</a><a href="contact.html">Contact</a></nav>
+</aside>
+
+<!-- HERO -->
+<section class="bg-ivoire">
+  <div class="container studio-hero">
+    <div class="portrait reveal">
+      <img alt="Portrait de Mohamed Maray, fondateur" src="assets/mohamed-portrait.jpg">
+    </div>
+    <div>
+      <span class="eyebrow reveal">La maison</span>
+      <h1 class="display italic-mix reveal delay-1" style="margin: 24px 0 32px;">
+        Un seul <em>nom</em>.<br>
+        Une seule signature.
+      </h1>
+      <p class="lede reveal delay-2">
+        Maison Maray est une maison à taille humaine. Trois personnes au cœur,
+        un écosystème resserré autour. Et une exigence non-négociable :
+        qu'aucun projet ne ressemble au précédent.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bg-ivoire">
+  <div class="container bio-grid">
+    <span class="eyebrow reveal">Mohamed Maray</span>
+    <div class="body">
+      <p class="reveal">Né au Caire, formé à Paris. Mohamed grandit entre deux villes
+        qui n'ont rien en commun sauf l'obsession du détail architectural.
+        Le souk Khan el-Khalili lui apprend la matière brute ; les passages
+        couverts du 9ᵉ, le silence comme matériau.</p>
+      <p class="reveal delay-1">Diplôme KEDGE Business School, premier poste en banque privée à Londres.
+        Trois ans à valoriser des actifs qu'il ne touchait jamais. La frustration
+        finit par devenir un projet : revenir à Paris, et faire l'inverse — toucher
+        chaque actif jusqu'à la dernière vis.</p>
+      <p class="reveal delay-2">En 2019, il fonde Maison Maray rue de Monceau, à deux pas du parc.
+        La maison livre 6 projets la première année, 12 la suivante, et n'a
+        plus jamais accepté de recevoir un client sans avoir d'abord visité
+        ses lieux actuels.</p>
+      <p class="reveal delay-3">Mohamed parle français, anglais, arabe. Il dort peu. Il dessine
+        en réunion. Et il refuse les projets qui ne lui font pas envie —
+        principe étrange pour une maison, mais qui explique probablement
+        pourquoi tous les clients reviennent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE -->
+<section class="bg-travertin manifeste">
+  <div class="container">
+    <div class="manifeste-head">
+      <span class="eyebrow reveal">Manifeste</span>
+      <h2 class="display reveal delay-1" style="max-width: 18ch;">Trois valeurs, tenues sans exception.</h2>
+    </div>
+    <div class="manifeste-grid">
+      <article class="value reveal">
+        <span class="num">01</span>
+        <h3>Sincérité <em>architecturale</em>.</h3>
+        <p>Ne jamais simuler ce qu'un bâtiment n'est pas. Une moulure restaurée plutôt qu'une moulure imitée. Un mur porteur respecté plutôt que masqué.</p>
+        <p style="opacity:.6; font-size: 14px;">Conséquence : nous refusons environ un tiers des projets qu'on nous propose.</p>
+      </article>
+      <article class="value reveal delay-1">
+        <span class="num">02</span>
+        <h3>Équilibre des <em>matières</em>.</h3>
+        <p>Quatre familles maximum par projet. Si une cinquième s'impose, c'est qu'une autre doit partir. La beauté d'un intérieur tient autant à ce qu'il refuse qu'à ce qu'il accepte.</p>
+        <p style="opacity:.6; font-size: 14px;">Conséquence : nous photographions chaque livraison sur film 4×5, jamais retouché.</p>
+      </article>
+      <article class="value reveal delay-2">
+        <span class="num">03</span>
+        <h3>Évidence <em>spatiale</em>.</h3>
+        <p>Un projet réussi est celui qu'on ne remarque pas. Pas parce qu'il est neutre, mais parce que tout y est exactement à sa place — au point qu'on n'imagine plus le lieu autrement.</p>
+        <p style="opacity:.6; font-size: 14px;">Conséquence : 98 % des clients ne déplacent aucun meuble dans les six mois.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ÉCOSYSTÈME -->
+<section class="bg-ivoire eco">
+  <div class="container">
+    <div class="eco-head">
+      <span class="eyebrow reveal">L'écosystème</span>
+      <h2 class="display reveal delay-1" style="max-width: 18ch;">Une équipe à trois, un réseau à trente.</h2>
+    </div>
+    <div class="eco-grid">
+      <div class="eco-col reveal">
+        <div class="img-hover"><img class="img-fill" alt="Chasseur immobilier dans le quartier de Monceau" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80&auto=format&fit=crop"></div>
+        <span class="eyebrow">01 · Sourcing</span>
+        <h3 style="margin-top: 8px;">Les chasseurs.</h3>
+        <p>Quatre chasseurs partenaires, exclusivement parisiens, qui connaissent les rues mieux que les gardiens. 80 % de notre flux off-market vient d'eux.</p>
+      </div>
+      <div class="eco-col reveal delay-1">
+        <div class="img-hover"><img class="img-fill" alt="Atelier d'ébéniste, mains travaillant le bois" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80&auto=format&fit=crop"></div>
+        <span class="eyebrow">02 · Réalisation</span>
+        <h3 style="margin-top: 8px;">Les artisans.</h3>
+        <p>Un seul atelier d'ébénisterie. Un seul maçon. Un seul peintre. Tous à moins de 30 minutes de la maison. Tous travaillent avec nous depuis 2020.</p>
+      </div>
+      <div class="eco-col reveal delay-2">
+        <div class="img-hover"><img class="img-fill" alt="Conciergerie, gestion d'un appartement parisien" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop"></div>
+        <span class="eyebrow">03 · Gestion</span>
+        <h3 style="margin-top: 8px;">Les conciergeries.</h3>
+        <p>Deux conciergeries partenaires pour la gestion locative haut de gamme et la maintenance continue des biens livrés.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press">
+  <div class="container">
+    <div class="press-head">
+      <span class="eyebrow reveal">Presse</span>
+      <h2 class="display reveal delay-1">Ce qu'on a écrit de nous.</h2>
+    </div>
+    <div class="press-rail">
+      <div class="press-card reveal">
+        <span class="src">AD Magazine — France</span>
+        <blockquote>« Maison Maray est l'une des rares maisons parisiennes à savoir conjuguer rigueur d'investisseur et œil de décorateur. »</blockquote>
+        <span class="date">Octobre 2024</span>
+      </div>
+      <div class="press-card reveal delay-1">
+        <span class="src">Milk Decoration</span>
+        <blockquote>« Une grammaire de quatre matières, tenue avec une discipline rare dans l'haussmannien d'aujourd'hui. »</blockquote>
+        <span class="date">Mars 2025</span>
+      </div>
+      <div class="press-card reveal delay-2">
+        <span class="src">Côté Paris</span>
+        <blockquote>« Mohamed Maray ne décore pas — il révèle. Et la nuance fait tout. »</blockquote>
+        <span class="date">Janvier 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-ivoire section-pad-sm">
+  <div class="container" style="display:grid; gap: 24px; max-width: 800px;">
+    <span class="eyebrow reveal">Discrètement</span>
+    <p class="display reveal delay-1" style="font-size: clamp(28px, 3vw, 44px); line-height: 1.2;">
+      Si vous êtes arrivés jusqu'ici, vous nous connaissez maintenant.
+    </p>
+    <a class="link-line reveal delay-2" href="contact.html">Prendre contact <span class="arr"></span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-cols">
+    <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
+    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="vivre.html">Conception</a></li><li><a href="vivre.html">Maîtrise d'œuvre</a></li><li><a href="vivre.html">Mobilier sur-mesure</a></li><li><a href="vivre.html">Matières</a></li></ul></div>
+    <div class="footer-col"><h3>Investir</h3><ul><li><a href="investir.html">Sourcing</a></li><li><a href="investir.html">Faisabilité</a></li><li><a href="investir.html">Valorisation</a></li><li><a href="investir.html">Gestion</a></li></ul></div>
+    <div class="footer-col"><h3>Journal</h3><ul><li><a href="journal.html">Matières</a></li><li><a href="journal.html">Lieux</a></li><li><a href="journal.html">Méthode</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

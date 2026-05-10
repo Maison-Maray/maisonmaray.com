@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projets — 40 adresses livrées par Maison Maray à Paris</title>
+<meta name="description" content="40 projets livrés depuis 2019. Haussmannien, moderne, pied-à-terre, locatif. Une seule signature, déclinée. Filtrez par typologie, quartier, surface.">
+<link rel="canonical" href="https://maisonmaray.com/projets.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Maison Maray">
+<meta property="og:title" content="Projets — 40 adresses livrées par Maison Maray à Paris">
+<meta property="og:description" content="40 projets livrés depuis 2019. Haussmannien, moderne, pied-à-terre, locatif. Une seule signature, déclinée.">
+<meta property="og:url" content="https://maisonmaray.com/projets.html">
+<meta property="og:image" content="https://maisonmaray.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maisonmaray.com/assets/og.jpg">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+
+<style>
+.projets-hero { padding: 180px var(--gutter-d) clamp(56px, 8vw, 120px); }
+@media (max-width: 720px) { .projets-hero { padding: 140px var(--gutter-m) 56px; } }
+.projets-hero h1 { font-size: clamp(72px, 14vw, 240px); }
+.projets-hero h1 em { font-style: italic; opacity: .55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 24px var(--gutter-d); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); align-items: center; }
+@media (max-width: 720px) { .filters { padding-inline: var(--gutter-m); } }
+.filters .group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filters .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.filters button { background: none; border: 1px solid transparent; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; color: inherit; }
+.filters button:hover { border-color: var(--rule-strong); }
+.filters button.on { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
+
+.projets-grid { padding: clamp(48px, 7vw, 96px) var(--gutter-d) clamp(72px, 9vw, 140px); columns: 3; column-gap: 24px; }
+@media (max-width: 1024px) { .projets-grid { columns: 2; } }
+@media (max-width: 720px) { .projets-grid { columns: 1; padding-inline: var(--gutter-m); } }
+.proj { break-inside: avoid; margin-bottom: 24px; position: relative; overflow: hidden; display: block; color: inherit; }
+.proj img { display: block; width: 100%; height: auto; transition: transform .9s var(--ease), filter .9s var(--ease); }
+.proj:hover img { transform: scale(1.025); filter: brightness(1.05); }
+.proj .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,31,24,0) 30%, rgba(42,31,24,.85) 100%); opacity: 0; transition: opacity .5s var(--ease); }
+.proj:hover .veil { opacity: 1; }
+.proj .info { position: absolute; inset: auto 0 0 0; padding: 24px; color: var(--ivoire); transform: translateY(20px); opacity: 0; transition: transform .5s var(--ease), opacity .5s var(--ease); }
+.proj:hover .info { transform: none; opacity: 1; }
+.proj .info h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.05; margin: 0 0 6px; }
+.proj .info .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .85; }
+
+.lookbook { padding-block: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: center; border-top: 1px solid var(--rule); }
+@media (max-width: 880px) { .lookbook { grid-template-columns: 1fr; } }
+.lookbook-cover { aspect-ratio: 4 / 5; max-width: 380px; padding: 32px; background: var(--ivoire); border: 1px solid var(--rule-strong); display: flex; flex-direction: column; justify-content: space-between; }
+.lookbook-cover .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .55; }
+.lookbook-cover .ttl { font-family: var(--font-display); font-size: 36px; line-height: 1; }
+.lookbook-cover .ttl em { font-style: italic; }
+</style>
+</head>
+<body data-screen-label="Projets">
+
+<header class="site-header scrolled" id="siteHeader">
+  <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
+  <nav class="nav">
+    <a href="vivre.html" class="nav-link">Concevoir</a>
+    <a href="investir.html" class="nav-link">Investir</a>
+    <a href="projets.html" class="nav-link active">Projets</a>
+    <a href="studio.html" class="nav-link">La Maison</a>
+    <a href="journal.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="cta">Prendre rendez-vous</a>
+    <button class="nav-toggle"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<aside class="mobile-menu">
+  <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
+  <nav class="links"><a href="vivre.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="studio.html">La Maison</a><a href="journal.html">Journal</a><a href="contact.html">Contact</a></nav>
+</aside>
+
+<section class="bg-ivoire projets-hero">
+  <span class="eyebrow reveal">Portfolio</span>
+  <h1 class="display reveal delay-1" style="margin-top: 24px;">40 projets.<br>Une seule <em>signature</em>.</h1>
+  <p class="lede reveal delay-2" style="margin-top: 32px; max-width: 56ch;">
+    De l'haussmannien intégral aux pieds-à-terre de 24 m². Chaque adresse,
+    une réponse différente — la même règle de quatre matières.
+  </p>
+</section>
+
+<section class="bg-ivoire" data-filter>
+  <div class="filters">
+    <span class="label">Filtres</span>
+    <div class="group">
+      <span class="label" style="opacity:.4">·</span>
+      <button data-filter-btn="all" class="on">Tout</button>
+      <button data-filter-btn="haussmann">Haussmannien</button>
+      <button data-filter-btn="moderne">Moderne</button>
+      <button data-filter-btn="pied">Pied-à-terre</button>
+      <button data-filter-btn="locatif">Locatif</button>
+    </div>
+    <div class="group" style="margin-left:auto">
+      <span class="label">Quartier</span>
+      <button data-filter-btn="monceau">Monceau</button>
+      <button data-filter-btn="marais">Marais</button>
+      <button data-filter-btn="trocadero">Trocadéro</button>
+      <button data-filter-btn="batignolles">Batignolles</button>
+    </div>
+  </div>
+
+  <div class="projets-grid">
+    <a class="proj" href="projets/revelation-haussmannienne.html" data-tag="haussmann monceau">
+      <img alt="Révélation Haussmannienne, salon double" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Révélation Haussmannienne</hh2><span class="meta">Paris 8ᵉ · 180 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="moderne marais">
+      <img alt="Le dîner miroir, salle à manger" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Le dîner miroir</hh2><span class="meta">Paris 16ᵉ · 95 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="haussmann trocadero">
+      <img alt="Vue Eiffel, salon" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Un horizon privé face à la Tour Eiffel</hh2><span class="meta">Paris 7ᵉ · 220 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="moderne batignolles">
+      <img alt="Cuisine ouverte, plan travertin" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Cuisine du nord</hh2><span class="meta">Paris 17ᵉ · 75 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="haussmann monceau">
+      <img alt="Bibliothèque noyer fumé" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Bibliothèque de Monceau</hh2><span class="meta">Paris 8ᵉ · 110 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="locatif batignolles">
+      <img alt="Studio mansardé livré" src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Studio sous toit</hh2><span class="meta">Paris 9ᵉ · 38 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="pied marais">
+      <img alt="Pied-à-terre Marais" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Pied-à-terre du Marais</hh2><span class="meta">Paris 4ᵉ · 42 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="haussmann monceau">
+      <img alt="Salon Monceau, parquet point de Hongrie" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>L'enfilade rétablie</hh2><span class="meta">Paris 17ᵉ · 145 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="moderne trocadero">
+      <img alt="Salle de bain travertin et laiton" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Salle d'eau Passy</hh2><span class="meta">Paris 16ᵉ · 9 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="locatif marais">
+      <img alt="2 pièces locatif Marais" src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Deux pièces, rue des Tournelles</hh2><span class="meta">Paris 4ᵉ · 52 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="haussmann monceau">
+      <img alt="Chambre principale, lin écru" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Chambre du nord</hh2><span class="meta">Paris 8ᵉ · 28 m²</span></div>
+    </a>
+    <a class="proj" href="#" data-tag="moderne batignolles">
+      <img alt="Loft moderne Paris" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&q=80&auto=format&fit=crop">
+      <span class="veil"></span>
+      <div class="info"><h2>Loft Cardinet</hh2><span class="meta">Paris 17ᵉ · 165 m²</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="bg-travertin">
+  <div class="container lookbook">
+    <div class="lookbook-cover reveal">
+      <span class="num">Lookbook 2025</span>
+      <div>
+        <span class="num">PDF · 64 pages · 8,1 Mo</span>
+        <div class="ttl">Nos dix derniers <em>projets</em>.</div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Téléchargement</span>
+      <h2 class="display reveal delay-1" style="max-width: 18ch; margin-top: 16px;">Le lookbook, en haute résolution.</h2>
+      <p class="reveal delay-2" style="margin-top: 24px; max-width: 44ch;">
+        Soixante-quatre pages, dix projets livrés en 2024–2025, photographies
+        Aurélie Cenno, plans techniques, fiches matières.
+      </p>
+      <div class="reveal delay-3" style="margin-top: 32px;">
+        <a class="btn btn-solid" href="#">Recevoir le lookbook (PDF) <span class="arr"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-cols">
+    <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
+    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="vivre.html">Conception</a></li><li><a href="vivre.html">Maîtrise d'œuvre</a></li><li><a href="vivre.html">Mobilier sur-mesure</a></li><li><a href="vivre.html">Matières &amp; finitions</a></li></ul></div>
+    <div class="footer-col"><h3>Investir</h3><ul><li><a href="investir.html">Sourcing</a></li><li><a href="investir.html">Faisabilité</a></li><li><a href="investir.html">Valorisation</a></li><li><a href="investir.html">Gestion locative</a></li></ul></div>
+    <div class="footer-col"><h3>Journal</h3><ul><li><a href="journal.html">Matières</a></li><li><a href="journal.html">Lieux</a></li><li><a href="journal.html">Méthode</a></li><li><a href="#">Instagram ↗</a></li><li><a href="#">LinkedIn ↗</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

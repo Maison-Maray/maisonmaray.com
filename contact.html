@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Prendre rendez-vous — Maison Maray</title>
+<meta name="description" content="Trois étapes, sans formulaire-fleuve. Réponse sous 24 h. Devis gratuit. Délai garanti 3–6 mois.">
+<link rel="canonical" href="https://maisonmaray.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Maison Maray">
+<meta property="og:title" content="Contact — Prendre rendez-vous — Maison Maray">
+<meta property="og:description" content="Trois étapes, sans formulaire-fleuve. Réponse sous 24 h. Devis gratuit. Délai garanti 3–6 mois.">
+<meta property="og:url" content="https://maisonmaray.com/contact.html">
+<meta property="og:image" content="https://maisonmaray.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maisonmaray.com/assets/og.jpg">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.contact-shell { padding-top: 140px; padding-bottom: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 96px); }
+@media (max-width: 880px) { .contact-shell { grid-template-columns: 1fr; padding-top: 120px; } }
+.contact-side h1 { max-width: 14ch; }
+.contact-side .reassure { margin-top: 48px; padding: 24px; background: var(--travertin); display: grid; gap: 12px; }
+.contact-side .reassure .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .55; }
+.contact-side .reassure ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 14px; }
+.contact-side .reassure ul li::before { content: "—"; opacity: .5; margin-right: 10px; }
+.contact-side .direct { margin-top: 32px; display: grid; gap: 10px; font-size: 15px; }
+
+/* funnel */
+.funnel { background: var(--ivoire); border: 1px solid var(--rule-strong); padding: 40px; min-height: 540px; display: flex; flex-direction: column; }
+.funnel-head { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+.funnel-dots { display: flex; gap: 8px; }
+.funnel-dots .f-dot { width: 32px; height: 2px; background: var(--rule-strong); transition: background .3s var(--ease); }
+.funnel-dots .f-dot.on { background: var(--noyer); }
+.funnel-step-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-left: auto; }
+.f-step { display: none; flex-direction: column; gap: 24px; flex: 1; }
+.f-step.on { display: flex; }
+.f-step h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.1; margin: 0; max-width: 18ch; }
+.f-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 540px) { .f-options { grid-template-columns: 1fr; } }
+.f-option { padding: 32px; border: 1px solid var(--rule-strong); cursor: pointer; display: grid; gap: 12px; transition: border-color .25s var(--ease), background .25s var(--ease); }
+.f-option:hover { border-color: var(--noyer); }
+.f-option input { display: none; }
+.f-option .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; opacity: .55; }
+.f-option .name { font-family: var(--font-display); font-size: 28px; line-height: 1; }
+.f-option .sub { font-size: 13px; opacity: .7; max-width: 28ch; }
+.f-option:has(input:checked) { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
+.f-option:has(input:checked) .num { opacity: .8; }
+.f-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 540px) { .f-checks { grid-template-columns: 1fr; } }
+.f-check { padding: 16px 20px; border: 1px solid var(--rule-strong); cursor: pointer; display: flex; align-items: center; gap: 12px; font-size: 14px; }
+.f-check input { accent-color: var(--laiton); }
+.f-check:has(input:checked) { background: var(--travertin); border-color: var(--noyer); }
+.f-fields { display: grid; gap: 16px; }
+.f-fields label { display: grid; gap: 6px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; }
+.f-fields input, .f-fields textarea { font: inherit; padding: 12px 0; background: transparent; border: 0; border-bottom: 1px solid var(--rule-strong); color: inherit; outline: none; }
+.f-fields input:focus, .f-fields textarea:focus { border-bottom-color: var(--laiton); }
+
+.f-mini-cal { padding: 20px; border: 1px solid var(--rule); }
+.f-mini-cal .head { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.f-mini-cal .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 12px 0; text-align: center; font-size: 12px; }
+.f-mini-cal .grid .d { padding: 8px 0; cursor: pointer; }
+.f-mini-cal .grid .d:hover { background: var(--travertin); }
+.f-mini-cal .grid .d.sel { background: var(--noyer); color: var(--ivoire); }
+.f-mini-cal .grid .d.off { opacity: .25; pointer-events: none; }
+.f-mini-cal .slots { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.f-mini-cal .slots button { background: transparent; border: 1px solid var(--rule); padding: 8px 12px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; }
+.f-mini-cal .slots button.on, .f-mini-cal .slots button:hover { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
+
+.funnel-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule); }
+.f-step:last-of-type { gap: 18px; }
+</style>
+</head>
+<body data-screen-label="Contact">
+
+<header class="site-header scrolled" id="siteHeader">
+  <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
+  <nav class="nav">
+    <a href="vivre.html" class="nav-link">Concevoir</a>
+    <a href="investir.html" class="nav-link">Investir</a>
+    <a href="projets.html" class="nav-link">Projets</a>
+    <a href="studio.html" class="nav-link">La Maison</a>
+    <a href="journal.html" class="nav-link">Journal</a>
+    <a href="contact.html" class="cta">Prendre rendez-vous</a>
+    <button class="nav-toggle"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<aside class="mobile-menu">
+  <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
+  <nav class="links"><a href="vivre.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="studio.html">La Maison</a><a href="journal.html">Journal</a><a href="contact.html">Contact</a></nav>
+</aside>
+
+<section class="bg-ivoire">
+  <div class="container contact-shell">
+    <div class="contact-side">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="display italic-mix reveal delay-1" style="margin-top: 24px;">
+        Trois questions. Trente <em>minutes</em>.
+      </h1>
+      <p class="lede reveal delay-2" style="margin-top: 24px;">
+        Pas de formulaire-fleuve. Trois étapes — vous, votre projet, un créneau —
+        et nous reprenons contact sous 24 h.
+      </p>
+      <div class="reassure reveal delay-3">
+        <span class="label">Réassurance</span>
+        <ul>
+          <li>Réponse sous 24 h, ouvré ou non.</li>
+          <li>Devis gratuit, figé à la signature.</li>
+          <li>Délai garanti 3 à 6 mois selon surface.</li>
+          <li>58 rue de Monceau, ou en visio.</li>
+        </ul>
+      </div>
+      <div class="direct reveal delay-4">
+        <a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a>
+        <a href="tel:+33682327884">+33 6 82 32 78 84</a>
+      </div>
+    </div>
+
+    <!-- FUNNEL -->
+    <form class="funnel reveal delay-1" data-funnel onsubmit="event.preventDefault(); this.querySelectorAll('.f-step').forEach(s=>s.classList.remove('on')); document.getElementById('f-done').classList.add('on');">
+      <div class="funnel-head">
+        <span class="funnel-dots">
+          <span class="f-dot on"></span><span class="f-dot"></span><span class="f-dot"></span>
+        </span>
+        <span class="funnel-step-label">Étape <span class="curr">1</span>/3</span>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="f-step on">
+        <span class="eyebrow">Étape 01</span>
+        <h2>Vous êtes ?</h2>
+        <div class="f-options">
+          <label class="f-option">
+            <input type="radio" name="profil" value="part" checked>
+            <span class="num">01 · Vivre</span>
+            <span class="name">Particulier.</span>
+            <span class="sub">Vous habitez les lieux. Conception, rénovation, mobilier sur-mesure.</span>
+          </label>
+          <label class="f-option">
+            <input type="radio" name="profil" value="inv">
+            <span class="num">02 · Investir</span>
+            <span class="name">Investisseur.</span>
+            <span class="sub">Vous capitalisez. Sourcing, transformation, valorisation, gestion.</span>
+          </label>
+        </div>
+        <div class="funnel-foot">
+          <span style="opacity:.5; font-size:13px;">Ou parlez-nous directement : <a href="mailto:contact@maisonmaray.com" style="border-bottom:1px solid currentColor; padding-bottom:2px;">contact@maisonmaray.com</a></span>
+          <button type="button" class="btn btn-solid" data-next>Continuer <span class="arr"></span></button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="f-step">
+        <span class="eyebrow">Étape 02</span>
+        <h2>Votre projet ?</h2>
+        <div class="f-checks">
+          <label class="f-check"><input type="checkbox"> Conception et plans</label>
+          <label class="f-check"><input type="checkbox"> Maîtrise d'œuvre complète</label>
+          <label class="f-check"><input type="checkbox"> Mobilier sur-mesure</label>
+          <label class="f-check"><input type="checkbox"> Sourcing immobilier</label>
+          <label class="f-check"><input type="checkbox"> Valorisation pour location</label>
+          <label class="f-check"><input type="checkbox"> Conseil ponctuel</label>
+        </div>
+        <div class="f-fields" style="margin-top: 8px;">
+          <label>Surface approximative
+            <input type="text" placeholder="Ex. 95 m² — Paris 8ᵉ">
+          </label>
+          <label>Quelques mots sur le projet (facultatif)
+            <textarea rows="3" placeholder="Adresse, échéance souhaitée, contraintes particulières…"></textarea>
+          </label>
+        </div>
+        <div class="funnel-foot">
+          <button type="button" class="btn btn-ghost" data-prev>← Retour</button>
+          <button type="button" class="btn btn-solid" data-next>Continuer <span class="arr"></span></button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="f-step">
+        <span class="eyebrow">Étape 03</span>
+        <h2>Coordonnées et créneau.</h2>
+        <div class="f-fields">
+          <label>Nom complet
+            <input type="text" required placeholder="Hélène Dubois">
+          </label>
+          <label>Email
+            <input type="email" required placeholder="vous@adresse.com">
+          </label>
+          <label>Téléphone (facultatif)
+            <input type="tel" placeholder="+33 6 ··· ··· ···">
+          </label>
+        </div>
+        <div class="f-mini-cal">
+          <div class="head"><span>Mai 2026</span><span>Disponibilités</span></div>
+          <div class="grid">
+            <span class="d off">28</span><span class="d off">29</span><span class="d off">30</span><span class="d">1</span><span class="d">2</span><span class="d off">3</span><span class="d off">4</span>
+            <span class="d">5</span><span class="d">6</span><span class="d sel">7</span><span class="d">8</span><span class="d">9</span><span class="d off">10</span><span class="d off">11</span>
+            <span class="d">12</span><span class="d">13</span><span class="d">14</span><span class="d">15</span><span class="d">16</span><span class="d off">17</span><span class="d off">18</span>
+          </div>
+          <div class="slots">
+            <button type="button">09:30</button>
+            <button type="button">11:00</button>
+            <button type="button" class="on">14:00</button>
+            <button type="button">15:30</button>
+            <button type="button">17:00</button>
+          </div>
+        </div>
+        <div class="funnel-foot">
+          <button type="button" class="btn btn-ghost" data-prev>← Retour</button>
+          <button type="submit" class="btn btn-solid">Confirmer le rendez-vous <span class="arr"></span></button>
+        </div>
+      </div>
+
+      <!-- DONE -->
+      <div class="f-step" id="f-done" style="text-align:center; align-items:center; justify-content:center;">
+        <span class="eyebrow">C'est fait.</span>
+        <h3 style="max-width: 22ch; margin: 0 auto;">On vous reprend sous 24 h.</h3>
+        <p style="opacity:.65; max-width: 36ch; margin: 0 auto;">Un email de confirmation est en route. À très vite.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-cols">
+    <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
+    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="vivre.html">Conception</a></li><li><a href="vivre.html">Maîtrise d'œuvre</a></li><li><a href="vivre.html">Mobilier</a></li></ul></div>
+    <div class="footer-col"><h3>Investir</h3><ul><li><a href="investir.html">Sourcing</a></li><li><a href="investir.html">Faisabilité</a></li><li><a href="investir.html">Valorisation</a></li></ul></div>
+    <div class="footer-col"><h3>Journal</h3><ul><li><a href="journal.html">Lectures</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
+</footer>
+
+<script>
+// step counter label
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-next], [data-prev]')) {
+    setTimeout(() => {
+      const on = document.querySelector('.f-step.on');
+      if (!on) return;
+      const all = [...document.querySelectorAll('.funnel > .f-step')];
+      const i = all.indexOf(on);
+      const lab = document.querySelector('.curr');
+      if (lab && i >= 0 && i < 3) lab.textContent = i + 1;
+    }, 10);
+  }
+});
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.DS_Store
+.claude/
+.agents/
+legacy_assets/
+skills-lock.json
+
+# raw/test assets not used by the deployed site
+assets/SAM2.jpg
+assets/mohamed-test.mp4
+assets/hero-live.jpg
+assets/hero-generated.png

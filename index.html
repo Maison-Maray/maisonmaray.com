@@ -471,14 +471,14 @@
 <div class="reveal divider" aria-hidden="true"><span class="mark"></span></div>
 
 <!-- ================ 8. TÉMOIGNAGE ================ -->
-<section data-chapter="06" data-chapter-name="Témoignage" class="testimonial bg-ivoire section-pad" aria-label="Témoignage" style="position: relative; overflow: hidden;">
-  <span class="scarab-mark lg br" aria-hidden="true"></span>
+<section data-chapter="06" data-chapter-name="Témoignage" class="testimonial bg-ivoire section-pad" aria-label="Témoignage">
   <div class="container testi-grid">
     <div class="testi-img img-hover reveal">
       <img class="img-fill" alt="Couple installé dans leur salon haussmannien rénové"
            src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1800&q=80&auto=format&fit=crop">
     </div>
     <figure class="testi-quote">
+      <span class="scarab-mark testi-scarab" aria-hidden="true"></span>
       <span class="eyebrow reveal">Témoignage</span>
       <blockquote class="display reveal delay-1">
         « On ne reconnaît pas notre appartement. Et pourtant, c'est plus que jamais le <em>nôtre</em>. »
@@ -491,10 +491,12 @@
 <style>
 .testi-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 5vw, 96px); align-items: center; }
 .testi-img { aspect-ratio: 4 / 5; }
-.testi-quote { margin: 0; display: grid; gap: 28px; }
-.testi-quote blockquote { font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 56px); line-height: 1.1; max-width: 22ch; }
+.testi-quote { margin: 0; display: grid; gap: 28px; position: relative; }
+.testi-quote blockquote { font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 56px); line-height: 1.1; max-width: 22ch; position: relative; z-index: 1; }
+.testi-quote .eyebrow, .testi-quote figcaption { position: relative; z-index: 1; }
 .testi-quote figcaption { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; }
-@media (max-width: 880px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi-scarab { position: absolute; right: -8%; bottom: -10%; width: clamp(200px, 22vw, 320px); aspect-ratio: 22/28; z-index: 0; }
+@media (max-width: 880px) { .testi-grid { grid-template-columns: 1fr; } .testi-scarab { right: -4%; bottom: -8%; width: 180px; } }
 </style>
 
 <!-- ================ 9. JOURNAL ================ -->

@@ -18,15 +18,34 @@
 <link rel="icon" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 
 <style>
-.studio-hero { padding-top: 140px; padding-bottom: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 96px); align-items: end; }
-@media (max-width: 880px) { .studio-hero { grid-template-columns: 1fr; padding-top: 120px; } }
-.studio-hero .portrait { aspect-ratio: 4 / 5; overflow: hidden; }
-.studio-hero .portrait img { width: 100%; height: 100%; object-fit: cover; }
-.studio-hero h1 { max-width: 14ch; }
+/* ===== CALLING-CARD HERO — portrait first ===== */
+.maison-hero { padding: clamp(110px, 13vh, 140px) var(--gutter-d) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 96px); align-items: stretch; }
+@media (max-width: 880px) { .maison-hero { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
+.maison-portrait { position: relative; aspect-ratio: 3 / 4; overflow: hidden; box-shadow: 0 32px 80px -28px rgba(42,31,24,.32), 0 0 0 1px rgba(176,138,75,.08); }
+.maison-portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.05) contrast(1.03); transition: transform 1.4s var(--ease); }
+.maison-portrait:hover img { transform: scale(1.03); }
+.maison-portrait .stamp { position: absolute; bottom: 18px; right: 18px; display: flex; flex-direction: column; gap: 2px; align-items: center; color: var(--ivoire); }
+.maison-portrait .stamp .mark { width: 26px; height: 34px; -webkit-mask: url("assets/logo-mark.png") center / contain no-repeat; mask: url("assets/logo-mark.png") center / contain no-repeat; background: currentColor; opacity: .85; }
+.maison-portrait .stamp .year { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.18em; opacity: .8; }
+
+.maison-card { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px, 4vw, 48px); padding: 4px 0; }
+.maison-card .top-line { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+.maison-card .top-line .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.maison-card .top-line .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; opacity: .55; }
+
+.maison-name { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(44px, 5.4vw, 88px); line-height: 0.95; letter-spacing: -.01em; margin: 0; }
+.maison-role { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; display: block; margin-top: 14px; }
+.maison-bio { font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; max-width: 38ch; margin: clamp(20px, 3vw, 28px) 0 0; opacity: .85; }
+
+.maison-signature { font-family: 'Pinyon Script', cursive; font-size: clamp(56px, 6vw, 80px); color: var(--noyer); line-height: 1; margin-top: clamp(16px, 2vw, 24px); display: inline-block; opacity: 0; transform: translateY(8px); transition: opacity 1.2s var(--ease) .6s, transform 1.2s var(--ease) .6s; }
+.maison-signature.in { opacity: .85; transform: none; }
+.maison-signature-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .45; display: block; margin-top: 8px; }
+
+.maison-card-foot { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--rule); }
 
 .bio-grid { padding-block: clamp(48px, 7vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
 @media (max-width: 880px) { .bio-grid { grid-template-columns: 1fr; } }
@@ -82,23 +101,35 @@
   <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
 </aside>
 
-<!-- HERO -->
-<section class="bg-ivoire">
-  <div class="container studio-hero">
-    <div class="portrait reveal">
-      <img alt="Portrait de Mohamed Maray, fondateur" src="assets/mohamed-portrait.jpg">
-    </div>
+<!-- HERO — Calling card / portrait-first -->
+<section class="bg-ivoire maison-hero">
+  <figure class="maison-portrait">
+    <img alt="Portrait de Mohamed Maray, fondateur de Maison Maray" src="assets/mohamed-portrait.jpg">
+    <figcaption class="stamp" aria-hidden="true">
+      <span class="mark"></span>
+      <span class="year">Est. 2019</span>
+    </figcaption>
+  </figure>
+
+  <div class="maison-card">
     <div>
-      <span class="eyebrow reveal">La maison</span>
-      <h1 class="display italic-mix reveal delay-1" style="margin: 24px 0 32px;">
-        Un seul <em>nom</em>.<br>
-        Une seule signature.
-      </h1>
-      <p class="lede reveal delay-2">
-        Maison Maray est une maison à taille humaine. Trois personnes au cœur,
-        un écosystème resserré autour. Et une exigence non-négociable :
-        qu'aucun projet ne ressemble au précédent.
-      </p>
+      <div class="top-line">
+        <span class="label">— Fondateur</span>
+        <span class="num">N° 01 / 03</span>
+      </div>
+      <h1 class="maison-name">Mohamed <em>Maray.</em></h1>
+      <span class="maison-role">Architecte d'intérieur · Maison Maray, Paris</span>
+      <p class="maison-bio">Quinze ans à dessiner des intérieurs parisiens. Une exigence : qu'aucun projet ne ressemble au précédent — et qu'il vous ressemble à vous.</p>
+    </div>
+
+    <div>
+      <span class="maison-signature" id="maisonSig">M. Maray</span>
+      <span class="maison-signature-meta">Signature · Paris, mai 2026</span>
+    </div>
+
+    <div class="maison-card-foot">
+      <a class="btn btn-solid" href="contact.html">Prendre rendez-vous <span class="arr"></span></a>
+      <a class="btn btn-ghost" href="projets.html">Voir les projets <span class="arr"></span></a>
     </div>
   </div>
 </section>
@@ -237,5 +268,12 @@
 </footer>
 
 <script src="assets/site.js"></script>
+<script>
+// Signature reveal — small flourish for the calling card
+(() => {
+  const sig = document.getElementById('maisonSig');
+  if (sig) setTimeout(() => sig.classList.add('in'), 400);
+})();
+</script>
 </body>
 </html>

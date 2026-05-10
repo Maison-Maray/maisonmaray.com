@@ -71,8 +71,14 @@
 .f-mini-cal .slots button { background: transparent; border: 1px solid var(--rule); padding: 8px 12px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; }
 .f-mini-cal .slots button.on, .f-mini-cal .slots button:hover { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
 
-.funnel-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule); }
+.funnel-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--rule); }
+.funnel-foot .btn { white-space: nowrap; }
 .f-step:last-of-type { gap: 18px; }
+@media (max-width: 540px) {
+  .funnel-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+  .funnel-foot .btn { width: 100%; justify-content: center; text-align: center; }
+  .funnel-foot > span { font-size: 12px !important; }
+}
 </style>
 </head>
 <body data-screen-label="Contact">

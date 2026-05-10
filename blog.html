@@ -41,9 +41,10 @@
 .article-grid { padding: 0 var(--gutter-d) clamp(72px, 9vw, 140px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px; }
 @media (max-width: 1024px) { .article-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 720px) { .article-grid { grid-template-columns: 1fr; padding-inline: var(--gutter-m); gap: 56px; } }
-.article-grid .article .article-img { aspect-ratio: 4 / 3; }
-.article-grid .cat { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .65; display: block; margin-bottom: 12px; }
-.article-grid h4 { font-family: var(--font-display); font-weight: 400; font-size: 24px; line-height: 1.15; margin: 0 0 12px; max-width: 24ch; }
+.article-grid .article { display: flex; flex-direction: column; }
+.article-grid .article .article-img { display: block; aspect-ratio: 4 / 3; margin-bottom: 20px; }
+.article-grid .cat { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .65; display: block; margin-bottom: 10px; }
+.article-grid h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(20px, 1.6vw, 24px); line-height: 1.2; margin: 0 0 12px; max-width: 24ch; }
 .article-grid .date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; opacity: .55; }
 </style>
 </head>

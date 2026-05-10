@@ -39,26 +39,6 @@
   setTimeout(revealCheck, 100);
   setTimeout(revealCheck, 600);
 
-  // --- custom cursor
-  const cursor = document.createElement('div');
-  cursor.className = 'cursor';
-  document.body.appendChild(cursor);
-  let cx = -100, cy = -100, tx = -100, ty = -100;
-  window.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
-  function tick() {
-    cx += (tx - cx) * 0.22;
-    cy += (ty - cy) * 0.22;
-    cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-    requestAnimationFrame(tick);
-  }
-  tick();
-  document.addEventListener('mouseover', (e) => {
-    if (e.target.closest('a, button, .img-hover, [data-cursor="hover"]')) cursor.classList.add('hover');
-  });
-  document.addEventListener('mouseout', (e) => {
-    if (e.target.closest('a, button, .img-hover, [data-cursor="hover"]')) cursor.classList.remove('hover');
-  });
-
   // --- mobile menu
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.mobile-menu');
@@ -66,26 +46,6 @@
     toggle.addEventListener('click', () => menu.classList.add('open'));
     menu.querySelector('.mobile-close')?.addEventListener('click', () => menu.classList.remove('open'));
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
-  }
-
-  // --- newsletter sticky (scroll-triggered : 40 % de page OU 20 s)
-  const ns = document.querySelector('.newsletter-sticky');
-  if (ns && !sessionStorage.getItem('mm-ns-dismissed')) {
-    let shown = false;
-    const showNs = () => {
-      if (shown) return;
-      shown = true;
-      ns.classList.add('in');
-    };
-    const onScrollNs = () => {
-      if (window.scrollY > document.body.scrollHeight * 0.4) showNs();
-    };
-    window.addEventListener('scroll', onScrollNs, { passive: true });
-    setTimeout(showNs, 20000);
-    ns.querySelector('.x')?.addEventListener('click', () => {
-      ns.classList.remove('in');
-      sessionStorage.setItem('mm-ns-dismissed', '1');
-    });
   }
 
   // --- horizontal scroll-snap arrows (signature cards)

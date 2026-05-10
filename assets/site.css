@@ -311,6 +311,15 @@ section { position: relative; }
 }
 .brand:hover .mark { transform: rotate(360deg) scale(1.08); }
 .brand-name { font-size: 15px; letter-spacing: 0.32em; font-family: var(--font-body); font-weight: 500; }
+@media (min-width: 1280px) {
+  .brand { gap: 16px; }
+  .brand .mark { width: 30px; height: 38px; }
+  .brand-name { font-size: 17px; letter-spacing: 0.36em; }
+}
+@media (min-width: 1600px) {
+  .brand .mark { width: 36px; height: 46px; }
+  .brand-name { font-size: 18px; }
+}
 
 .nav {
   display: flex;
@@ -415,52 +424,6 @@ section { position: relative; }
   flex-wrap: wrap;
 }
 
-/* =========================================================
-   CURSOR
-   ========================================================= */
-.cursor {
-  position: fixed;
-  top: 0; left: 0;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--noyer);
-  opacity: .4;
-  pointer-events: none;
-  z-index: 999;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform .3s var(--ease), opacity .3s var(--ease), background .3s var(--ease);
-  mix-blend-mode: difference;
-  filter: invert(1);
-}
-.cursor.hover { transform: translate(-50%, -50%) scale(4.67); opacity: .75; }
-.cursor.dark { background: var(--ivoire); }
-@media (hover: none), (max-width: 880px) { .cursor { display: none; } }
-@media (hover: hover) and (pointer: fine) and (min-width: 881px) { html, body, a, button { cursor: none; } }
-
-/* =========================================================
-   NEWSLETTER STICKY BAND
-   ========================================================= */
-.newsletter-sticky {
-  position: fixed;
-  inset: auto 24px 24px auto;
-  z-index: 50;
-  width: min(380px, calc(100vw - 48px));
-  background: var(--ivoire);
-  color: var(--noyer);
-  border: 1px solid var(--rule-strong);
-  padding: 22px 24px;
-  transform: translateY(140%);
-  transition: transform .6s var(--ease);
-}
-.newsletter-sticky.in { transform: none; }
-.newsletter-sticky .ns-title { margin: 0 0 4px; font-family: var(--font-display); font-size: 22px; line-height: 1.05; }
-.newsletter-sticky p  { margin: 0 0 14px; font-size: 13px; opacity: .7; }
-.newsletter-sticky .row { display: flex; gap: 0; border: 1px solid var(--noyer); }
-.newsletter-sticky input { flex: 1; border: 0; background: transparent; padding: 12px 14px; font: inherit; font-size: 13px; outline: none; }
-.newsletter-sticky button.sub { background: var(--laiton); color: var(--ivoire); border: 0; padding: 0 18px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
-.newsletter-sticky .x { position: absolute; top: 8px; right: 12px; background: none; border: 0; font-size: 18px; opacity: .5; }
-.newsletter-sticky .x:hover { opacity: 1; }
-@media (max-width: 540px) { .newsletter-sticky { inset: auto 12px 12px 12px; width: auto; } }
 
 /* =========================================================
    PLACEHOLDERS — image slots

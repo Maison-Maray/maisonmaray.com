@@ -31,22 +31,22 @@
 .contact-side .direct { margin-top: 32px; display: grid; gap: 10px; font-size: 15px; }
 
 /* funnel */
-.funnel { background: var(--ivoire); border: 1px solid var(--rule-strong); padding: 40px; min-height: 540px; display: flex; flex-direction: column; }
-.funnel-head { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
+.funnel { background: var(--ivoire); border: 1px solid var(--rule-strong); padding: clamp(20px, 5vw, 40px); min-height: 540px; display: flex; flex-direction: column; }
+.funnel-head { display: flex; align-items: center; gap: 12px; margin-bottom: clamp(24px, 5vw, 40px); flex-wrap: wrap; }
 .funnel-dots { display: flex; gap: 8px; }
-.funnel-dots .f-dot { width: 32px; height: 2px; background: var(--rule-strong); transition: background .3s var(--ease); }
+.funnel-dots .f-dot { width: clamp(20px, 6vw, 32px); height: 2px; background: var(--rule-strong); transition: background .3s var(--ease); }
 .funnel-dots .f-dot.on { background: var(--noyer); }
 .funnel-step-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-left: auto; }
 .f-step { display: none; flex-direction: column; gap: 24px; flex: 1; }
 .f-step.on { display: flex; }
-.f-step h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.1; margin: 0; max-width: 18ch; }
+.f-step h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 4vw, 44px); line-height: 1.1; margin: 0; max-width: 18ch; }
 .f-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 540px) { .f-options { grid-template-columns: 1fr; } }
-.f-option { padding: 32px; border: 1px solid var(--rule-strong); cursor: pointer; display: grid; gap: 12px; transition: border-color .25s var(--ease), background .25s var(--ease); }
+.f-option { padding: clamp(18px, 4vw, 32px); border: 1px solid var(--rule-strong); cursor: pointer; display: grid; gap: 10px; transition: border-color .25s var(--ease), background .25s var(--ease); }
 .f-option:hover { border-color: var(--noyer); }
 .f-option input { display: none; }
 .f-option .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; opacity: .55; }
-.f-option .name { font-family: var(--font-display); font-size: 28px; line-height: 1; }
+.f-option .name { font-family: var(--font-display); font-size: clamp(22px, 5vw, 28px); line-height: 1; }
 .f-option .sub { font-size: 13px; opacity: .7; max-width: 28ch; }
 .f-option:has(input:checked) { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
 .f-option:has(input:checked) .num { opacity: .8; }
@@ -80,18 +80,18 @@
 <header class="site-header scrolled" id="siteHeader">
   <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
   <nav class="nav">
-    <a href="vivre.html" class="nav-link">Concevoir</a>
+    <a href="concevoir.html" class="nav-link">Concevoir</a>
     <a href="investir.html" class="nav-link">Investir</a>
     <a href="projets.html" class="nav-link">Projets</a>
-    <a href="studio.html" class="nav-link">La Maison</a>
-    <a href="journal.html" class="nav-link">Blog</a>
+    <a href="maison.html" class="nav-link">La Maison</a>
+    <a href="blog.html" class="nav-link">Blog</a>
     <a href="contact.html" class="cta">Prendre rendez-vous</a>
     <button class="nav-toggle"><span></span><span></span><span></span></button>
   </nav>
 </header>
 <aside class="mobile-menu">
   <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
-  <nav class="links"><a href="vivre.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="studio.html">La Maison</a><a href="journal.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
 </aside>
 
 <section class="bg-ivoire">
@@ -228,9 +228,9 @@
 <footer class="site-footer">
   <div class="footer-cols">
     <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
-    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="vivre.html">Conception</a></li><li><a href="vivre.html">Maîtrise d'œuvre</a></li><li><a href="vivre.html">Mobilier</a></li></ul></div>
+    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="concevoir.html">Conception</a></li><li><a href="concevoir.html">Maîtrise d'œuvre</a></li><li><a href="concevoir.html">Mobilier</a></li></ul></div>
     <div class="footer-col"><h3>Investir</h3><ul><li><a href="investir.html">Sourcing</a></li><li><a href="investir.html">Faisabilité</a></li><li><a href="investir.html">Valorisation</a></li></ul></div>
-    <div class="footer-col"><h3>Blog</h3><ul><li><a href="journal.html">Lectures</a></li></ul></div>
+    <div class="footer-col"><h3>Blog</h3><ul><li><a href="blog.html">Lectures</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
 </footer>

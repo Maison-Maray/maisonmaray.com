@@ -22,138 +22,168 @@
 <link rel="stylesheet" href="assets/site.css">
 
 <style>
-/* ===== FLOATING IMAGE — shadow + reveal mask + parallax ===== */
-.float-img { position: relative; overflow: hidden;
-  box-shadow: 0 32px 72px -22px rgba(42,31,24,.28), 0 0 0 1px rgba(176,138,75,.08);
-  clip-path: inset(8% 6% 8% 6%);
-  transition: clip-path 1.4s var(--ease), box-shadow .6s var(--ease);
-  will-change: clip-path;
-}
-.float-img.in { clip-path: inset(0% 0% 0% 0%); }
-.float-img img { scale: 1.08; transition: scale 2.2s var(--ease); will-change: transform, scale; }
-.float-img.in img { scale: 1; }
-.float-img:hover { box-shadow: 0 40px 96px -22px rgba(42,31,24,.34), 0 0 0 1px rgba(176,138,75,.12); }
-.float-img:hover img { scale: 1.03; transition: scale .9s var(--ease); }
-.float-img .caption {
-  position: absolute; left: 16px; bottom: 16px; z-index: 2;
-  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ivoire); opacity: 0; padding: 7px 12px; background: rgba(42,31,24,.55);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  transition: opacity .35s var(--ease), transform .45s var(--ease);
-  pointer-events: none; transform: translateY(6px);
-}
-.float-img:hover .caption { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) {
-  .float-img { clip-path: none; transition: none; }
-  .float-img img { transform: none; transition: none; }
-}
+/* ============ TIMELINE — vertical zigzag ============ */
 
-/* ===== HERO ===== */
-.cv-hero { padding-top: clamp(140px, 18vh, 200px); padding-bottom: clamp(72px, 9vw, 120px); display: grid; grid-template-columns: 6fr 6fr; gap: clamp(48px, 6vw, 96px); align-items: end; }
-.cv-hero h1.display { max-width: 14ch; margin: 24px 0 32px; font-size: clamp(48px, 5.6vw, 92px); line-height: 1; }
-.cv-hero .lede { max-width: 38ch; }
-@media (max-width: 880px) { .cv-hero { grid-template-columns: 1fr; padding-top: 120px; gap: 32px; } }
+/* Compact top bar */
+.cv-top { padding: clamp(110px, 13vh, 140px) var(--gutter-d) 18px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+@media (max-width: 720px) { .cv-top { padding-inline: var(--gutter-m); } }
+.cv-top .title { font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 2.4vw, 32px); line-height: 1; margin: 0; font-weight: 400; }
+.cv-top .title .num { font-family: var(--font-mono); font-style: normal; font-size: 12px; letter-spacing: 0.18em; opacity: .55; margin-left: 14px; vertical-align: middle; }
+.cv-top .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
 
-/* ===== 4 ÉTAPES ===== */
-.cv-srv { padding-block: clamp(72px, 9vw, 140px); }
-.cv-srv-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: clamp(48px, 6vw, 80px); align-items: end; }
-@media (max-width: 880px) { .cv-srv-head { grid-template-columns: 1fr; gap: 16px; } }
-.cv-srv-head h2 { max-width: 22ch; }
+/* Heading */
+.cv-heading { padding: clamp(48px, 7vw, 96px) var(--gutter-d) clamp(24px, 4vw, 48px); text-align: center; }
+@media (max-width: 720px) { .cv-heading { padding-inline: var(--gutter-m); text-align: left; } }
+.cv-heading h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 88px); line-height: 1; letter-spacing: -.01em; margin: 0 auto; max-width: 18ch; }
+.cv-heading h1 em { font-style: italic; }
+.cv-heading .lede { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; opacity: .55; margin: clamp(20px, 3vw, 32px) auto 0; max-width: 56ch; }
 
-.cv-srv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--rule); }
-@media (max-width: 1024px) { .cv-srv-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 540px)  { .cv-srv-grid { grid-template-columns: 1fr; } }
+/* Timeline frame */
+.cv-timeline { position: relative; max-width: 1100px; margin: 0 auto; padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(48px, 6vw, 96px); }
+@media (max-width: 720px) { .cv-timeline { padding-inline: var(--gutter-m); } }
 
-.cv-card { position: relative; padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 40px); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; gap: 22px; align-content: start; cursor: pointer; background: transparent; text-align: left; font-family: inherit; color: inherit; transition: background .35s var(--ease); width: 100%; outline: 0; }
-.cv-card:last-child { border-right: 0; }
-@media (max-width: 1024px) { .cv-card:nth-child(2n) { border-right: 0; } }
-@media (max-width: 540px)  { .cv-card { border-right: 0; } }
-.cv-card:hover { background: rgba(176,138,75,.05); }
-.cv-card.is-active { background: var(--travertin); color: var(--noyer); }
-.cv-card.is-active .ico, .cv-card.is-active .num { color: var(--noyer); }
-.cv-card .ico { width: 64px; height: 64px; color: var(--noyer); transition: transform .9s var(--ease), color .35s var(--ease); }
-.cv-card:hover .ico { transform: rotate(-4deg) scale(1.05); }
-.cv-card .ico svg { width: 100%; height: 100%; display: block; }
-.cv-card .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; opacity: .65; transition: color .35s var(--ease); }
-.cv-card h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 2.4vw, 34px); margin: 0; line-height: 1.05; }
-.cv-card .teaser { margin: 0; font-size: 14px; line-height: 1.55; opacity: .8; max-width: 32ch; }
-.cv-card .toggle { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; transition: opacity .3s; }
-.cv-card:hover .toggle, .cv-card.is-active .toggle { opacity: .95; }
-.cv-card .toggle .plus { display: inline-block; width: 12px; height: 12px; position: relative; }
-.cv-card .toggle .plus::before, .cv-card .toggle .plus::after { content: ""; position: absolute; background: currentColor; transition: transform .35s var(--ease); }
-.cv-card .toggle .plus::before { left: 0; right: 0; top: 50%; height: 1px; transform: translateY(-50%); }
-.cv-card .toggle .plus::after { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%); }
-.cv-card.is-active .toggle .plus::after { transform: translateX(-50%) scaleY(0); }
-
-/* SVG line-drawn icons — animate stroke on initial mount */
-.ico svg path, .ico svg circle, .ico svg line, .ico svg rect, .ico svg polyline, .ico svg ellipse {
-  fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round;
-  stroke-dasharray: 600; stroke-dashoffset: 600;
-  animation: drawLine 1.6s var(--ease) forwards;
+/* The central vertical line */
+.cv-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: rgba(42,31,24,.15);
+  pointer-events: none;
 }
-.cv-card:nth-child(1) .ico svg * { animation-delay: .15s; }
-.cv-card:nth-child(2) .ico svg * { animation-delay: .35s; }
-.cv-card:nth-child(3) .ico svg * { animation-delay: .55s; }
-.cv-card:nth-child(4) .ico svg * { animation-delay: .75s; }
-@keyframes drawLine { to { stroke-dashoffset: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .ico svg path, .ico svg circle, .ico svg line, .ico svg rect, .ico svg polyline, .ico svg ellipse { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+.cv-line-fill {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0;
+  background: var(--noyer);
+  will-change: height;
+  transition: height .12s linear;
 }
-
-/* ===== DETAIL DRAWER (expand on click) ===== */
-.cv-detail {
-  position: relative; overflow: hidden;
-  max-height: 0; opacity: 0;
-  transition: max-height .8s var(--ease), opacity .6s var(--ease);
-}
-.cv-detail.open { max-height: 900px; opacity: 1; }
-.cv-detail-inner { position: relative; z-index: 1; padding: clamp(56px, 7vw, 96px) clamp(24px, 4vw, 56px); display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: clamp(32px, 4vw, 64px); }
-@media (max-width: 880px) { .cv-detail-inner { grid-template-columns: 1fr; gap: 24px; } }
-.cv-detail h4 { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(28px, 3vw, 44px); margin: 0; line-height: 1.05; max-width: 14ch; color: var(--noyer); }
-.cv-detail p { color: rgba(42,31,24,.85); font-size: 15px; line-height: 1.65; max-width: 42ch; margin: 0; }
-.cv-detail .det-eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--noyer); opacity: .6; margin-bottom: 14px; display: block; }
-.cv-detail ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; color: var(--noyer); }
-.cv-detail ul li { font-size: 14px; line-height: 1.5; padding-left: 22px; position: relative; opacity: .85; }
-.cv-detail ul li::before { content: ""; position: absolute; left: 0; top: 11px; width: 12px; height: 1px; background: var(--laiton); }
-
-/* === Grid background with edge fade — subtle, on travertin === */
-.cv-detail-bg {
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-color: var(--travertin);
-  background-image:
-    linear-gradient(to right, rgba(42,31,24,.14) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42,31,24,.14) 1px, transparent 1px);
-  background-size: 36px 36px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 95%);
-          mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 95%);
-}
-.cv-detail-pulse { display: none; }
-/* Hide click-to-expand mechanism on mobile — teaser on each card is enough */
 @media (max-width: 880px) {
-  .cv-detail { display: none !important; }
-  .cv-card .toggle { display: none; }
-  .cv-card { cursor: default; }
-  .cv-card.is-active { background: transparent; color: inherit; }
+  .cv-line { left: 22px; transform: none; }
 }
 
-/* ===== TESTIMONIAL ===== */
-.cv-quote { padding-block: clamp(72px, 9vw, 140px); border-top: 1px solid var(--rule); }
-.cv-quote-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(32px, 5vw, 96px); align-items: center; }
-@media (max-width: 880px) { .cv-quote-grid { grid-template-columns: 1fr; } }
-.cv-quote .img-hover { aspect-ratio: 4 / 5; }
-.cv-quote blockquote { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 2.8vw, 42px); line-height: 1.2; max-width: 32ch; }
-.cv-quote blockquote em { font-style: italic; color: var(--laiton-deep); }
-.cv-quote figcaption { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; opacity: .6; margin-top: 28px; }
+/* Each step */
+.cv-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  align-items: center;
+  gap: 0;
+  padding: clamp(56px, 8vw, 110px) 0;
+}
+.cv-step:first-child { padding-top: 0; }
+.cv-step:last-child { padding-bottom: 0; }
+.cv-step .cv-content { padding: 0 clamp(16px, 3vw, 48px); display: flex; flex-direction: column; gap: 16px; }
+.cv-step.left .cv-content { grid-column: 1; text-align: right; align-items: flex-end; }
+.cv-step.right .cv-content { grid-column: 3; text-align: left; align-items: flex-start; }
+.cv-step .cv-node-wrap { grid-column: 2; display: flex; justify-content: center; align-items: center; }
 
-/* ===== CTA — terra cota / noyer base ===== */
-.cv-end { padding-block: clamp(72px, 9vw, 140px); position: relative; overflow: hidden; background: var(--noyer); color: var(--ivoire); border-top: 1px solid var(--rule); }
-.cv-end-inner { display: grid; gap: 28px; max-width: 720px; position: relative; z-index: 1; }
-.cv-end h2 { max-width: 16ch; font-size: clamp(40px, 4.4vw, 72px); color: var(--ivoire); }
-.cv-end .lede { color: rgba(245,241,234,.85); }
-.cv-end .eyebrow { color: var(--ivoire); }
-.cv-end .scarab-mark { background: var(--ivoire); opacity: .045 !important; }
-.cv-end .btn-solid { background: var(--laiton); color: var(--ivoire); border-color: var(--laiton); }
-.cv-end .btn-solid:hover { background: var(--ivoire); color: var(--noyer); border-color: var(--ivoire); }
+/* Node on the line */
+.cv-node {
+  width: 18px; height: 18px;
+  background: var(--ivoire);
+  border: 1.5px solid var(--noyer);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  transition: transform .5s var(--ease), background .5s var(--ease);
+}
+.cv-node::after {
+  content: "";
+  position: absolute; inset: 5px;
+  background: var(--noyer);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform .5s var(--ease);
+}
+.cv-step.is-active .cv-node { transform: scale(1.15); }
+.cv-step.is-active .cv-node::after { transform: scale(1); }
+
+/* Content elements */
+.cv-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1;
+  letter-spacing: -.02em;
+  margin: 0;
+  opacity: .35;
+  transition: opacity .6s var(--ease);
+}
+.cv-step.is-active .cv-num { opacity: .85; }
+
+.cv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+.cv-step h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  margin: 0;
+  max-width: 14ch;
+}
+.cv-step h2 em { font-style: italic; color: var(--laiton-deep); }
+
+.cv-step p {
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.6;
+  margin: 4px 0 0;
+  opacity: .85;
+  max-width: 38ch;
+}
+
+.cv-list {
+  list-style: none;
+  padding: 14px 0 0;
+  margin: 4px 0 0;
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  opacity: .75;
+}
+.cv-step.left .cv-list li::before { content: "—"; opacity: .4; margin-left: 8px; }
+.cv-step.left .cv-list { text-align: right; }
+.cv-step.left .cv-list li::after { content: ""; }
+.cv-step.right .cv-list li::before { content: "—"; opacity: .4; margin-right: 8px; }
+.cv-step.right .cv-list { text-align: left; }
+
+.cv-when {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: .45;
+}
+
+/* Mobile: collapse to single column with line on the left */
+@media (max-width: 880px) {
+  .cv-step { grid-template-columns: 44px 1fr; padding: clamp(40px, 8vw, 64px) 0; }
+  .cv-step.left .cv-content,
+  .cv-step.right .cv-content { grid-column: 2; text-align: left; align-items: flex-start; padding-left: 24px; padding-right: 0; }
+  .cv-step .cv-node-wrap { grid-column: 1; justify-content: flex-start; padding-left: 13px; }
+  .cv-step.left .cv-list,
+  .cv-step.right .cv-list { text-align: left; }
+  .cv-step.left .cv-list li::before { margin-left: 0; margin-right: 8px; }
+}
+
+/* End CTA */
+.cv-end { padding: clamp(80px, 10vw, 140px) var(--gutter-d); text-align: center; border-top: 1px solid var(--rule); }
+@media (max-width: 720px) { .cv-end { padding-inline: var(--gutter-m); } }
+.cv-end h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; max-width: 22ch; margin: 0 auto 28px; }
+.cv-end h2 em { font-style: italic; }
+.cv-end .ctas { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 </style>
 </head>
 <body data-screen-label="Concevoir">
@@ -177,159 +207,101 @@
   <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
 </aside>
 
-<!-- ============ HERO ============ -->
-<section class="bg-ivoire">
-  <div class="container cv-hero">
-    <div>
-      <span class="eyebrow reveal">Parcours · Concevoir</span>
-      <h1 class="display italic-mix reveal delay-1">
-        Quatre temps, un seul <em>interlocuteur.</em>
-      </h1>
-      <p class="lede reveal delay-2">
-        De la rencontre à la pose du dernier meuble — Maison Maray
-        accompagne chaque étape, sans relais ni transfert.
-      </p>
-      <div class="reveal delay-3" style="margin-top: 36px;">
-        <a class="btn btn-solid" href="contact.html">Prendre rendez-vous <span class="arr"></span></a>
-      </div>
-    </div>
-    <div class="img-hover float-img reveal delay-1" data-parallax="20">
-      <img class="img-fill" alt="Salon parisien rénové par Maison Maray, parquet point de Hongrie"
-           src="assets/hero-sam2.jpg">
-      <span class="caption">Révélation Haussmannienne · Paris 7ᵉ</span>
-    </div>
-  </div>
+<!-- ============ TOP BAR ============ -->
+<header class="bg-ivoire cv-top">
+  <h1 class="title">Parcours · Concevoir<span class="num">— Méthode 2026</span></h1>
+  <span class="meta">Quatre temps · Une seule signature</span>
+</header>
+
+<!-- ============ HEADING ============ -->
+<section class="bg-ivoire cv-heading">
+  <h1>De la rencontre à la <em>remise des clés.</em></h1>
+  <p class="lede">— Aucun relais. Aucun transfert. Aucun avenant surprise.</p>
 </section>
 
-<!-- ============ 4 ÉTAPES ============ -->
-<section class="bg-ivoire cv-srv">
-  <div class="container">
-    <div class="cv-srv-head">
-      <span class="eyebrow reveal">Quatre temps</span>
-      <h2 class="display reveal delay-1">De la première écoute à la <em>dernière prise.</em></h2>
+<!-- ============ TIMELINE ============ -->
+<section class="bg-ivoire cv-timeline" id="cvTimeline">
+  <div class="cv-line" aria-hidden="true"><div class="cv-line-fill" id="cvLineFill"></div></div>
+
+  <!-- STEP 01 — left -->
+  <article class="cv-step left">
+    <div class="cv-content">
+      <span class="cv-num">01</span>
+      <span class="cv-eyebrow">Premier temps</span>
+      <h2>La <em>rencontre.</em></h2>
+      <p>Avant le premier trait, trois heures sur place. On regarde votre lumière à différentes heures, on note vos rituels, on liste ce que vous tenez à garder.</p>
+      <ul class="cv-list">
+        <li>Visite des lieux et de la lumière</li>
+        <li>Brief d'usage et de style</li>
+        <li>Cadrage du budget</li>
+        <li>Avant-projet d'orientations</li>
+      </ul>
+      <span class="cv-when">— Temps zéro</span>
     </div>
-    <div class="cv-srv-grid reveal" id="cvGrid">
-      <!-- 01 RENCONTRE -->
-      <button type="button" class="cv-card" data-card="01" aria-expanded="false" aria-controls="cvDet01">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <circle cx="22" cy="22" r="6"/>
-            <path d="M14 36 Q14 46 22 50"/>
-            <circle cx="42" cy="22" r="6"/>
-            <path d="M50 36 Q50 46 42 50"/>
-            <line x1="28" y1="22" x2="36" y2="22" stroke-dasharray="2 2"/>
-            <ellipse cx="32" cy="56" rx="20" ry="2"/>
-          </svg>
-        </span>
-        <span class="num">01.</span>
-        <h3>Rencontre.</h3>
-        <p class="teaser">On vous écoute longtemps avant de dessiner. Vos rituels, votre lumière, ce qui vous manque.</p>
-        <span class="toggle">Détail <span class="plus"></span></span>
-      </button>
+    <div class="cv-node-wrap"><span class="cv-node"></span></div>
+  </article>
 
-      <!-- 02 CONCEPTION -->
-      <button type="button" class="cv-card" data-card="02" aria-expanded="false" aria-controls="cvDet02">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <circle cx="32" cy="14" r="2.4"/>
-            <line x1="32" y1="16" x2="18" y2="50"/>
-            <line x1="32" y1="16" x2="46" y2="50"/>
-            <path d="M20 50 Q32 56 44 50"/>
-            <line x1="18" y1="50" x2="14" y2="56"/>
-            <line x1="46" y1="50" x2="50" y2="56"/>
-          </svg>
-        </span>
-        <span class="num">02.</span>
-        <h3>Conception.</h3>
-        <p class="teaser">Le projet existe avant le chantier — plans, ambiances, rendus 3D.</p>
-        <span class="toggle">Détail <span class="plus"></span></span>
-      </button>
-
-      <!-- 03 CHANTIER -->
-      <button type="button" class="cv-card" data-card="03" aria-expanded="false" aria-controls="cvDet03">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <polyline points="12,28 32,14 52,28"/>
-            <line x1="14" y1="28" x2="14" y2="50"/>
-            <line x1="50" y1="28" x2="50" y2="50"/>
-            <line x1="14" y1="50" x2="50" y2="50"/>
-            <rect x="28" y="38" width="8" height="12"/>
-            <rect x="18" y="34" width="6" height="6"/>
-            <line x1="12" y1="56" x2="52" y2="56" stroke-dasharray="2 2"/>
-          </svg>
-        </span>
-        <span class="num">03.</span>
-        <h3>Chantier.</h3>
-        <p class="teaser">Coordination des artisans, budget verrouillé, livraison à date fixe.</p>
-        <span class="toggle">Détail <span class="plus"></span></span>
-      </button>
-
-      <!-- 04 MOBILIER -->
-      <button type="button" class="cv-card" data-card="04" aria-expanded="false" aria-controls="cvDet04">
-        <span class="ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <line x1="20" y1="14" x2="20" y2="42"/>
-            <path d="M20 14 Q22 32 38 32 L42 32"/>
-            <line x1="42" y1="32" x2="42" y2="44"/>
-            <line x1="20" y1="44" x2="42" y2="44"/>
-            <line x1="20" y1="44" x2="20" y2="54"/>
-            <line x1="42" y1="44" x2="42" y2="54"/>
-          </svg>
-        </span>
-        <span class="num">04.</span>
-        <h3>Mobilier.</h3>
-        <p class="teaser">Bibliothèques, cuisines, dressings, matières — fabriqués pour vos murs.</p>
-        <span class="toggle">Détail <span class="plus"></span></span>
-      </button>
+  <!-- STEP 02 — right -->
+  <article class="cv-step right">
+    <div class="cv-node-wrap"><span class="cv-node"></span></div>
+    <div class="cv-content">
+      <span class="cv-num">02</span>
+      <span class="cv-eyebrow">Deuxième temps</span>
+      <h2>La <em>conception.</em></h2>
+      <p>Trois semaines plus tard, le projet existe — plans techniques, ambiances, rendus 3D photoréalistes. Vous traversez l'appartement avant qu'il existe.</p>
+      <ul class="cv-list">
+        <li>Plans techniques détaillés</li>
+        <li>Moodboards par pièce</li>
+        <li>3D immersives des pièces clés</li>
+        <li>Devis figé à la signature</li>
+      </ul>
+      <span class="cv-when">— Semaine 03</span>
     </div>
+  </article>
 
-    <!-- Detail drawer — populated by JS -->
-    <div class="cv-detail" id="cvDetail" role="region" aria-live="polite">
-      <span class="cv-detail-bg" aria-hidden="true"></span>
-      <span class="cv-detail-pulse" aria-hidden="true"></span>
-      <div class="cv-detail-inner">
-        <div>
-          <span class="det-eyebrow" id="cvDetEyebrow">Étape 01</span>
-          <h4 id="cvDetTitle">—</h4>
-        </div>
-        <p id="cvDetBody">—</p>
-        <ul id="cvDetList"></ul>
-      </div>
+  <!-- STEP 03 — left -->
+  <article class="cv-step left">
+    <div class="cv-content">
+      <span class="cv-num">03</span>
+      <span class="cv-eyebrow">Troisième temps</span>
+      <h2>Le <em>chantier.</em></h2>
+      <p>Coordination des artisans, visite hebdomadaire, récap photo le vendredi. Trois mois pour 100 m², six pour 200. Aucun avenant sans validation écrite.</p>
+      <ul class="cv-list">
+        <li>Coordination des corps de métier</li>
+        <li>Visite hebdomadaire + récap photo</li>
+        <li>Budget verrouillé contractuellement</li>
+        <li>Réception OPR et garantie 1 an</li>
+      </ul>
+      <span class="cv-when">— Mois 02 à 05</span>
     </div>
-  </div>
+    <div class="cv-node-wrap"><span class="cv-node"></span></div>
+  </article>
+
+  <!-- STEP 04 — right -->
+  <article class="cv-step right">
+    <div class="cv-node-wrap"><span class="cv-node"></span></div>
+    <div class="cv-content">
+      <span class="cv-num">04</span>
+      <span class="cv-eyebrow">Quatrième temps</span>
+      <h2>Le <em>mobilier.</em></h2>
+      <p>Bibliothèques, dressings, cuisines — fabriqués dans le même atelier d'ébénisterie en Seine-et-Marne, avec un partenaire unique depuis sept ans.</p>
+      <ul class="cv-list">
+        <li>Ébénisterie sur-mesure</li>
+        <li>Bois massif, finitions à la main</li>
+        <li>Quincaillerie laiton et bronze</li>
+        <li>Mise en lumière finale</li>
+      </ul>
+      <span class="cv-when">— Mois 05 à 06</span>
+    </div>
+  </article>
 </section>
 
-<!-- ============ TESTIMONIAL ============ -->
-<section class="bg-ivoire cv-quote">
-  <div class="container cv-quote-grid">
-    <div class="img-hover float-img reveal" data-parallax="32">
-      <img class="img-fill" alt="Salon parisien rénové, lumière du soir"
-           src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1600&q=80&auto=format&fit=crop">
-      <span class="caption">Hélène &amp; Pierre · Paris 8ᵉ · 2024</span>
-    </div>
-    <figure>
-      <span class="eyebrow reveal">Témoignage</span>
-      <blockquote class="reveal delay-1" style="margin: 24px 0 0;">
-        « Trois mois après l'emménagement, on n'a déplacé aucun meuble. Mohamed avait observé nos rituels avant de dessiner. Le salon respire à <em>l'heure exacte</em> où on rentre. »
-      </blockquote>
-      <figcaption class="reveal delay-2">— Hélène & Pierre · Paris 8ᵉ · 180 m²</figcaption>
-      <a class="link-line reveal delay-2" href="projets/revelation-haussmannienne.html" style="margin-top: 28px; display: inline-block;">
-        Lire le projet entier <span class="arr"></span>
-      </a>
-    </figure>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="cv-end">
-  <span class="scarab-mark lg br" aria-hidden="true"></span>
-  <div class="container cv-end-inner">
-    <span class="eyebrow reveal">Prendre rendez-vous</span>
-    <h2 class="display reveal delay-1">Parlons de votre projet en <em>trente minutes.</em></h2>
-    <p class="lede reveal delay-2">Sans engagement. Réponse sous 24 h. En studio, à Monceau, ou en visio.</p>
-    <div class="reveal delay-3">
-      <a class="btn btn-solid" href="contact.html">Réserver un créneau <span class="arr"></span></a>
-    </div>
+<!-- ============ END CTA ============ -->
+<section class="bg-ivoire cv-end">
+  <h2>Prêt pour un <em>premier rendez-vous ?</em></h2>
+  <div class="ctas">
+    <a class="btn btn-solid" href="contact.html">Réserver 30 minutes <span class="arr"></span></a>
+    <a class="btn btn-ghost" href="projets.html">Voir les projets <span class="arr"></span></a>
   </div>
 </section>
 
@@ -344,62 +316,42 @@
 </footer>
 
 <script src="assets/site.js"></script>
-<script type="module">
-  import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11.18.0/+esm";
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.eyebrow.reveal').forEach(el => el.classList.add('with-leader'));
+<script>
+(() => {
+  const timeline = document.getElementById('cvTimeline');
+  const lineFill = document.getElementById('cvLineFill');
+  const steps = document.querySelectorAll('.cv-step');
+  const progressBar = document.querySelector('.scroll-progress .bar');
+  if (!timeline || !lineFill) return;
 
-  // Top scroll progress bar
-  const bar = document.querySelector('.scroll-progress .bar');
-  if (bar && !reduced) {
-    const u = () => { const m = document.documentElement.scrollHeight - window.innerHeight; bar.style.transform = `scaleX(${m > 0 ? Math.min(1, Math.max(0, window.scrollY / m)) : 0})`; };
-    u(); window.addEventListener('scroll', u, { passive: true }); window.addEventListener('resize', u);
-  }
+  const update = () => {
+    // Top scroll bar
+    if (progressBar) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = `scaleX(${max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0})`;
+    }
 
-  // Image parallax — float images glide slower than the page
-  if (typeof scroll === 'function' && !reduced) {
-    document.querySelectorAll('[data-parallax]').forEach(container => {
-      const img = container.querySelector('img');
-      if (!img) return;
-      const amt = Number(container.dataset.parallax) || 24;
-      scroll(
-        animate(img, { y: [-amt, amt] }, { easing: 'linear' }),
-        { target: container, offset: ['start end', 'end start'] }
-      );
+    // Timeline line fill — starts when timeline enters viewport mid, fills as we scroll through it
+    const r = timeline.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const trigger = vh * 0.55;
+    const total = r.height - (vh - trigger);
+    const scrolled = Math.min(total, Math.max(0, trigger - r.top));
+    const ratio = total > 0 ? Math.min(1, scrolled / total) : 0;
+    lineFill.style.height = (ratio * 100) + '%';
+
+    // Activate nodes as they pass viewport mid
+    steps.forEach(s => {
+      const sr = s.getBoundingClientRect();
+      const mid = sr.top + sr.height / 2;
+      s.classList.toggle('is-active', mid < vh * 0.6);
     });
-  }
-
-  // Detail drawer
-  const drawer = document.getElementById('cvDetail');
-  const eyebrow = document.getElementById('cvDetEyebrow');
-  const title = document.getElementById('cvDetTitle');
-  const body = document.getElementById('cvDetBody');
-  const list = document.getElementById('cvDetList');
-  const cards = document.querySelectorAll('.cv-card');
-  const data = {
-    '01': { eb: 'Étape 01 — Rencontre',  t: 'Écouter avant de dessiner.', b: "Une rencontre longue, en studio ou chez vous. On découvre vos rituels, vos contraintes, ce qui vous manque, ce que vous aimez vraiment. Aucun trait n'est posé avant cette étape.", l: ['Visite des lieux', "Brief d'usage et de style", 'Cadrage du budget', "Avant-projet d'orientations"] },
-    '02': { eb: 'Étape 02 — Conception',  t: 'Le projet avant le chantier.', b: "Plans précis, ambiances, rendus 3D immersifs. Vous traversez votre futur appartement avant le premier coup de marteau. Tout est ajusté en allers-retours jusqu'à l'évidence.", l: ['Plans techniques détaillés', 'Moodboards et palette matières', '3D photoréalistes des pièces clés', 'Cahier des charges artisans'] },
-    '03': { eb: 'Étape 03 — Chantier',    t: 'Du croquis aux clés.', b: "Maison Maray dirige et coordonne l'ensemble des artisans. Visite hebdomadaire, budget verrouillé à la signature, aucun avenant surprise. Livré à la date prévue.", l: ['Coordination des corps de métier', 'Visite de chantier hebdomadaire', 'Budget figé dès la signature', 'Réception et garantie 1 an'] },
-    '04': { eb: 'Étape 04 — Mobilier',    t: 'Pensé pour vos murs.', b: "Bibliothèques, dressings, cuisines, banquettes : conçus pour vos volumes, fabriqués en atelier en banlieue parisienne. Sourcing des matières en France, Italie, Maroc.", l: ['Ébénisterie sur-mesure', 'Pierres, bois et métaux', 'Tissus, papiers, peintures', 'Mise en lumière et scénographie'] },
   };
-  let openId = null;
-  function open(id) {
-    const d = data[id]; if (!d) return;
-    eyebrow.textContent = d.eb; title.textContent = d.t; body.textContent = d.b;
-    list.innerHTML = d.l.map(item => `<li>${item}</li>`).join('');
-    drawer.classList.add('open');
-    cards.forEach(c => { const a = c.dataset.card === id; c.classList.toggle('is-active', a); c.setAttribute('aria-expanded', a ? 'true' : 'false'); });
-    openId = id;
-  }
-  function close() {
-    drawer.classList.remove('open');
-    cards.forEach(c => { c.classList.remove('is-active'); c.setAttribute('aria-expanded', 'false'); });
-    openId = null;
-  }
-  cards.forEach(c => c.addEventListener('click', () => {
-    const id = c.dataset.card;
-    if (openId === id) close(); else open(id);
-  }));
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
 </script>
 </body>
 </html>

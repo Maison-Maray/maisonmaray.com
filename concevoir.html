@@ -167,6 +167,26 @@
   opacity: .45;
 }
 
+/* SVG sketch above each step content */
+.cv-sketch { width: 64px; height: 64px; color: var(--noyer); opacity: .85; }
+.cv-sketch svg { width: 100%; height: 100%; display: block; }
+.cv-sketch svg path, .cv-sketch svg circle, .cv-sketch svg line, .cv-sketch svg rect, .cv-sketch svg polyline, .cv-sketch svg ellipse {
+  fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 320; stroke-dashoffset: 320;
+  transition: stroke-dashoffset 1.4s var(--ease);
+}
+.cv-step.is-active .cv-sketch svg path,
+.cv-step.is-active .cv-sketch svg circle,
+.cv-step.is-active .cv-sketch svg line,
+.cv-step.is-active .cv-sketch svg rect,
+.cv-step.is-active .cv-sketch svg polyline,
+.cv-step.is-active .cv-sketch svg ellipse {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv-sketch svg * { stroke-dasharray: none; stroke-dashoffset: 0; transition: none; }
+}
+
 /* Mobile: collapse to single column with line on the left */
 @media (max-width: 880px) {
   .cv-step { grid-template-columns: 44px 1fr; padding: clamp(40px, 8vw, 64px) 0; }
@@ -226,6 +246,14 @@
   <!-- STEP 01 — left -->
   <article class="cv-step left">
     <div class="cv-content">
+      <span class="cv-sketch" aria-hidden="true"><svg viewBox="0 0 64 64">
+        <circle cx="22" cy="22" r="6"/>
+        <path d="M14 36 Q14 46 22 50"/>
+        <circle cx="42" cy="22" r="6"/>
+        <path d="M50 36 Q50 46 42 50"/>
+        <line x1="28" y1="22" x2="36" y2="22" stroke-dasharray="2 2"/>
+        <ellipse cx="32" cy="56" rx="20" ry="2"/>
+      </svg></span>
       <span class="cv-num">01</span>
       <span class="cv-eyebrow">Premier temps</span>
       <h2>La <em>rencontre.</em></h2>
@@ -245,6 +273,14 @@
   <article class="cv-step right">
     <div class="cv-node-wrap"><span class="cv-node"></span></div>
     <div class="cv-content">
+      <span class="cv-sketch" aria-hidden="true"><svg viewBox="0 0 64 64">
+        <circle cx="32" cy="14" r="2.4"/>
+        <line x1="32" y1="16" x2="18" y2="50"/>
+        <line x1="32" y1="16" x2="46" y2="50"/>
+        <path d="M20 50 Q32 56 44 50"/>
+        <line x1="18" y1="50" x2="14" y2="56"/>
+        <line x1="46" y1="50" x2="50" y2="56"/>
+      </svg></span>
       <span class="cv-num">02</span>
       <span class="cv-eyebrow">Deuxième temps</span>
       <h2>La <em>conception.</em></h2>
@@ -262,6 +298,15 @@
   <!-- STEP 03 — left -->
   <article class="cv-step left">
     <div class="cv-content">
+      <span class="cv-sketch" aria-hidden="true"><svg viewBox="0 0 64 64">
+        <polyline points="12,28 32,14 52,28"/>
+        <line x1="14" y1="28" x2="14" y2="50"/>
+        <line x1="50" y1="28" x2="50" y2="50"/>
+        <line x1="14" y1="50" x2="50" y2="50"/>
+        <rect x="28" y="38" width="8" height="12"/>
+        <rect x="18" y="34" width="6" height="6"/>
+        <line x1="12" y1="56" x2="52" y2="56" stroke-dasharray="2 2"/>
+      </svg></span>
       <span class="cv-num">03</span>
       <span class="cv-eyebrow">Troisième temps</span>
       <h2>Le <em>chantier.</em></h2>
@@ -281,6 +326,14 @@
   <article class="cv-step right">
     <div class="cv-node-wrap"><span class="cv-node"></span></div>
     <div class="cv-content">
+      <span class="cv-sketch" aria-hidden="true"><svg viewBox="0 0 64 64">
+        <line x1="20" y1="14" x2="20" y2="42"/>
+        <path d="M20 14 Q22 32 38 32 L42 32"/>
+        <line x1="42" y1="32" x2="42" y2="44"/>
+        <line x1="20" y1="44" x2="42" y2="44"/>
+        <line x1="20" y1="44" x2="20" y2="54"/>
+        <line x1="42" y1="44" x2="42" y2="54"/>
+      </svg></span>
       <span class="cv-num">04</span>
       <span class="cv-eyebrow">Quatrième temps</span>
       <h2>Le <em>mobilier.</em></h2>

@@ -233,7 +233,7 @@
       <div class="sig-overlay">
         <span class="sig-num">II.</span>
         <h4 class="display">Matière</h4>
-        <p>Travertin, noyer, laiton, lin. Quatre familles. Aucune surcharge.</p>
+        <p>Faire dialoguer les matières plutôt que les accumuler.</p>
       </div>
     </article>
     <article class="sig-card img-hover reveal delay-2">
@@ -264,7 +264,14 @@
     gap: 16px;
   }
 }
-.sig-card { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.sig-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.sig-card:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 .sig-card .img-fill { filter: brightness(.85); }
 .sig-overlay { position: absolute; inset: auto 0 0 0; padding: 32px; color: var(--ivoire); display: grid; gap: 12px; }
 .sig-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; opacity: .8; }
@@ -289,7 +296,7 @@
         <p class="lede">Écoute longue, rituels du quotidien, mode de vie. Avant de tracer le moindre trait, comprendre comment vous habitez réellement les lieux.</p>
         <div class="act-img img-hover">
           <img class="img-fill" alt="Carnet de croquis et notes manuscrites posés sur une table en bois"
-               src="assets/selection-web/21-31/61903-quai-andre-citroen-1.jpg">
+               src="assets/selection-web/banque/l_ame%20du%20projet.jpg">
         </div>
       </article>
       <article class="act" data-num="02">
@@ -304,7 +311,7 @@
       <article class="act" data-num="03">
         <span class="eyebrow">Acte 03</span>
         <h4 class="display">L'exigence technique.</h4>
-        <p class="lede">Choix des matières, ébénisterie sur-mesure, suivi de chantier hebdomadaire, budget figé dès la signature. Aucun avenant surprise.</p>
+        <p class="lede">Choix des matières, mobiliers sur-mesure, suivi de chantier hebdomadaire, budget figé dès la signature. Aucun avenant surprise.</p>
         <div class="act-img img-hover">
           <img class="img-fill" alt="Atelier d'ébénisterie, mains travaillant le bois noyer"
                src="assets/selection-web/banque/L_exigence%20technique.jpg">
@@ -344,7 +351,13 @@
 .act:first-child { border-top: 0; }
 .act .display { font-size: clamp(36px, 4vw, 72px); max-width: 14ch; }
 .act .lede { max-width: 42ch; }
-.act-img { aspect-ratio: 4 / 3; margin-top: 24px; }
+.act-img {
+  aspect-ratio: 4 / 3;
+  margin-top: 24px;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.act-img:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 @media (max-width: 880px) {
   .process-stage { grid-template-columns: 1fr; }
   .process-numwrap { display: none; }
@@ -387,12 +400,12 @@
     </div>
   </a>
 
-  <a class="feat-card img-hover reveal" href="projets.html">
-    <img class="img-fill" alt="Salle à manger en miroir, lumière tamisée, table dressée"
-         src="assets/selection-web/22-11/DJI_20250727_184700_626.jpg">
+  <a class="feat-card img-hover reveal" href="projets/22-11.html">
+    <img class="img-fill" alt="Salon parisien face à la Tour Eiffel, vue dégagée sur la Seine"
+         src="assets/selection-web/22-11/DJI_20250727_185712_332.jpg">
     <div class="feat-overlay">
       <span class="feat-num eyebrow">Projet&nbsp;02</span>
-      <h4 class="display">Le dîner miroir.</h4>
+      <h4 class="display">Un horizon privé face à la Tour Eiffel.</h4>
       <div class="feat-meta">
         <span>Paris 16<sup>e</sup></span><span>95&nbsp;m²</span>
       </div>
@@ -400,14 +413,14 @@
     </div>
   </a>
 
-  <a class="feat-card img-hover reveal" href="projets.html">
-    <img class="img-fill" alt="Vue depuis un appartement parisien donnant sur la Tour Eiffel"
-         src="assets/selection-web/57-19/SEJOUR11.jpg">
+  <a class="feat-card img-hover reveal" href="projets/21-31.html">
+    <img class="img-fill" alt="Appartement parisien au 30ᵉ étage, vue panoramique sur Paris — quai André-Citroën"
+         src="assets/selection-web/21-31/61903-quai-andre-citroen-29.jpg">
     <div class="feat-overlay">
       <span class="feat-num eyebrow">Projet&nbsp;03</span>
-      <h4 class="display">Un horizon privé face à la Tour Eiffel.</h4>
+      <h4 class="display">Paris à perte de vue.</h4>
       <div class="feat-meta">
-        <span>Paris 7<sup>e</sup></span><span>220&nbsp;m²</span>
+        <span>Paris 15<sup>e</sup></span><span>30<sup>e</sup>&nbsp;étage</span>
       </div>
       <span class="link-line">Voir le projet <span class="arr"></span></span>
     </div>
@@ -472,12 +485,12 @@
 <!-- ================ 8. TÉMOIGNAGE ================ -->
 <section data-chapter="06" data-chapter-name="Témoignage" class="testimonial bg-ivoire section-pad" aria-label="Témoignage">
   <div class="container testi-grid">
+    <span class="scarab-mark testi-scarab" aria-hidden="true"></span>
     <div class="testi-img img-hover reveal">
       <img class="img-fill" alt="Couple installé dans leur salon haussmannien rénové"
            src="assets/selection-web/35-22/61904-Quai-de-Grenelle-1.jpg">
     </div>
     <figure class="testi-quote">
-      <span class="scarab-mark testi-scarab" aria-hidden="true"></span>
       <span class="eyebrow reveal">Témoignage</span>
       <blockquote class="display reveal delay-1">
         « On ne reconnaît pas notre appartement. Et pourtant, c'est plus que jamais le <em>nôtre</em>. »
@@ -488,13 +501,32 @@
 </section>
 
 <style>
-.testi-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 5vw, 96px); align-items: center; }
-.testi-img { aspect-ratio: 4 / 5; }
+.testi-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 5vw, 96px); align-items: center; position: relative; }
+.testi-img {
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.testi-img:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 .testi-quote { margin: 0; display: grid; gap: 28px; position: relative; }
 .testi-quote blockquote { font-family: var(--font-display); font-size: clamp(28px, 3.6vw, 56px); line-height: 1.1; max-width: 22ch; position: relative; z-index: 1; }
 .testi-quote .eyebrow, .testi-quote figcaption { position: relative; z-index: 1; }
 .testi-quote figcaption { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; }
 .testi-scarab { position: absolute; right: -8%; bottom: -10%; width: clamp(200px, 22vw, 320px); aspect-ratio: 22/28; z-index: 0; }
+@media (min-width: 1024px) {
+  .testi-scarab {
+    -webkit-mask-image: url("assets/IMG_9646.PNG");
+            mask-image: url("assets/IMG_9646.PNG");
+    aspect-ratio: 1198 / 1853;
+    width: clamp(500px, 44vw, 680px);
+    top: -10%;
+    left: 58%;
+    right: auto;
+    bottom: auto;
+    opacity: .09 !important;
+    transform: none;
+  }
+}
 @media (max-width: 880px) { .testi-grid { grid-template-columns: 1fr; } .testi-scarab { right: -4%; bottom: -8%; width: 180px; } }
 </style>
 
@@ -543,10 +575,18 @@
 .journal-head { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 56px; flex-wrap: wrap; }
 .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 @media (max-width: 880px) { .journal-grid { grid-template-columns: 1fr; gap: 56px; } }
-.article-img { display: block; aspect-ratio: 1 / 1; margin-bottom: 24px; }
-.article .cat { display: block; margin-bottom: 12px; }
-.article h4 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 0 0 16px; max-width: 22ch; }
-.article .date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.article {
+  border: 1px solid var(--noyer);
+  background: var(--ivoire);
+  padding: 14px 14px 22px;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.article:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
+.article-img { display: block; aspect-ratio: 1 / 1; margin-bottom: 20px; }
+.article .cat { display: block; margin: 0 4px 12px; }
+.article h4 { font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.15; margin: 0 4px 16px; max-width: 22ch; }
+.article .date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; padding: 0 4px; }
 </style>
 
 <!-- ================ 10. CTA FINAL ================ -->
@@ -558,7 +598,7 @@
         Trente minutes pour <em>parler</em> de votre projet.
       </h2>
       <p class="lede reveal delay-2">
-        Sans engagement. Réponse sous 24 h. En studio, à Monceau,
+        Sans engagement. Réponse sous 24 h. Chez vous
         ou en visio depuis le monde entier.
       </p>
       <ul class="final-direct reveal delay-3">

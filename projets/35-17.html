@@ -4,51 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projet 35-17 — Paris — Maison Maray</title>
-<meta name="description" content="Projet 35-17, livré à Paris en 2025. Galerie des photos par Maison Maray.">
+<meta name="description" content="Chantier suivi par photographie aérienne. De l'état des lieux à la finition. Projet livré à Paris en 2025.">
 <link rel="canonical" href="https://maisonmaray.com/projets/35-17.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Maison Maray">
 <meta property="og:title" content="Projet 35-17 — Paris — Maison Maray">
-<meta property="og:description" content="Projet 35-17, livré à Paris en 2025.">
+<meta property="og:description" content="Chantier suivi par photographie aérienne. De l'état des lieux à la finition.">
 <meta property="og:url" content="https://maisonmaray.com/projets/35-17.html">
-<meta property="og:image" content="https://maisonmaray.com/assets/selection-web/35-17/DJI_20250813_171338_790.jpg">
+<meta property="og:image" content="https://maisonmaray.com/projets/assets/selection-web/35-17/DJI_20250813_181753_078.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maisonmaray.com/assets/selection-web/35-17/DJI_20250813_171338_790.jpg">
+<meta name="twitter:image" content="https://maisonmaray.com/projets/assets/selection-web/35-17/DJI_20250813_181753_078.jpg">
 <link rel="icon" href="../assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-.pj-top { padding: clamp(110px, 13vh, 140px) var(--gutter-d) 18px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
-@media (max-width: 720px) { .pj-top { padding-inline: var(--gutter-m); } }
-.pj-top .label { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
-.pj-top h1 { font-family: var(--font-display); font-style: italic; font-size: clamp(28px, 3.4vw, 48px); line-height: 1; margin: 0; font-weight: 400; }
-.pj-top .meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
-.pj-top .meta a { color: inherit; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.project-hero { position: relative; height: 100vh; min-height: 720px; }
+.project-hero .img-fill { filter: brightness(.78); }
+.project-hero .frame { position: absolute; inset: auto 0 0 0; padding: 0 var(--gutter-d) clamp(56px, 8vw, 120px); color: var(--ivoire); display: grid; gap: 18px; max-width: var(--maxw); margin: 0 auto; }
+@media (max-width: 720px) { .project-hero .frame { padding-inline: var(--gutter-m); } }
+.project-hero h1.display { max-width: 16ch; color: var(--ivoire); }
+.project-hero h1 em { font-style: italic; }
 
-.pj-hero { aspect-ratio: 21 / 9; max-height: 80vh; min-height: 380px; overflow: hidden; }
-.pj-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 880px) { .pj-hero { aspect-ratio: 4/3; min-height: 320px; } }
+.project-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: 32px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.project-meta dl { margin: 0; display: grid; gap: 6px; }
+.project-meta dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.project-meta dd { margin: 0; font-family: var(--font-display); font-size: 24px; }
+@media (max-width: 720px) { .project-meta { grid-template-columns: 1fr 1fr; } }
 
-.pj-gallery { padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(72px, 9vw, 140px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 1024px) { .pj-gallery { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 720px) { .pj-gallery { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
-.gallery-cell { display: block; aspect-ratio: 4/3; overflow: hidden; background: var(--travertin); }
-.gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease), filter .8s var(--ease); filter: brightness(.97); }
-.gallery-cell:hover img { transform: scale(1.03); filter: brightness(1.03); }
-.gallery-cell:nth-child(7n) { grid-column: span 2; aspect-ratio: 16/9; }
-@media (max-width: 720px) { .gallery-cell:nth-child(7n) { grid-column: span 1; aspect-ratio: 4/3; } }
+.story { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); padding: clamp(72px, 9vw, 160px) 0; }
+.story h2.display { max-width: 14ch; }
+.story .body { display: grid; gap: 24px; max-width: 60ch; font-size: 17px; line-height: 1.65; }
+.story .body p { margin: 0; }
+.story .body p:first-of-type::first-letter { font-family: var(--font-display); font-size: 4.5em; line-height: 0.85; float: left; padding: 6px 12px 0 0; font-style: italic; color: var(--laiton-deep); }
+@media (max-width: 880px) { .story { grid-template-columns: 1fr; } }
 
-.pj-foot { padding: clamp(48px, 7vw, 96px) var(--gutter-d); text-align: center; border-top: 1px solid var(--rule); }
-@media (max-width: 720px) { .pj-foot { padding-inline: var(--gutter-m); } }
-.pj-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noyer); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+.gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; padding-block: clamp(48px, 7vw, 120px); }
+.gallery .g { overflow: hidden; }
+.gallery .g img { width: 100%; height: 100%; object-fit: cover; }
+.g-1 { grid-column: 1 / 8; aspect-ratio: 4/3; }
+.g-2 { grid-column: 8 / 13; aspect-ratio: 4/5; align-self: end; }
+.g-3 { grid-column: 1 / 5; aspect-ratio: 4/5; }
+.g-4 { grid-column: 5 / 13; aspect-ratio: 16/9; align-self: center; }
+.g-5 { grid-column: 1 / 13; aspect-ratio: 21/9; }
+.g-6 { grid-column: 1 / 7; aspect-ratio: 1/1; }
+.g-7 { grid-column: 7 / 13; aspect-ratio: 1/1; }
+@media (max-width: 880px) { .gallery .g { grid-column: 1 / -1 !important; aspect-ratio: 4/3 !important; } }
+
+.before-after-block { padding-block: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); }
+.before-after { position: relative; aspect-ratio: 16 / 10; user-select: none; cursor: ew-resize; overflow: hidden; }
+.before-after img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.before-after .ba-after { clip-path: inset(0 0 0 50%); }
+.before-after .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--ivoire); transform: translateX(-50%); }
+.before-after .ba-handle::before, .before-after .ba-handle::after { content: ""; position: absolute; top: 50%; width: 12px; height: 12px; border: 1px solid var(--ivoire); transform: translateY(-50%) rotate(45deg); background: var(--noyer); }
+.before-after .ba-handle::before { left: -22px; }
+.before-after .ba-handle::after  { right: -22px; }
+.before-after .lab { position: absolute; top: 16px; padding: 6px 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(42,31,24,.7); color: var(--ivoire); }
+.before-after .lab.l { left: 16px; }
+.before-after .lab.r { right: 16px; }
+@media (max-width: 880px) { .before-after-block { grid-template-columns: 1fr; } }
+
+.client-quote { padding-block: clamp(72px, 9vw, 140px); }
+.client-quote blockquote { font-family: var(--font-display); font-style: italic; font-size: clamp(32px, 4.5vw, 64px); line-height: 1.1; max-width: 22ch; margin: 0; }
+.client-quote .who { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; margin-top: 24px; }
+
+.credits { padding-block: clamp(56px, 8vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
+.credits ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
+.credits dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-bottom: 4px; }
+.credits dd { margin: 0; }
+@media (max-width: 880px) { .credits { grid-template-columns: 1fr; } .credits ul { grid-template-columns: 1fr; } }
+
+.next-project { display: block; position: relative; height: 70vh; overflow: hidden; color: var(--ivoire); text-decoration: none; }
+.next-project .img-fill { filter: brightness(.6); transition: transform 1.4s var(--ease), filter 1.4s var(--ease); }
+.next-project:hover .img-fill { transform: scale(1.03); filter: brightness(.7); }
+.next-project .nf { position: absolute; inset: auto 0 0 0; padding: clamp(48px, 6vw, 96px) var(--gutter-d); display: grid; gap: 14px; }
+.next-project .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .8; }
+.next-project h3.display { font-size: clamp(48px, 7vw, 128px); color: var(--ivoire); margin: 0; }
+@media (max-width: 720px) { .next-project .nf { padding-inline: var(--gutter-m); } }
 </style>
 </head>
-<body data-screen-label="Projet 35-17">
+<body data-screen-label="Projet — 35-17">
 
-<header class="site-header scrolled" id="siteHeader">
+<header class="site-header solid" id="siteHeader">
   <a href="../index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
   <nav class="nav">
     <a href="../concevoir.html" class="nav-link">Concevoir</a>
@@ -65,62 +104,109 @@
   <nav class="links"><a href="../concevoir.html">Concevoir</a><a href="../investir.html">Investir</a><a href="../projets.html">Projets</a><a href="../maison.html">La Maison</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a></nav>
 </aside>
 
-<header class="bg-ivoire pj-top">
-  <span class="label">— Projet</span>
-  <h1>35-17</h1>
-  <span class="meta">
-    <span>Paris</span><span>·</span><span>2025</span><span>·</span>
-    <a href="../projets.html">Retour à l'index</a>
-  </span>
-</header>
-
-<figure class="pj-hero">
-  <img src="../assets/selection-web/35-17/DJI_20250813_171338_790.jpg" alt="Projet 35-17, Paris — Maison Maray" fetchpriority="high">
-</figure>
-
-<section class="bg-ivoire pj-gallery">
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171425_199.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 1" src="../assets/selection-web/35-17/DJI_20250813_171425_199.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171503_318.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 2" src="../assets/selection-web/35-17/DJI_20250813_171503_318.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171546_727.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 3" src="../assets/selection-web/35-17/DJI_20250813_171546_727.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171634_743.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 4" src="../assets/selection-web/35-17/DJI_20250813_171634_743.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171708_896.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 5" src="../assets/selection-web/35-17/DJI_20250813_171708_896.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171733_019.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 6" src="../assets/selection-web/35-17/DJI_20250813_171733_019.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171814_986.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 7" src="../assets/selection-web/35-17/DJI_20250813_171814_986.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_171859_299.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 8" src="../assets/selection-web/35-17/DJI_20250813_171859_299.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_175510_809.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 9" src="../assets/selection-web/35-17/DJI_20250813_175510_809.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_175546_808.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 10" src="../assets/selection-web/35-17/DJI_20250813_175546_808.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_175827_571.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 11" src="../assets/selection-web/35-17/DJI_20250813_175827_571.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180116_053.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 12" src="../assets/selection-web/35-17/DJI_20250813_180116_053.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180141_644.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 13" src="../assets/selection-web/35-17/DJI_20250813_180141_644.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180156_808.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 14" src="../assets/selection-web/35-17/DJI_20250813_180156_808.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180218_724.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 15" src="../assets/selection-web/35-17/DJI_20250813_180218_724.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180330_110.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 16" src="../assets/selection-web/35-17/DJI_20250813_180330_110.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180413_235.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 17" src="../assets/selection-web/35-17/DJI_20250813_180413_235.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180509_145.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 18" src="../assets/selection-web/35-17/DJI_20250813_180509_145.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180646_014.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 19" src="../assets/selection-web/35-17/DJI_20250813_180646_014.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180747_111.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 20" src="../assets/selection-web/35-17/DJI_20250813_180747_111.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_180944_188.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 21" src="../assets/selection-web/35-17/DJI_20250813_180944_188.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181008_641.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 22" src="../assets/selection-web/35-17/DJI_20250813_181008_641.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181127_197.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 23" src="../assets/selection-web/35-17/DJI_20250813_181127_197.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181335_659.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 24" src="../assets/selection-web/35-17/DJI_20250813_181335_659.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181411_376.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 25" src="../assets/selection-web/35-17/DJI_20250813_181411_376.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181551_051.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 26" src="../assets/selection-web/35-17/DJI_20250813_181551_051.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181559_705.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 27" src="../assets/selection-web/35-17/DJI_20250813_181559_705.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181627_651.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 28" src="../assets/selection-web/35-17/DJI_20250813_181627_651.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181753_078.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 29" src="../assets/selection-web/35-17/DJI_20250813_181753_078.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181806_654.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 30" src="../assets/selection-web/35-17/DJI_20250813_181806_654.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_181842_788.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 31" src="../assets/selection-web/35-17/DJI_20250813_181842_788.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_182105_110.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 32" src="../assets/selection-web/35-17/DJI_20250813_182105_110.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_182142_554.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 33" src="../assets/selection-web/35-17/DJI_20250813_182142_554.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_182313_831.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 34" src="../assets/selection-web/35-17/DJI_20250813_182313_831.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_182346_349.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 35" src="../assets/selection-web/35-17/DJI_20250813_182346_349.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/35-17/DJI_20250813_182639_470.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="35-17 · vue 36" src="../assets/selection-web/35-17/DJI_20250813_182639_470.jpg"></a>
+<!-- HERO -->
+<section class="project-hero">
+  <img class="img-fill" alt="Projet 35-17 — vue d'ensemble" src="../assets/selection-web/35-17/DJI_20250813_181753_078.jpg">
+  <div class="frame">
+    <span class="eyebrow" style="color:var(--ivoire); opacity:.85">Projet · 35-17</span>
+    <h1 class="display italic-mix">Projet <em>35-17.</em></h1>
+    <p class="lede" style="color:var(--ivoire); opacity:.9; max-width: 56ch;">
+      Chantier suivi par photographie aérienne. De l'état des lieux à la finition.
+    </p>
+  </div>
 </section>
 
-<section class="bg-ivoire pj-foot">
-  <a href="../projets.html">← Retour à l'index des projets</a>
+<!-- META -->
+<section class="bg-ivoire">
+  <div class="container">
+    <div class="project-meta">
+      <dl><dt>Lieu</dt><dd>Paris</dd></dl>
+      <dl><dt>Année</dt><dd>2025</dd></dl>
+      <dl><dt>Durée</dt><dd>6 mois</dd></dl>
+      <dl><dt>Budget</dt><dd>Sur demande</dd></dl>
+    </div>
+  </div>
 </section>
 
+<!-- STORY -->
+<section class="bg-ivoire">
+  <div class="container story">
+    <span class="eyebrow reveal">Le récit</span>
+    <div>
+      <h2 class="display reveal" style="margin-bottom: 48px;">Documenter chaque acte.</h2>
+      <div class="body">
+        <p class="reveal delay-1">Sur ce projet, chaque étape clé du chantier a été documentée par drone. Le client recevait chaque vendredi un récap visuel qui replaçait le détail dans l'ensemble.</p>
+        <p class="reveal delay-2">Cette méthode oblige à se positionner sur les choix structurels avant qu'il ne soit trop tard. Elle déplace la conversation client du « j'aime / j'aime pas » vers le « ça tient ensemble ».</p>
+        <p class="reveal delay-3">Six mois plus tard, les images deviennent un livret de remise des clés — utile au propriétaire, à l'assureur, et à la valeur de revente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="bg-ivoire">
+  <div class="container">
+    <div class="gallery">
+      <div class="g g-1 img-hover reveal"><img alt="35-17 · vue 1" src="../assets/selection-web/35-17/DJI_20250813_181335_659.jpg" loading="lazy"></div>
+      <div class="g g-2 img-hover reveal delay-1"><img alt="35-17 · vue 2" src="../assets/selection-web/35-17/DJI_20250813_182105_110.jpg" loading="lazy"></div>
+      <div class="g g-3 img-hover reveal"><img alt="35-17 · vue 3" src="../assets/selection-web/35-17/DJI_20250813_171814_986.jpg" loading="lazy"></div>
+      <div class="g g-4 img-hover reveal delay-1"><img alt="35-17 · vue 4" src="../assets/selection-web/35-17/DJI_20250813_171425_199.jpg" loading="lazy"></div>
+      <div class="g g-5 img-hover reveal"><img alt="35-17 · vue 5" src="../assets/selection-web/35-17/DJI_20250813_171708_896.jpg" loading="lazy"></div>
+      <div class="g g-6 img-hover reveal"><img alt="35-17 · vue 6" src="../assets/selection-web/35-17/DJI_20250813_171733_019.jpg" loading="lazy"></div>
+      <div class="g g-7 img-hover reveal delay-1"><img alt="35-17 · vue 7" src="../assets/selection-web/35-17/DJI_20250813_181411_376.jpg" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="bg-travertin">
+  <div class="container before-after-block">
+    <div>
+      <span class="eyebrow reveal">Deux états</span>
+      <h3 class="display reveal" style="margin-top: 16px; max-width: 14ch;">Avant le projet, après la livraison.</h3>
+      <p class="reveal delay-1" style="margin-top: 16px; max-width: 36ch;">Faites glisser pour comparer deux moments du projet.</p>
+    </div>
+    <div class="before-after reveal delay-1" data-ba>
+      <img class="ba-before" alt="Avant" src="../assets/selection-web/35-17/DJI_20250813_182105_110.jpg" loading="lazy">
+      <img class="ba-after" alt="Après" src="../assets/selection-web/35-17/DJI_20250813_171814_986.jpg" loading="lazy">
+      <span class="lab l">Avant</span><span class="lab r">Après</span>
+      <span class="ba-handle"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT QUOTE -->
+<section class="bg-travertin">
+  <div class="container client-quote">
+    <span class="eyebrow reveal">Le mot du propriétaire</span>
+    <blockquote class="display reveal delay-1" style="margin-top: 24px;">« Chaque vendredi, je savais où on en était. »</blockquote>
+    <p class="who reveal delay-2">— Propriétaire, livraison 2025</p>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section class="bg-ivoire">
+  <div class="container credits">
+    <span class="eyebrow">Crédits</span>
+    <ul>
+      <li><dt>Direction artistique</dt><dd>Mohamed Maray</dd></li>
+      <li><dt>Ébénisterie</dt><dd>Atelier partenaire</dd></li>
+      <li><dt>Maçonnerie</dt><dd>Entreprise partenaire</dd></li>
+      <li><dt>Photographie</dt><dd>—</dd></li>
+    </ul>
+  </div>
+</section>
+
+<!-- NEXT PROJECT -->
+<a class="next-project img-hover" href="35-22.html">
+  <img class="img-fill" alt="Projet 35-22" src="../assets/selection-web/35-22/61904-Quai-de-Grenelle-16.jpg" loading="lazy">
+  <div class="nf">
+    <span class="label">Projet suivant · 35-22</span>
+    <h3 class="display">35-22.<span style="opacity:.6"> →</span></h3>
+  </div>
+</a>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-cols">
     <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
@@ -128,7 +214,9 @@
     <div class="footer-col"><h3>Investir</h3><ul><li><a href="../investir.html">Sourcing</a></li><li><a href="../investir.html">Faisabilité</a></li><li><a href="../investir.html">Valorisation</a></li><li><a href="../investir.html">Gestion locative</a></li></ul></div>
     <div class="footer-col"><h3>Blog</h3><ul><li><a href="../blog.html">Matières</a></li><li><a href="../blog.html">Lieux</a></li><li><a href="../blog.html">Méthode</a></li><li><a href="#">Instagram ↗</a></li><li><a href="#">LinkedIn ↗</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
+  <div class="footer-bottom">
+    <span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span>
+  </div>
 </footer>
 
 <script src="../assets/site.js"></script>

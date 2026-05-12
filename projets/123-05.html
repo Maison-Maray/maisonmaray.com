@@ -4,51 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Projet 123-05 — Paris — Maison Maray</title>
-<meta name="description" content="Projet 123-05, livré à Paris en 2024. Galerie des photos par Maison Maray.">
+<meta name="description" content="Rénovation intégrale d'un appartement familial. Quatre matières, une seule règle de composition. Projet livré à Paris en 2024.">
 <link rel="canonical" href="https://maisonmaray.com/projets/123-05.html">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Maison Maray">
 <meta property="og:title" content="Projet 123-05 — Paris — Maison Maray">
-<meta property="og:description" content="Projet 123-05, livré à Paris en 2024.">
+<meta property="og:description" content="Rénovation intégrale d'un appartement familial. Quatre matières, une seule règle de composition.">
 <meta property="og:url" content="https://maisonmaray.com/projets/123-05.html">
-<meta property="og:image" content="https://maisonmaray.com/assets/selection-web/123-05/SALON1.jpg">
+<meta property="og:image" content="https://maisonmaray.com/projets/assets/selection-web/123-05/SALON3.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maisonmaray.com/assets/selection-web/123-05/SALON1.jpg">
+<meta name="twitter:image" content="https://maisonmaray.com/projets/assets/selection-web/123-05/SALON3.jpg">
 <link rel="icon" href="../assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-.pj-top { padding: clamp(110px, 13vh, 140px) var(--gutter-d) 18px; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
-@media (max-width: 720px) { .pj-top { padding-inline: var(--gutter-m); } }
-.pj-top .label { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
-.pj-top h1 { font-family: var(--font-display); font-style: italic; font-size: clamp(28px, 3.4vw, 48px); line-height: 1; margin: 0; font-weight: 400; }
-.pj-top .meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
-.pj-top .meta a { color: inherit; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.project-hero { position: relative; height: 100vh; min-height: 720px; }
+.project-hero .img-fill { filter: brightness(.78); }
+.project-hero .frame { position: absolute; inset: auto 0 0 0; padding: 0 var(--gutter-d) clamp(56px, 8vw, 120px); color: var(--ivoire); display: grid; gap: 18px; max-width: var(--maxw); margin: 0 auto; }
+@media (max-width: 720px) { .project-hero .frame { padding-inline: var(--gutter-m); } }
+.project-hero h1.display { max-width: 16ch; color: var(--ivoire); }
+.project-hero h1 em { font-style: italic; }
 
-.pj-hero { aspect-ratio: 21 / 9; max-height: 80vh; min-height: 380px; overflow: hidden; }
-.pj-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 880px) { .pj-hero { aspect-ratio: 4/3; min-height: 320px; } }
+.project-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding: 32px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.project-meta dl { margin: 0; display: grid; gap: 6px; }
+.project-meta dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
+.project-meta dd { margin: 0; font-family: var(--font-display); font-size: 24px; }
+@media (max-width: 720px) { .project-meta { grid-template-columns: 1fr 1fr; } }
 
-.pj-gallery { padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(72px, 9vw, 140px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 1024px) { .pj-gallery { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 720px) { .pj-gallery { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
-.gallery-cell { display: block; aspect-ratio: 4/3; overflow: hidden; background: var(--travertin); }
-.gallery-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease), filter .8s var(--ease); filter: brightness(.97); }
-.gallery-cell:hover img { transform: scale(1.03); filter: brightness(1.03); }
-.gallery-cell:nth-child(7n) { grid-column: span 2; aspect-ratio: 16/9; }
-@media (max-width: 720px) { .gallery-cell:nth-child(7n) { grid-column: span 1; aspect-ratio: 4/3; } }
+.story { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); padding: clamp(72px, 9vw, 160px) 0; }
+.story h2.display { max-width: 14ch; }
+.story .body { display: grid; gap: 24px; max-width: 60ch; font-size: 17px; line-height: 1.65; }
+.story .body p { margin: 0; }
+.story .body p:first-of-type::first-letter { font-family: var(--font-display); font-size: 4.5em; line-height: 0.85; float: left; padding: 6px 12px 0 0; font-style: italic; color: var(--laiton-deep); }
+@media (max-width: 880px) { .story { grid-template-columns: 1fr; } }
 
-.pj-foot { padding: clamp(48px, 7vw, 96px) var(--gutter-d); text-align: center; border-top: 1px solid var(--rule); }
-@media (max-width: 720px) { .pj-foot { padding-inline: var(--gutter-m); } }
-.pj-foot a { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--noyer); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+.gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; padding-block: clamp(48px, 7vw, 120px); }
+.gallery .g { overflow: hidden; }
+.gallery .g img { width: 100%; height: 100%; object-fit: cover; }
+.g-1 { grid-column: 1 / 8; aspect-ratio: 4/3; }
+.g-2 { grid-column: 8 / 13; aspect-ratio: 4/5; align-self: end; }
+.g-3 { grid-column: 1 / 5; aspect-ratio: 4/5; }
+.g-4 { grid-column: 5 / 13; aspect-ratio: 16/9; align-self: center; }
+.g-5 { grid-column: 1 / 13; aspect-ratio: 21/9; }
+.g-6 { grid-column: 1 / 7; aspect-ratio: 1/1; }
+.g-7 { grid-column: 7 / 13; aspect-ratio: 1/1; }
+@media (max-width: 880px) { .gallery .g { grid-column: 1 / -1 !important; aspect-ratio: 4/3 !important; } }
+
+.before-after-block { padding-block: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); }
+.before-after { position: relative; aspect-ratio: 16 / 10; user-select: none; cursor: ew-resize; overflow: hidden; }
+.before-after img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.before-after .ba-after { clip-path: inset(0 0 0 50%); }
+.before-after .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--ivoire); transform: translateX(-50%); }
+.before-after .ba-handle::before, .before-after .ba-handle::after { content: ""; position: absolute; top: 50%; width: 12px; height: 12px; border: 1px solid var(--ivoire); transform: translateY(-50%) rotate(45deg); background: var(--noyer); }
+.before-after .ba-handle::before { left: -22px; }
+.before-after .ba-handle::after  { right: -22px; }
+.before-after .lab { position: absolute; top: 16px; padding: 6px 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; background: rgba(42,31,24,.7); color: var(--ivoire); }
+.before-after .lab.l { left: 16px; }
+.before-after .lab.r { right: 16px; }
+@media (max-width: 880px) { .before-after-block { grid-template-columns: 1fr; } }
+
+.client-quote { padding-block: clamp(72px, 9vw, 140px); }
+.client-quote blockquote { font-family: var(--font-display); font-style: italic; font-size: clamp(32px, 4.5vw, 64px); line-height: 1.1; max-width: 22ch; margin: 0; }
+.client-quote .who { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; margin-top: 24px; }
+
+.credits { padding-block: clamp(56px, 8vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
+.credits ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
+.credits dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-bottom: 4px; }
+.credits dd { margin: 0; }
+@media (max-width: 880px) { .credits { grid-template-columns: 1fr; } .credits ul { grid-template-columns: 1fr; } }
+
+.next-project { display: block; position: relative; height: 70vh; overflow: hidden; color: var(--ivoire); text-decoration: none; }
+.next-project .img-fill { filter: brightness(.6); transition: transform 1.4s var(--ease), filter 1.4s var(--ease); }
+.next-project:hover .img-fill { transform: scale(1.03); filter: brightness(.7); }
+.next-project .nf { position: absolute; inset: auto 0 0 0; padding: clamp(48px, 6vw, 96px) var(--gutter-d); display: grid; gap: 14px; }
+.next-project .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .8; }
+.next-project h3.display { font-size: clamp(48px, 7vw, 128px); color: var(--ivoire); margin: 0; }
+@media (max-width: 720px) { .next-project .nf { padding-inline: var(--gutter-m); } }
 </style>
 </head>
-<body data-screen-label="Projet 123-05">
+<body data-screen-label="Projet — 123-05">
 
-<header class="site-header scrolled" id="siteHeader">
+<header class="site-header solid" id="siteHeader">
   <a href="../index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
   <nav class="nav">
     <a href="../concevoir.html" class="nav-link">Concevoir</a>
@@ -65,93 +104,109 @@
   <nav class="links"><a href="../concevoir.html">Concevoir</a><a href="../investir.html">Investir</a><a href="../projets.html">Projets</a><a href="../maison.html">La Maison</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a></nav>
 </aside>
 
-<header class="bg-ivoire pj-top">
-  <span class="label">— Projet</span>
-  <h1>123-05</h1>
-  <span class="meta">
-    <span>Paris</span><span>·</span><span>2024</span><span>·</span>
-    <a href="../projets.html">Retour à l'index</a>
-  </span>
-</header>
-
-<figure class="pj-hero">
-  <img src="../assets/selection-web/123-05/SALON1.jpg" alt="Projet 123-05, Paris — Maison Maray" fetchpriority="high">
-</figure>
-
-<section class="bg-ivoire pj-gallery">
-    <a class="gallery-cell" href="../assets/selection-web/123-05/BALCON2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 1" src="../assets/selection-web/123-05/BALCON2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE1-1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 2" src="../assets/selection-web/123-05/CHAMBRE1-1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE1-2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 3" src="../assets/selection-web/123-05/CHAMBRE1-2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE1-3.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 4" src="../assets/selection-web/123-05/CHAMBRE1-3.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE2-1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 5" src="../assets/selection-web/123-05/CHAMBRE2-1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE3-1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 6" src="../assets/selection-web/123-05/CHAMBRE3-1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CHAMBRE3-2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 7" src="../assets/selection-web/123-05/CHAMBRE3-2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/COULOIR1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 8" src="../assets/selection-web/123-05/COULOIR1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/COULOIR2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 9" src="../assets/selection-web/123-05/COULOIR2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/COULOIR3.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 10" src="../assets/selection-web/123-05/COULOIR3.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CUISINE1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 11" src="../assets/selection-web/123-05/CUISINE1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CUISINE2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 12" src="../assets/selection-web/123-05/CUISINE2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CUISINE3.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 13" src="../assets/selection-web/123-05/CUISINE3.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/CUISINE4.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 14" src="../assets/selection-web/123-05/CUISINE4.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_133805_594.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 15" src="../assets/selection-web/123-05/DJI_20251004_133805_594.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_133821_808.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 16" src="../assets/selection-web/123-05/DJI_20251004_133821_808.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_133851_359.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 17" src="../assets/selection-web/123-05/DJI_20251004_133851_359.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_133902_832.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 18" src="../assets/selection-web/123-05/DJI_20251004_133902_832.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_134435_568.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 19" src="../assets/selection-web/123-05/DJI_20251004_134435_568.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_134519_637.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 20" src="../assets/selection-web/123-05/DJI_20251004_134519_637.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_134641_403.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 21" src="../assets/selection-web/123-05/DJI_20251004_134641_403.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_134846_098.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 22" src="../assets/selection-web/123-05/DJI_20251004_134846_098.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_134927_155.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 23" src="../assets/selection-web/123-05/DJI_20251004_134927_155.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_135006_542.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 24" src="../assets/selection-web/123-05/DJI_20251004_135006_542.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251004_135202_143.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 25" src="../assets/selection-web/123-05/DJI_20251004_135202_143.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_122714_781.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 26" src="../assets/selection-web/123-05/DJI_20251011_122714_781.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_122918_507.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 27" src="../assets/selection-web/123-05/DJI_20251011_122918_507.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_122948_583.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 28" src="../assets/selection-web/123-05/DJI_20251011_122948_583.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_123018_971.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 29" src="../assets/selection-web/123-05/DJI_20251011_123018_971.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_123302_071.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 30" src="../assets/selection-web/123-05/DJI_20251011_123302_071.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_123526_074.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 31" src="../assets/selection-web/123-05/DJI_20251011_123526_074.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_123927_081.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 32" src="../assets/selection-web/123-05/DJI_20251011_123927_081.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124009_951.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 33" src="../assets/selection-web/123-05/DJI_20251011_124009_951.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124134_437.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 34" src="../assets/selection-web/123-05/DJI_20251011_124134_437.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124204_300.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 35" src="../assets/selection-web/123-05/DJI_20251011_124204_300.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124429_445.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 36" src="../assets/selection-web/123-05/DJI_20251011_124429_445.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124454_479.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 37" src="../assets/selection-web/123-05/DJI_20251011_124454_479.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_124622_993.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 38" src="../assets/selection-web/123-05/DJI_20251011_124622_993.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_125640_404.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 39" src="../assets/selection-web/123-05/DJI_20251011_125640_404.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_125720_081.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 40" src="../assets/selection-web/123-05/DJI_20251011_125720_081.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_125801_121.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 41" src="../assets/selection-web/123-05/DJI_20251011_125801_121.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_125934_195.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 42" src="../assets/selection-web/123-05/DJI_20251011_125934_195.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_130303_046.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 43" src="../assets/selection-web/123-05/DJI_20251011_130303_046.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_130502_924.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 44" src="../assets/selection-web/123-05/DJI_20251011_130502_924.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DJI_20251011_130823_571.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 45" src="../assets/selection-web/123-05/DJI_20251011_130823_571.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DRESSING1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 46" src="../assets/selection-web/123-05/DRESSING1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/DRESSING2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 47" src="../assets/selection-web/123-05/DRESSING2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5942.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 48" src="../assets/selection-web/123-05/IMG_5942.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5944.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 49" src="../assets/selection-web/123-05/IMG_5944.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5945.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 50" src="../assets/selection-web/123-05/IMG_5945.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5946.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 51" src="../assets/selection-web/123-05/IMG_5946.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5949.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 52" src="../assets/selection-web/123-05/IMG_5949.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5955.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 53" src="../assets/selection-web/123-05/IMG_5955.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5956.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 54" src="../assets/selection-web/123-05/IMG_5956.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5961.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 55" src="../assets/selection-web/123-05/IMG_5961.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/IMG_5964.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 56" src="../assets/selection-web/123-05/IMG_5964.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 57" src="../assets/selection-web/123-05/SALON2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON3.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 58" src="../assets/selection-web/123-05/SALON3.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON4.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 59" src="../assets/selection-web/123-05/SALON4.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON5.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 60" src="../assets/selection-web/123-05/SALON5.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON6.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 61" src="../assets/selection-web/123-05/SALON6.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SALON7.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 62" src="../assets/selection-web/123-05/SALON7.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SAM1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 63" src="../assets/selection-web/123-05/SAM1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SAM2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 64" src="../assets/selection-web/123-05/SAM2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SDB1.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 65" src="../assets/selection-web/123-05/SDB1.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SDB2.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 66" src="../assets/selection-web/123-05/SDB2.jpg"></a>
-    <a class="gallery-cell" href="../assets/selection-web/123-05/SDB3.jpg" target="_blank" rel="noopener"><img loading="lazy" alt="123-05 · vue 67" src="../assets/selection-web/123-05/SDB3.jpg"></a>
+<!-- HERO -->
+<section class="project-hero">
+  <img class="img-fill" alt="Projet 123-05 — vue d'ensemble" src="../assets/selection-web/123-05/SALON3.jpg">
+  <div class="frame">
+    <span class="eyebrow" style="color:var(--ivoire); opacity:.85">Projet · 123-05</span>
+    <h1 class="display italic-mix">Projet <em>123-05.</em></h1>
+    <p class="lede" style="color:var(--ivoire); opacity:.9; max-width: 56ch;">
+      Rénovation intégrale d'un appartement familial. Quatre matières, une seule règle de composition.
+    </p>
+  </div>
 </section>
 
-<section class="bg-ivoire pj-foot">
-  <a href="../projets.html">← Retour à l'index des projets</a>
+<!-- META -->
+<section class="bg-ivoire">
+  <div class="container">
+    <div class="project-meta">
+      <dl><dt>Lieu</dt><dd>Paris</dd></dl>
+      <dl><dt>Année</dt><dd>2024</dd></dl>
+      <dl><dt>Durée</dt><dd>7 mois</dd></dl>
+      <dl><dt>Budget</dt><dd>Sur demande</dd></dl>
+    </div>
+  </div>
 </section>
 
+<!-- STORY -->
+<section class="bg-ivoire">
+  <div class="container story">
+    <span class="eyebrow reveal">Le récit</span>
+    <div>
+      <h2 class="display reveal" style="margin-bottom: 48px;">Quatre matières, une seule règle.</h2>
+      <div class="body">
+        <p class="reveal delay-1">Sous les volumes existants, l'appartement attendait d'être révélé. Notre première décision fut de retirer — faux plafonds, cloisons rapportées, moquettes — plutôt que d'ajouter.</p>
+        <p class="reveal delay-2">Les moulures ont été restaurées plutôt que recoulées. Le parquet point de Hongrie a été poncé puis huilé clair pour retrouver son veinage d'origine.</p>
+        <p class="reveal delay-3">Le reste tient à quatre matières — travertin, noyer fumé, laiton patiné, lin écru — et à une seule règle tenue jusqu'à la dernière vis : ne jamais introduire un cinquième.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="bg-ivoire">
+  <div class="container">
+    <div class="gallery">
+      <div class="g g-1 img-hover reveal"><img alt="123-05 · vue 1" src="../assets/selection-web/123-05/SDB3.jpg" loading="lazy"></div>
+      <div class="g g-2 img-hover reveal delay-1"><img alt="123-05 · vue 2" src="../assets/selection-web/123-05/SAM1.jpg" loading="lazy"></div>
+      <div class="g g-3 img-hover reveal"><img alt="123-05 · vue 3" src="../assets/selection-web/123-05/CUISINE2.jpg" loading="lazy"></div>
+      <div class="g g-4 img-hover reveal delay-1"><img alt="123-05 · vue 4" src="../assets/selection-web/123-05/CHAMBRE3-1.jpg" loading="lazy"></div>
+      <div class="g g-5 img-hover reveal"><img alt="123-05 · vue 5" src="../assets/selection-web/123-05/COULOIR3.jpg" loading="lazy"></div>
+      <div class="g g-6 img-hover reveal"><img alt="123-05 · vue 6" src="../assets/selection-web/123-05/DRESSING2.jpg" loading="lazy"></div>
+      <div class="g g-7 img-hover reveal delay-1"><img alt="123-05 · vue 7" src="../assets/selection-web/123-05/SALON4.jpg" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="bg-travertin">
+  <div class="container before-after-block">
+    <div>
+      <span class="eyebrow reveal">Deux états</span>
+      <h3 class="display reveal" style="margin-top: 16px; max-width: 14ch;">Avant le projet, après la livraison.</h3>
+      <p class="reveal delay-1" style="margin-top: 16px; max-width: 36ch;">Faites glisser pour comparer deux moments du projet.</p>
+    </div>
+    <div class="before-after reveal delay-1" data-ba>
+      <img class="ba-before" alt="Avant" src="../assets/selection-web/123-05/SAM1.jpg" loading="lazy">
+      <img class="ba-after" alt="Après" src="../assets/selection-web/123-05/CUISINE2.jpg" loading="lazy">
+      <span class="lab l">Avant</span><span class="lab r">Après</span>
+      <span class="ba-handle"></span>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT QUOTE -->
+<section class="bg-travertin">
+  <div class="container client-quote">
+    <span class="eyebrow reveal">Le mot du propriétaire</span>
+    <blockquote class="display reveal delay-1" style="margin-top: 24px;">« On ne reconnaît pas l'appartement. Et pourtant, c'est plus que jamais le nôtre. »</blockquote>
+    <p class="who reveal delay-2">— Propriétaires, livraison 2024</p>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section class="bg-ivoire">
+  <div class="container credits">
+    <span class="eyebrow">Crédits</span>
+    <ul>
+      <li><dt>Direction artistique</dt><dd>Mohamed Maray</dd></li>
+      <li><dt>Ébénisterie</dt><dd>Atelier partenaire</dd></li>
+      <li><dt>Maçonnerie</dt><dd>Entreprise partenaire</dd></li>
+      <li><dt>Photographie</dt><dd>—</dd></li>
+    </ul>
+  </div>
+</section>
+
+<!-- NEXT PROJECT -->
+<a class="next-project img-hover" href="21-31.html">
+  <img class="img-fill" alt="Projet 21-31" src="../assets/selection-web/21-31/61903-quai-andre-citroen-26.jpg" loading="lazy">
+  <div class="nf">
+    <span class="label">Projet suivant · 21-31</span>
+    <h3 class="display">21-31.<span style="opacity:.6"> →</span></h3>
+  </div>
+</a>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-cols">
     <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
@@ -159,7 +214,9 @@
     <div class="footer-col"><h3>Investir</h3><ul><li><a href="../investir.html">Sourcing</a></li><li><a href="../investir.html">Faisabilité</a></li><li><a href="../investir.html">Valorisation</a></li><li><a href="../investir.html">Gestion locative</a></li></ul></div>
     <div class="footer-col"><h3>Blog</h3><ul><li><a href="../blog.html">Matières</a></li><li><a href="../blog.html">Lieux</a></li><li><a href="../blog.html">Méthode</a></li><li><a href="#">Instagram ↗</a></li><li><a href="#">LinkedIn ↗</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span></div>
+  <div class="footer-bottom">
+    <span>© 2026 Maison Maray</span><span>SIRET 902 318 449 00018</span><span><a href="#">Mentions légales</a></span>
+  </div>
 </footer>
 
 <script src="../assets/site.js"></script>

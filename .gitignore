@@ -12,3 +12,6 @@ assets/hero-generated.png
 
 # Raw 1GB project photos — keep originals locally, ship the optimized mirror
 assets/selection site/
+
+# Local dev server
+serve.ps1

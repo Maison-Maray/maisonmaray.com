@@ -116,7 +116,7 @@
         <span class="rev"><span>L'art d'habiter,</span></span>
         <span class="rev"><span><em>sans compromis.</em></span></span>
       </h1>
-      <span class="hero-sub eyebrow"><span class="rev"><span>Architecture intérieure · Rénovation complète · Sur-mesure</span></span></span>
+      <span class="hero-sub eyebrow"><span class="rev"><span>Architecture d'intérieur · Décoration d'intérieur · Sur-mesure · Investissement</span></span></span>
     </div>
   </div>
 
@@ -142,7 +142,7 @@
 .hero-phrase { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.2vw, 84px); line-height: 1.02; letter-spacing: -.01em; margin: 0; color: var(--ivoire); }
 .hero-phrase .rev { display: block; }
 .hero-phrase em { font-style: italic; opacity: .9; }
-.hero-sub { display: block; margin-top: 22px; opacity: .85; color: var(--ivoire); }
+.hero-sub { display: block; margin-top: 22px; opacity: .85; color: var(--ivoire); white-space: nowrap; }
 .rev { display: inline-block; overflow: hidden; padding-bottom: .12em; }
 .rev > span { display: inline-block; transform: translateY(110%); will-change: transform; }
 
@@ -161,6 +161,7 @@
 @media (max-width: 880px) {
   .hero-ui { padding-inline: var(--gutter-m); padding-bottom: 132px; }
   .hero-phrase { font-size: clamp(32px, 8vw, 52px); }
+  .hero-sub { white-space: normal; letter-spacing: .16em; }
   .hero-scroll-h { right: var(--gutter-m); bottom: 32px; gap: 10px; }
   .line-h { height: 56px; }
 }

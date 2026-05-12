@@ -21,7 +21,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://maisonmaray.com/projets/revelation-haussmannienne.html</loc>
+    <loc>https://maisonmaray.com/projets/123-05.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37,6 +37,36 @@
   </url>
   <url>
     <loc>https://maisonmaray.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/21-31.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/22-11.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/35-17.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/35-22.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/57-19.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/57-25.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

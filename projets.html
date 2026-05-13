@@ -29,55 +29,54 @@
 .proj-index-bar .title .count { font-family: var(--font-mono); font-style: normal; font-size: 12px; letter-spacing: .15em; opacity: .55; margin-left: 14px; vertical-align: middle; }
 .proj-index-bar .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
 
-/* ===== TYPOGRAPHIC INDEX — Dirand-style row list with hover-image ===== */
-.proj-list { padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(72px, 9vw, 120px); position: relative; }
-@media (max-width: 720px) { .proj-list { padding-inline: var(--gutter-m); } }
-.proj-row { display: grid; grid-template-columns: 60px 1fr 14ch 7ch 7ch auto; gap: clamp(16px, 2vw, 32px); align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; position: relative; transition: opacity .3s var(--ease); }
-@media (max-width: 880px) { .proj-row { grid-template-columns: 40px 1fr auto; row-gap: 4px; } .proj-row .col-loc, .proj-row .col-yr, .proj-row .col-area { display: none; } }
-.proj-row .col-num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; opacity: .5; }
-.proj-row .col-name { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.05; transition: transform .4s var(--ease); transform-origin: left; }
-.proj-row .col-loc, .proj-row .col-yr, .proj-row .col-area, .proj-row .col-cat { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: .55; }
-.proj-row .col-cat { padding: 4px 10px; border: 1px solid var(--rule); border-radius: 999px; }
-.proj-row::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--noyer); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
-.proj-row:hover { opacity: 1; }
-.proj-row:hover .col-name { transform: translateX(8px); }
-.proj-row:hover::after { transform: scaleX(1); }
-.proj-list:hover .proj-row:not(:hover) { opacity: .4; }
+/* ===== EDITORIAL PROJECT GRID — magazine-style ===== */
+.proj-editorial { padding: clamp(40px, 5vw, 80px) clamp(32px, 4.5vw, 110px) clamp(88px, 11vw, 150px); display: grid; gap: clamp(28px, 3.5vw, 56px); max-width: 1720px; margin: 0 auto; }
+@media (max-width: 720px) { .proj-editorial { padding-inline: var(--gutter-m); gap: 28px; } }
 
-/* hover-image — follows cursor */
-.proj-cursor-img { position: fixed; pointer-events: none; width: clamp(220px, 22vw, 340px); aspect-ratio: 4/5; z-index: 8; top: 0; left: 0; opacity: 0; transform: translate(-50%, -50%) scale(.9) rotate(-2deg); transition: opacity .25s var(--ease), transform .35s var(--ease); overflow: hidden; box-shadow: 0 30px 80px -25px rgba(42,31,24,.4); }
-.proj-cursor-img.in { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-2deg); }
-.proj-cursor-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (hover: none), (max-width: 880px) { .proj-cursor-img { display: none; } }
+.proj-card {
+  display: block; position: relative; overflow: hidden;
+  color: inherit; text-decoration: none;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.proj-card:hover { box-shadow: 0 28px 70px rgba(42, 31, 24, 0.22), 0 8px 20px rgba(42, 31, 24, 0.12); transform: translateY(-3px); }
+.proj-card img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: transform 1.2s var(--ease), filter .9s var(--ease); will-change: transform, filter; }
+.proj-card:hover img { transform: scale(1.04); filter: grayscale(0) brightness(1.04); }
 
-/* ===== FILTERS ===== */
-.filters { display: flex; flex-wrap: wrap; gap: 14px 24px; padding: 24px var(--gutter-d); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); align-items: center; }
-@media (max-width: 720px) { .filters { padding-inline: var(--gutter-m); gap: 12px 18px; } }
-.filters .group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.filters .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
-.filters button { background: none; border: 1px solid transparent; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; color: inherit; transition: border-color .25s var(--ease), background .25s var(--ease); }
-.filters button:hover { border-color: var(--rule-strong); }
-.filters button.on { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
+/* gradient veil for legibility */
+.proj-card .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,10,7,0) 40%, rgba(15,10,7,.72) 100%); pointer-events: none; }
 
-.projets-grid { padding: clamp(48px, 7vw, 96px) var(--gutter-d) clamp(72px, 9vw, 140px); columns: 3; column-gap: 24px; }
-@media (max-width: 1024px) { .projets-grid { columns: 2; } }
-@media (max-width: 720px) { .projets-grid { columns: 1; padding-inline: var(--gutter-m); } }
-.proj { break-inside: avoid; margin-bottom: 24px; position: relative; overflow: hidden; display: block; color: inherit; }
-.proj img { display: block; width: 100%; height: auto; transition: transform .9s var(--ease), filter .9s var(--ease); }
-.proj:hover img { transform: scale(1.025); filter: brightness(1.05); }
-.proj .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,31,24,0) 30%, rgba(42,31,24,.85) 100%); opacity: 0; transition: opacity .5s var(--ease); }
-.proj:hover .veil { opacity: 1; }
-.proj .info { position: absolute; inset: auto 0 0 0; padding: 24px; color: var(--ivoire); transform: translateY(20px); opacity: 0; transition: transform .5s var(--ease), opacity .5s var(--ease); }
-.proj:hover .info { transform: none; opacity: 1; }
-.proj .info h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; line-height: 1.05; margin: 0 0 6px; }
-.proj .info .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .85; }
+/* bottom-anchored info block */
+.proj-card .info {
+  position: absolute; inset: auto 0 0 0; padding: clamp(20px, 2.6vw, 36px);
+  color: var(--ivoire); display: grid; gap: 10px; z-index: 1;
+}
+.proj-card .info-row { display: flex; align-items: baseline; gap: clamp(14px, 1.8vw, 24px); flex-wrap: wrap; }
+.proj-card .info .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: .75; }
+.proj-card .info .name { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(28px, 3.4vw, 56px); line-height: 1; margin: 0; }
+.proj-card .info .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .8; }
+.proj-card .info .meta span + span::before { content: " · "; opacity: .55; }
 
-.lookbook { padding-block: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: center; border-top: 1px solid var(--rule); }
-@media (max-width: 880px) { .lookbook { grid-template-columns: 1fr; } }
-.lookbook-cover { aspect-ratio: 4 / 5; max-width: 380px; padding: clamp(20px, 5vw, 32px); background: var(--ivoire); border: 1px solid var(--rule-strong); display: flex; flex-direction: column; justify-content: space-between; }
-.lookbook-cover .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .55; }
-.lookbook-cover .ttl { font-family: var(--font-display); font-size: 36px; line-height: 1; }
-.lookbook-cover .ttl em { font-style: italic; }
+/* "voir le projet" CTA — emerges on hover */
+.proj-card .cta-line {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
+}
+.proj-card:hover .cta-line { opacity: 1; transform: none; }
+.proj-card .cta-line .arr { width: 28px; height: 1px; background: currentColor; position: relative; }
+.proj-card .cta-line .arr::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-right: 1px solid currentColor; border-top: 1px solid currentColor; transform: rotate(45deg); transform-origin: right top; }
+
+/* aspect ratios — generous */
+.proj-card.hero { aspect-ratio: 17 / 9; }
+.proj-card.tall { aspect-ratio: 4 / 5; }
+.proj-card.wide { aspect-ratio: 11 / 8; }
+
+/* 2-column rows */
+.proj-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 64px); }
+@media (max-width: 880px) { .proj-row2 { grid-template-columns: 1fr; gap: 32px; } .proj-card.hero, .proj-card.tall, .proj-card.wide { aspect-ratio: 4 / 5; } }
+
 </style>
 </head>
 <body data-screen-label="Projets">
@@ -101,97 +100,114 @@
 
 <!-- Magazine index bar -->
 <header class="bg-ivoire proj-index-bar">
-  <h1 class="title">Index<span class="count">— 07 projets · Paris · depuis 2019</span></h1>
-  <span class="meta">Sélection 2024 — 2026</span>
+  <h1 class="title">Tous les projets</h1>
 </header>
 
-<!-- Typographic project index, hover reveals image -->
-<section class="bg-ivoire" data-filter>
-  <div class="proj-list">
-    <a class="proj-row" data-img="assets/selection-web/123-05/SALON1.jpg" href="projets/123-05.html">
-      <span class="col-num">01</span>
-      <span class="col-name">123-05</span>
-      <span class="col-loc">Paris</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">—</span>
-      <span class="col-cat">Projet</span>
+<!-- Editorial project grid -->
+<section class="bg-ivoire">
+  <div class="proj-editorial">
+
+    <!-- Hero — projet 01 -->
+    <a class="proj-card hero" href="projets/123-05.html" aria-label="Projet 123-05, Paris">
+      <img src="assets/selection-web/123-05/SALON1.jpg" alt="Projet 123-05 — salon haussmannien rénové à Paris">
+      <span class="veil" aria-hidden="true"></span>
+      <div class="info">
+        <div class="info-row">
+          <span class="num">01</span>
+          <span class="meta"><span>Paris</span></span>
+        </div>
+        <h2 class="name">123-05</h2>
+        <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+      </div>
     </a>
-    <a class="proj-row" data-img="assets/selection-web/21-31/61903-quai-andre-citroen-1.jpg" href="projets/21-31.html">
-      <span class="col-num">02</span>
-      <span class="col-name">21-31</span>
-      <span class="col-loc">Paris 15ᵉ</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">—</span>
-      <span class="col-cat">Projet</span>
-    </a>
-    <a class="proj-row" data-img="assets/selection-web/22-11/DJI_20250727_184700_626.jpg" href="projets/22-11.html">
-      <span class="col-num">03</span>
-      <span class="col-name">22-11</span>
-      <span class="col-loc">Paris</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">2025</span>
-      <span class="col-cat">Projet</span>
-    </a>
-    <a class="proj-row" data-img="assets/selection-web/35-17/DJI_20250813_171338_790.jpg" href="projets/35-17.html">
-      <span class="col-num">04</span>
-      <span class="col-name">35-17</span>
-      <span class="col-loc">Paris</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">2025</span>
-      <span class="col-cat">Projet</span>
-    </a>
-    <a class="proj-row" data-img="assets/selection-web/35-22/61904-Quai-de-Grenelle-1.jpg" href="projets/35-22.html">
-      <span class="col-num">05</span>
-      <span class="col-name">35-22</span>
-      <span class="col-loc">Paris 15ᵉ</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">2024</span>
-      <span class="col-cat">Projet</span>
-    </a>
-    <a class="proj-row" data-img="assets/selection-web/57-19/SEJOUR11.jpg" href="projets/57-19.html">
-      <span class="col-num">06</span>
-      <span class="col-name">57-19</span>
-      <span class="col-loc">Paris</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">—</span>
-      <span class="col-cat">Projet</span>
-    </a>
-    <a class="proj-row" data-img="assets/selection-web/57-25/61905-quai-de-grenelle-11.jpg" href="projets/57-25.html">
-      <span class="col-num">07</span>
-      <span class="col-name">57-25</span>
-      <span class="col-loc">Paris 15ᵉ</span>
-      <span class="col-area">—</span>
-      <span class="col-yr">2024</span>
-      <span class="col-cat">Projet</span>
-    </a>
+
+    <!-- Row — projets 02 & 03 -->
+    <div class="proj-row2">
+      <a class="proj-card tall" href="projets/21-31.html" aria-label="Projet 21-31, Paris 15ᵉ">
+        <img src="assets/selection-web/21-31/61903-quai-andre-citroen-29.jpg" alt="Projet 21-31 — appartement panoramique Paris 15ᵉ">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">02</span>
+            <span class="meta"><span>Paris 15ᵉ</span></span>
+          </div>
+          <h2 class="name">21-31</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+      <a class="proj-card tall" href="projets/22-11.html" aria-label="Projet 22-11, Paris">
+        <img src="assets/selection-web/22-11/DJI_20250727_185712_332.jpg" alt="Projet 22-11 — salon face à la Tour Eiffel">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">03</span>
+            <span class="meta"><span>Paris</span></span>
+          </div>
+          <h2 class="name">22-11</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Row — projets 04 & 05 (alternated: wide left, wide right) -->
+    <div class="proj-row2">
+      <a class="proj-card wide" href="projets/35-17.html" aria-label="Projet 35-17, Paris">
+        <img src="assets/selection-web/35-17/DJI_20250813_171338_790.jpg" alt="Projet 35-17 — matière noyer fumé">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">04</span>
+            <span class="meta"><span>Paris</span></span>
+          </div>
+          <h2 class="name">35-17</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+      <a class="proj-card wide" href="projets/35-22.html" aria-label="Projet 35-22, Paris 15ᵉ">
+        <img src="assets/selection-web/35-22/61904-Quai-de-Grenelle-1.jpg" alt="Projet 35-22 — quai de Grenelle, Paris 15ᵉ">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">05</span>
+            <span class="meta"><span>Paris 15ᵉ</span></span>
+          </div>
+          <h2 class="name">35-22</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Row — projets 06 & 07 (alternated back to tall) -->
+    <div class="proj-row2">
+      <a class="proj-card tall" href="projets/57-19.html" aria-label="Projet 57-19, Paris">
+        <img src="assets/selection-web/57-19/SEJOUR11.jpg" alt="Projet 57-19 — séjour donnant sur la Tour Eiffel">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">06</span>
+            <span class="meta"><span>Paris</span></span>
+          </div>
+          <h2 class="name">57-19</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+      <a class="proj-card tall" href="projets/57-25.html" aria-label="Projet 57-25, Paris 15ᵉ">
+        <img src="assets/selection-web/57-25/61905-quai-de-grenelle-11.jpg" alt="Projet 57-25 — quai de Grenelle, Paris 15ᵉ">
+        <span class="veil" aria-hidden="true"></span>
+        <div class="info">
+          <div class="info-row">
+            <span class="num">07</span>
+            <span class="meta"><span>Paris 15ᵉ</span></span>
+          </div>
+          <h2 class="name">57-25</h2>
+          <span class="cta-line">Voir le projet <span class="arr" aria-hidden="true"></span></span>
+        </div>
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- Cursor-following preview image -->
-<div class="proj-cursor-img" id="projCursorImg" aria-hidden="true"><img alt=""></div>
-
-<section class="bg-travertin">
-  <div class="container lookbook">
-    <div class="lookbook-cover reveal">
-      <span class="num">Lookbook 2025</span>
-      <div>
-        <span class="num">PDF · 64 pages · 8,1 Mo</span>
-        <div class="ttl">Nos dix derniers <em>projets</em>.</div>
-      </div>
-    </div>
-    <div>
-      <span class="eyebrow reveal">Téléchargement</span>
-      <h2 class="display reveal delay-1" style="max-width: 18ch; margin-top: 16px;">Le lookbook, en haute résolution.</h2>
-      <p class="reveal delay-2" style="margin-top: 24px; max-width: 44ch;">
-        Soixante-quatre pages, dix projets livrés en 2024–2025, photographies
-        Aurélie Cenno, plans techniques, fiches matières.
-      </p>
-      <div class="reveal delay-3" style="margin-top: 32px;">
-        <a class="btn btn-solid" href="#">Recevoir le lookbook (PDF) <span class="arr"></span></a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer class="site-footer">
   <div class="footer-cols">
@@ -204,55 +220,5 @@
 </footer>
 
 <script src="assets/site.js"></script>
-<script>
-(() => {
-  // Filter buttons
-  const root = document.querySelector('[data-filter]');
-  if (root) {
-    const btns = root.querySelectorAll('button[data-filter-btn]');
-    const rows = root.querySelectorAll('.proj-row');
-    btns.forEach(b => b.addEventListener('click', () => {
-      btns.forEach(o => o.classList.remove('on'));
-      b.classList.add('on');
-      const k = b.dataset.filterBtn;
-      rows.forEach(r => {
-        const tags = (r.dataset.tag || '').split(' ');
-        r.style.display = (k === 'all' || tags.includes(k)) ? '' : 'none';
-      });
-    }));
-  }
-
-  // Cursor-following preview image
-  const cImg = document.getElementById('projCursorImg');
-  if (!cImg) return;
-  const inner = cImg.querySelector('img');
-  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
-  const loop = () => {
-    cx += (tx - cx) * 0.18;
-    cy += (ty - cy) * 0.18;
-    cImg.style.left = cx + 'px';
-    cImg.style.top  = cy + 'px';
-    raf = requestAnimationFrame(loop);
-  };
-  document.querySelectorAll('.proj-row').forEach(row => {
-    row.addEventListener('mouseenter', () => {
-      const src = row.dataset.img;
-      if (src && inner.src !== src) inner.src = src;
-      cImg.classList.add('in');
-      if (!raf) loop();
-    });
-    row.addEventListener('mouseleave', () => {
-      cImg.classList.remove('in');
-    });
-  });
-  document.querySelector('.proj-list')?.addEventListener('mousemove', e => {
-    tx = e.clientX; ty = e.clientY;
-  });
-  document.querySelector('.proj-list')?.addEventListener('mouseleave', () => {
-    cImg.classList.remove('in');
-    if (raf) { cancelAnimationFrame(raf); raf = null; }
-  });
-})();
-</script>
 </body>
 </html>

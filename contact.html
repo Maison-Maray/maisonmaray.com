@@ -157,7 +157,11 @@
 <section class="bg-ivoire">
   <div class="contact-shell-v2">
     <!-- FUNNEL -->
-    <form class="funnel reveal delay-1" data-funnel onsubmit="event.preventDefault(); this.querySelectorAll('.f-step').forEach(s=>s.classList.remove('on')); document.getElementById('f-done').classList.add('on');">
+    <form class="funnel reveal delay-1" data-funnel>
+      <input type="hidden" name="subject" value="Nouvelle demande de rendez-vous — maisonmaray.com">
+      <input type="hidden" name="from_name" value="Site Maison Maray">
+      <input type="hidden" name="creneau" value="">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
       <div class="funnel-head">
         <span class="funnel-dots">
           <span class="f-dot on"></span><span class="f-dot"></span><span class="f-dot"></span>
@@ -194,19 +198,19 @@
         <span class="eyebrow">Étape 02</span>
         <h2>Votre projet ?</h2>
         <div class="f-checks">
-          <label class="f-check"><input type="checkbox"> Conception et plans</label>
-          <label class="f-check"><input type="checkbox"> Maîtrise d'œuvre complète</label>
-          <label class="f-check"><input type="checkbox"> Mobilier sur-mesure</label>
-          <label class="f-check"><input type="checkbox"> Sourcing immobilier</label>
-          <label class="f-check"><input type="checkbox"> Valorisation pour location</label>
-          <label class="f-check"><input type="checkbox"> Conseil ponctuel</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Conception et plans"> Conception et plans</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Maîtrise d'œuvre complète"> Maîtrise d'œuvre complète</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Mobilier sur-mesure"> Mobilier sur-mesure</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Sourcing immobilier"> Sourcing immobilier</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Valorisation pour location"> Valorisation pour location</label>
+          <label class="f-check"><input type="checkbox" name="besoins" value="Conseil ponctuel"> Conseil ponctuel</label>
         </div>
         <div class="f-fields" style="margin-top: 8px;">
           <label>Surface approximative
-            <input type="text" placeholder="Ex. 95 m² — Paris 8ᵉ">
+            <input type="text" name="surface" placeholder="Ex. 95 m² — Paris 8ᵉ">
           </label>
           <label>Quelques mots sur le projet (facultatif)
-            <textarea rows="3" placeholder="Adresse, échéance souhaitée, contraintes particulières…"></textarea>
+            <textarea name="message" rows="3" placeholder="Adresse, échéance souhaitée, contraintes particulières…"></textarea>
           </label>
         </div>
         <div class="funnel-foot">
@@ -221,13 +225,13 @@
         <h2>Coordonnées et créneau.</h2>
         <div class="f-fields">
           <label>Nom complet
-            <input type="text" required placeholder="Hélène Dubois">
+            <input type="text" name="nom" required placeholder="Hélène Dubois">
           </label>
           <label>Email
-            <input type="email" required placeholder="vous@adresse.com">
+            <input type="email" name="email" required placeholder="vous@adresse.com">
           </label>
           <label>Téléphone (facultatif)
-            <input type="tel" placeholder="+33 6 ··· ··· ···">
+            <input type="tel" name="telephone" placeholder="+33 6 ··· ··· ···">
           </label>
         </div>
         <div class="f-mini-cal">
@@ -249,6 +253,7 @@
           <button type="button" class="btn btn-ghost" data-prev>← Retour</button>
           <button type="submit" class="btn btn-solid">Confirmer le rendez-vous <span class="arr"></span></button>
         </div>
+        <p data-form-status class="form-status" style="display:none"></p>
       </div>
 
       <!-- DONE -->
@@ -308,5 +313,6 @@ document.addEventListener('click', (e) => {
 });
 </script>
 <script src="assets/site.js"></script>
+<script src="assets/forms.js"></script>
 </body>
 </html>

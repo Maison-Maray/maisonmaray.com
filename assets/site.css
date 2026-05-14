@@ -462,3 +462,24 @@ section { position: relative; }
   text-transform: uppercase;
   opacity: .6;
 }
+
+/* form status messages */
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid var(--rule-strong);
+}
+.form-status[data-kind="ok"] {
+  color: var(--noyer);
+  border-color: var(--laiton);
+  background: rgba(176, 138, 75, 0.10);
+}
+.form-status[data-kind="error"] {
+  color: #8a3b2e;
+  border-color: #8a3b2e;
+  background: rgba(138, 59, 46, 0.07);
+}

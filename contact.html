@@ -71,8 +71,13 @@
 .f-fields input:focus, .f-fields textarea:focus { border-bottom-color: var(--laiton); }
 
 .f-mini-cal { padding: 20px; border: 1px solid var(--rule); }
-.f-mini-cal .head { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.f-mini-cal .head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.f-mini-cal .cal-month { display: flex; align-items: center; gap: 10px; }
+.f-mini-cal .cal-nav { background: transparent; border: 0; color: inherit; cursor: pointer; font: inherit; font-size: 15px; line-height: 1; padding: 2px 4px; opacity: .55; transition: opacity .2s var(--ease); }
+.f-mini-cal .cal-nav:hover { opacity: 1; }
+.f-mini-cal .cal-nav:disabled { opacity: .15; cursor: default; }
 .f-mini-cal .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 12px 0; text-align: center; font-size: 12px; }
+.f-mini-cal .grid .dow { font-family: var(--font-mono); font-size: 10px; opacity: .4; padding: 4px 0; }
 .f-mini-cal .grid .d { padding: 8px 0; cursor: pointer; }
 .f-mini-cal .grid .d:hover { background: var(--travertin); }
 .f-mini-cal .grid .d.sel { background: var(--noyer); color: var(--ivoire); }
@@ -234,17 +239,20 @@
             <input type="tel" name="telephone" placeholder="+33 6 ··· ··· ···">
           </label>
         </div>
-        <div class="f-mini-cal">
-          <div class="head"><span>Mai 2026</span><span>Disponibilités</span></div>
-          <div class="grid">
-            <span class="d off">28</span><span class="d off">29</span><span class="d off">30</span><span class="d">1</span><span class="d">2</span><span class="d off">3</span><span class="d off">4</span>
-            <span class="d">5</span><span class="d">6</span><span class="d sel">7</span><span class="d">8</span><span class="d">9</span><span class="d off">10</span><span class="d off">11</span>
-            <span class="d">12</span><span class="d">13</span><span class="d">14</span><span class="d">15</span><span class="d">16</span><span class="d off">17</span><span class="d off">18</span>
+        <div class="f-mini-cal" data-cal>
+          <div class="head">
+            <span class="cal-month">
+              <button type="button" class="cal-nav" data-cal-prev aria-label="Mois précédent">‹</button>
+              <span data-cal-label>—</span>
+              <button type="button" class="cal-nav" data-cal-next aria-label="Mois suivant">›</button>
+            </span>
+            <span>Disponibilités</span>
           </div>
-          <div class="slots">
+          <div class="grid" data-cal-grid></div>
+          <div class="slots" data-cal-slots>
             <button type="button">09:30</button>
             <button type="button">11:00</button>
-            <button type="button" class="on">14:00</button>
+            <button type="button">14:00</button>
             <button type="button">15:30</button>
             <button type="button">17:00</button>
           </div>

@@ -88,20 +88,22 @@
 .case blockquote { font-family: var(--font-display); font-style: italic; font-size: clamp(20px, 2vw, 28px); line-height: 1.3; margin: 32px 0 0; max-width: 36ch; }
 .case .who { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; opacity: .55; margin-top: 12px; }
 
-.brochure { padding-block: clamp(56px, 8vw, 120px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: center; border-top: 1px solid var(--rule); }
-@media (max-width: 880px) { .brochure { grid-template-columns: 1fr; } }
-.brochure-cover { aspect-ratio: 3 / 4; background: var(--noyer); color: var(--ivoire); padding: clamp(20px, 5vw, 32px); display: flex; flex-direction: column; justify-content: space-between; max-width: 360px; }
-.brochure-cover .top { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: .65; }
-.brochure-cover .ttl { font-family: var(--font-display); font-size: 36px; line-height: 1; }
-.brochure-cover .ttl em { font-style: italic; }
 
 .inv-form-block { padding-block: clamp(72px, 9vw, 140px); }
 .inv-form-block-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: start; }
 @media (max-width: 880px) { .inv-form-block-grid { grid-template-columns: 1fr; } }
-.inv-form { display: grid; gap: 18px; }
+.inv-form {
+  display: grid; gap: 18px;
+  border: 1px solid var(--noyer);
+  background: var(--ivoire);
+  padding: clamp(28px, 3vw, 44px);
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.inv-form:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 .inv-form label { display: grid; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: .65; }
-.inv-form input, .inv-form select { font: inherit; padding: 14px 0; background: transparent; border: 0; border-bottom: 1px solid var(--rule-strong); color: inherit; outline: none; }
-.inv-form input:focus, .inv-form select:focus { border-bottom-color: var(--laiton); }
+.inv-form input, .inv-form select { font: inherit; padding: 12px 14px; background: rgba(42, 31, 24, 0.03); border: 1px solid rgba(42, 31, 24, 0.32); color: inherit; outline: none; transition: border-color .25s var(--ease), background .25s var(--ease); }
+.inv-form input:focus, .inv-form select:focus { border-color: var(--laiton); background: rgba(42, 31, 24, 0.05); }
 .inv-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 @media (max-width: 720px) { .inv-form .row2 { grid-template-columns: 1fr; } }
 </style>
@@ -129,7 +131,6 @@
 <section class="bg-ivoire inv-hero-v2">
   <div class="inv-head">
     <span class="eyebrow">Parcours · Investir</span>
-    <span class="meta">Famille · Family office · Club deal</span>
   </div>
 
   <h1 class="inv-h1">Acheter. Transformer.<br><em>Valoriser.</em></h1>
@@ -162,7 +163,6 @@
 
   <div class="inv-ctas">
     <a class="btn btn-solid" href="#dossier">Demander un dossier d'opportunité <span class="arr"></span></a>
-    <a class="btn btn-ghost" href="#brochure">Brochure investisseur PDF <span class="arr"></span></a>
   </div>
 </section>
 
@@ -201,14 +201,13 @@
         <div class="acc-body"><span></span><div class="pad">
           Trois critères non-négociables : potentiel architectural, exposition,
           ratio surface/prix par rapport au quartier. 80 % des biens présentés
-          sont off-market — issus du réseau notaires, gestionnaires d'immeuble
-          et family offices que nous opérons depuis cinq ans.
+          sont off-market.
         </div></div>
       </div>
       <div class="acc-row">
         <button class="acc-h"><span class="num">02</span><span class="ttl">Faisabilité.</span><span class="plus"></span></button>
         <div class="acc-body"><span></span><div class="pad">
-          Étude technique en 7 jours : état des lieux structurel, faisabilité
+          Étude technique : état des lieux structurel, faisabilité
           réglementaire (copropriété, urbanisme), chiffrage travaux figé,
           projection locative à 36 mois. Le go/no-go est documenté avant signature.
         </div></div>
@@ -217,8 +216,7 @@
         <button class="acc-h"><span class="num">03</span><span class="ttl">Transformation.</span><span class="plus"></span></button>
         <div class="acc-body"><span></span><div class="pad">
           Conception, maîtrise d'œuvre et mobilier sur-mesure intégrés.
-          Délai garanti 3 à 6 mois selon surface. Réception en propre,
-          OPR, levée des réserves.
+          Réception en propre, OPR, levée des réserves.
         </div></div>
       </div>
       <div class="acc-row">
@@ -244,13 +242,13 @@
 <section class="bg-ivoire case">
   <div class="container">
     <div class="case-head">
-      <h2 class="display">Cas 01 — Studio sous toit, Paris 9<sup>e</sup>.</h2>
-      <span class="meta">Achat → Valorisation · 4 mois</span>
+      <h2 class="display">Cas 01 — Quatre pièces, Paris 15<sup>e</sup>.</h2>
+      <span class="meta">Achat → Valorisation</span>
     </div>
     <div class="case-grid">
-      <div class="img-hover reveal" data-ba style="aspect-ratio: 16 / 11;">
-        <img class="ba-before" alt="Studio mansardé avant transformation, configuration vétuste" src="assets/selection-web/22-11/DJI_20250727_184700_626.jpg">
-        <img class="ba-after" alt="Studio mansardé après transformation par Maison Maray, mobilier intégré" src="assets/selection-web/22-11/DJI_20250727_184721_700.jpg" style="position:absolute; inset:0; clip-path: inset(0 0 0 50%);">
+      <div class="img-hover reveal" data-ba style="aspect-ratio: 4 / 5;">
+        <img class="ba-before" alt="4 pièces Paris 15ᵉ avant transformation" src="assets/selection-web/22-11/Avant.jpg" style="object-position: 50% 55%;">
+        <img class="ba-after" alt="4 pièces Paris 15ᵉ après transformation par Maison Maray" src="assets/selection-web/22-11/DJI_20250727_190620_743.jpg" style="position:absolute; inset:0; clip-path: inset(0 0 0 50%); object-position: 50% 50%;">
         <span class="ba-handle"></span>
         <span class="lab l">Avant</span><span class="lab r">Après</span>
         <style>.case-grid [data-ba] { position: relative; cursor: ew-resize; overflow: hidden; }
@@ -270,8 +268,6 @@
           <div><dt>Valorisation</dt><dd class="gold">580 k€</dd></div>
           <div><dt>Loyer net</dt><dd class="gold">5,8 %</dd></div>
         </dl>
-        <blockquote>« On a signé en mars. Premier locataire en juillet. Sans rien faire d'autre que d'écouter Maison Maray. »</blockquote>
-        <p class="who">— L. M., investisseur particulier</p>
       </div>
     </div>
   </div>
@@ -281,13 +277,13 @@
 <section class="bg-ivoire case">
   <div class="container">
     <div class="case-head">
-      <h2 class="display">Cas 02 — Trois pièces, Paris 17<sup>e</sup>.</h2>
-      <span class="meta">Achat → Valorisation · 5 mois</span>
+      <h2 class="display">Cas 02 — Cinq pièces, Paris 15<sup>e</sup>.</h2>
+      <span class="meta">Achat → Valorisation</span>
     </div>
     <div class="case-grid">
-      <div class="img-hover reveal" data-ba style="aspect-ratio: 16 / 11;">
-        <img class="ba-before" alt="Appartement 75 m² avant transformation" src="assets/selection-web/35-17/DJI_20250813_171338_790.jpg">
-        <img class="ba-after" alt="Appartement 75 m² après transformation par Maison Maray" src="assets/selection-web/35-17/DJI_20250813_171425_199.jpg" style="position:absolute; inset:0; clip-path: inset(0 0 0 50%);">
+      <div class="img-hover reveal" data-ba style="aspect-ratio: 4 / 5;">
+        <img class="ba-before" alt="Cinq pièces Paris 15ᵉ avant transformation" src="assets/selection-web/21-31/IMG_7201.jpg" style="object-position: 50% 50%;">
+        <img class="ba-after" alt="Cinq pièces Paris 15ᵉ après transformation par Maison Maray" src="assets/selection-web/21-31/IMG_8921.jpg" style="position:absolute; inset:0; clip-path: inset(0 0 0 50%); object-position: 40% 50%;">
         <span class="ba-handle"></span>
         <span class="lab l">Avant</span><span class="lab r">Après</span>
       </div>
@@ -300,32 +296,6 @@
           <div><dt>Valorisation</dt><dd class="gold">1,02 M€</dd></div>
           <div><dt>Délai</dt><dd class="gold">5 mois</dd></div>
         </dl>
-        <blockquote>« On voulait revendre. Maison Maray nous a proposé de garder. Un an plus tard, le rendement justifie la décision. »</blockquote>
-        <p class="who">— Family office parisien</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BROCHURE -->
-<section id="brochure" class="bg-travertin">
-  <div class="container brochure">
-    <div class="brochure-cover reveal">
-      <span class="top">Maison Maray · Brochure 2026</span>
-      <div>
-        <div style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; opacity: .65;">PDF · 28 pages · 4,2 Mo</div>
-        <div class="ttl">Brochure <em>investisseur</em>.</div>
-      </div>
-    </div>
-    <div>
-      <span class="eyebrow reveal">Téléchargement</span>
-      <h2 class="display reveal delay-1" style="max-width: 18ch; margin-top: 16px;">Méthode, chiffres, dossiers de cas.</h2>
-      <p class="reveal delay-2" style="margin-top: 24px; max-width: 44ch;">
-        Vingt-huit pages : la méthode détaillée, les six dernières opérations
-        avec chiffres complets, le contrat type, et la grille tarifaire 2026.
-      </p>
-      <div class="reveal delay-3" style="margin-top: 32px;">
-        <a class="btn btn-solid" href="#">Recevoir la brochure (PDF) <span class="arr"></span></a>
       </div>
     </div>
   </div>
@@ -338,7 +308,7 @@
       <div>
         <span class="eyebrow reveal">Demande d'opportunité</span>
         <h2 class="display reveal delay-1" style="max-width: 16ch; margin-top: 16px;">
-          Recevez deux ou trois biens off-market par mois.
+          Recevez deux ou trois biens off-market.
         </h2>
         <p class="reveal delay-2" style="margin-top: 24px; max-width: 44ch;">
           Calibrés sur votre capacité, votre horizon et votre tolérance au risque.
@@ -365,6 +335,7 @@
           <label>Horizon
             <select required>
               <option value="">— sélectionner —</option>
+              <option>1 – 3 ans</option>
               <option>3 – 5 ans</option>
               <option>5 – 10 ans</option>
               <option>+10 ans</option>

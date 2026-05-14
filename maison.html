@@ -23,16 +23,46 @@
 
 <style>
 /* ===== CALLING-CARD HERO — portrait first ===== */
-.maison-hero { padding: clamp(110px, 13vh, 140px) var(--gutter-d) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 5vw, 96px); align-items: stretch; }
+.maison-hero { padding: clamp(110px, 13vh, 140px) var(--gutter-d) clamp(56px, 7vw, 96px); display: grid; grid-template-columns: minmax(280px, 5fr) 8fr; gap: clamp(32px, 5vw, 96px); align-items: start; position: relative; overflow: hidden; }
 @media (max-width: 880px) { .maison-hero { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
-.maison-portrait { position: relative; aspect-ratio: 3 / 4; overflow: hidden; box-shadow: 0 32px 80px -28px rgba(42,31,24,.32), 0 0 0 1px rgba(176,138,75,.08); }
+.maison-portrait { position: relative; z-index: 2; aspect-ratio: 3 / 4; overflow: hidden; box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08); transition: box-shadow .5s var(--ease), transform .5s var(--ease); }
+.maison-portrait:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 .maison-portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.05) contrast(1.03); transition: transform 1.4s var(--ease); }
 .maison-portrait:hover img { transform: scale(1.03); }
 .maison-portrait .stamp { position: absolute; bottom: 18px; right: 18px; display: flex; flex-direction: column; gap: 2px; align-items: center; color: var(--ivoire); }
 .maison-portrait .stamp .mark { width: 26px; height: 34px; -webkit-mask: url("assets/logo-mark.png") center / contain no-repeat; mask: url("assets/logo-mark.png") center / contain no-repeat; background: currentColor; opacity: .85; }
 .maison-portrait .stamp .year { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.18em; opacity: .8; }
 
-.maison-card { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px, 4vw, 48px); padding: 4px 0; }
+.maison-card { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px, 4vw, 48px); padding: 4px 0; }
+.maison-card-top { position: relative; z-index: 1; }
+/* large scarab watermark, drifting slowly behind the hero */
+.maison-watermark {
+  position: absolute;
+  left: 50%; bottom: -22%;
+  width: clamp(520px, 62vw, 880px); aspect-ratio: 1198 / 1853;
+  -webkit-mask: url("assets/IMG_9646.PNG") center / contain no-repeat;
+          mask: url("assets/IMG_9646.PNG") center / contain no-repeat;
+  background: var(--noyer);
+  opacity: 0;
+  pointer-events: none; z-index: 0;
+  transform-origin: 50% 30%;
+  animation: maisonWatermarkRise 1.6s var(--ease) .4s forwards, maisonWatermarkDrift 22s ease-in-out 2s infinite;
+}
+@keyframes maisonWatermarkRise {
+  from { opacity: 0; transform: translate(-50%, 6%) rotate(-3deg) scale(.96); }
+  to   { opacity: .06; transform: translate(-50%, 0) rotate(0deg) scale(1); }
+}
+@keyframes maisonWatermarkDrift {
+  0%   { transform: translate(-50%, 0) rotate(0deg);   opacity: .055; }
+  25%  { transform: translate(-49%, -14px) rotate(1.2deg);  opacity: .075; }
+  50%  { transform: translate(-50%, -22px) rotate(0deg);    opacity: .065; }
+  75%  { transform: translate(-51%, -14px) rotate(-1.2deg); opacity: .075; }
+  100% { transform: translate(-50%, 0) rotate(0deg);   opacity: .055; }
+}
+@media (max-width: 880px) { .maison-watermark { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .maison-watermark { animation: none; opacity: .055; transform: translate(-50%, 0); }
+}
 .maison-card .top-line { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
 .maison-card .top-line .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
 .maison-card .top-line .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; opacity: .55; }
@@ -41,22 +71,22 @@
 .maison-role { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; display: block; margin-top: 14px; }
 .maison-bio { font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; max-width: 38ch; margin: clamp(20px, 3vw, 28px) 0 0; opacity: .85; }
 
-.maison-signature { font-family: 'Pinyon Script', cursive; font-size: clamp(56px, 6vw, 80px); color: var(--noyer); line-height: 1; margin-top: clamp(16px, 2vw, 24px); display: inline-block; opacity: 0; transform: translateY(8px); transition: opacity 1.2s var(--ease) .6s, transform 1.2s var(--ease) .6s; }
-.maison-signature.in { opacity: .85; transform: none; }
-.maison-signature-meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .45; display: block; margin-top: 8px; }
+.maison-sign-row { display: flex; align-items: center; gap: 16px; margin-top: clamp(20px, 2.5vw, 28px); position: relative; z-index: 2; }
+.maison-signature { font-family: 'Pinyon Script', cursive; font-size: clamp(48px, 5vw, 68px); color: var(--noyer); line-height: 1; display: inline-block; opacity: .9; position: relative; z-index: 2; }
 
 .maison-card-foot { display: flex; gap: 14px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--rule); }
 
 .bio-grid { padding-block: clamp(48px, 7vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
 @media (max-width: 880px) { .bio-grid { grid-template-columns: 1fr; } }
-.bio-grid .body { display: grid; gap: 20px; max-width: 64ch; font-size: 17px; line-height: 1.65; }
+.bio-grid .body { display: grid; gap: 20px; max-width: 64ch; font-size: 17px; line-height: 1.65; text-align: justify; hyphens: auto; }
 
 .manifeste { padding-block: clamp(72px, 9vw, 140px); }
 .manifeste-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: 56px; align-items: end; }
 @media (max-width: 880px) { .manifeste-head { grid-template-columns: 1fr; } }
 .manifeste-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
 @media (max-width: 880px) { .manifeste-grid { grid-template-columns: 1fr; } }
-.value { padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px); background: var(--ivoire); display: grid; gap: 16px; align-content: start; min-height: clamp(220px, 30vw, 380px); border: 1px solid var(--rule); }
+.value { padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px); background: var(--ivoire); display: grid; grid-template-rows: auto auto 1fr; gap: 16px; min-height: clamp(220px, 30vw, 380px); border: 1px solid var(--rule); }
+.value p { align-self: end; }
 .value .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; opacity: .55; }
 .value h3 { font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1; margin: 0; max-width: 14ch; }
 .value h3 em { font-style: italic; color: var(--laiton-deep); }
@@ -67,19 +97,16 @@
 @media (max-width: 880px) { .eco-head { grid-template-columns: 1fr; } }
 .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 @media (max-width: 880px) { .eco-grid { grid-template-columns: 1fr; gap: 56px; } }
-.eco-col .img-hover { aspect-ratio: 4 / 5; margin-bottom: 24px; }
+.eco-col .img-hover {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 24px;
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08);
+  transition: box-shadow .5s var(--ease), transform .5s var(--ease);
+}
+.eco-col .img-hover:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
 .eco-col h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; margin: 0 0 12px; }
 .eco-col p { max-width: 38ch; }
 
-.press { padding-block: clamp(72px, 9vw, 140px); background: var(--travertin); }
-.press-head { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); margin-bottom: 56px; align-items: end; }
-@media (max-width: 880px) { .press-head { grid-template-columns: 1fr; } }
-.press-rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-@media (max-width: 880px) { .press-rail { grid-template-columns: 1fr; } }
-.press-card { padding: 32px 0; border-top: 1px solid var(--noyer); }
-.press-card .src { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: .65; margin-bottom: 16px; }
-.press-card blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 22px; line-height: 1.3; max-width: 28ch; }
-.press-card .date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; opacity: .55; margin-top: 16px; display: block; }
 </style>
 </head>
 <body data-screen-label="La Maison">
@@ -111,20 +138,18 @@
     </figcaption>
   </figure>
 
+  <span class="maison-watermark" aria-hidden="true"></span>
   <div class="maison-card">
-    <div>
+    <div class="maison-card-top">
       <div class="top-line">
         <span class="label">— Fondateur</span>
-        <span class="num">N° 01 / 03</span>
       </div>
       <h1 class="maison-name">Mohamed <em>Maray.</em></h1>
       <span class="maison-role">Architecte d'intérieur · Maison Maray, Paris</span>
-      <p class="maison-bio">Quinze ans à dessiner des intérieurs parisiens. Une exigence : qu'aucun projet ne ressemble au précédent — et qu'il vous ressemble à vous.</p>
-    </div>
-
-    <div>
-      <span class="maison-signature" id="maisonSig">M. Maray</span>
-      <span class="maison-signature-meta">Signature · Paris, mai 2026</span>
+      <p class="maison-bio">Créer des intérieurs élégants, intemporels et parfaitement pensés pour révéler le potentiel unique de chaque lieu.</p>
+      <div class="maison-sign-row">
+        <span class="maison-signature" id="maisonSig">M. Maray</span>
+      </div>
     </div>
 
     <div class="maison-card-foot">
@@ -139,22 +164,23 @@
   <div class="container bio-grid">
     <span class="eyebrow reveal">Mohamed Maray</span>
     <div class="body">
-      <p class="reveal">Né au Caire, formé à Paris. Mohamed grandit entre deux villes
-        qui n'ont rien en commun sauf l'obsession du détail architectural.
-        Le souk Khan el-Khalili lui apprend la matière brute ; les passages
-        couverts du 9ᵉ, le silence comme matériau.</p>
-      <p class="reveal delay-1">Diplôme KEDGE Business School, premier poste en banque privée à Londres.
-        Trois ans à valoriser des actifs qu'il ne touchait jamais. La frustration
-        finit par devenir un projet : revenir à Paris, et faire l'inverse — toucher
-        chaque actif jusqu'à la dernière vis.</p>
-      <p class="reveal delay-2">En 2019, il fonde Maison Maray rue de Monceau, à deux pas du parc.
-        La maison livre 6 projets la première année, 12 la suivante, et n'a
-        plus jamais accepté de recevoir un client sans avoir d'abord visité
-        ses lieux actuels.</p>
-      <p class="reveal delay-3">Mohamed parle français, anglais, arabe. Il dort peu. Il dessine
-        en réunion. Et il refuse les projets qui ne lui font pas envie —
-        principe étrange pour une maison, mais qui explique probablement
-        pourquoi tous les clients reviennent.</p>
+      <p class="reveal">Je m'appelle Mohamed Maray. J'ai fondé Maison Maray parce que je
+        voulais dessiner des intérieurs qui résistent au temps, et qui
+        ressemblent vraiment à ceux qui les habitent.</p>
+      <p class="reveal delay-1">Avant le moindre trait, je cherche à comprendre comment vous vivez.
+        Vos heures, vos rituels, vos objets, ce que vous tenez à garder
+        et ce que l'on enlève. Tout part de là.</p>
+      <p class="reveal delay-2">Je travaille principalement sur des projets résidentiels haut de gamme.
+        De la première rencontre à la livraison, je reste votre interlocuteur
+        unique : conception, maîtrise d'œuvre, choix des matières, mobilier
+        sur-mesure, jusqu'à la dernière finition.</p>
+      <p class="reveal delay-3">Ce que je cherche, ce n'est pas un effet ; c'est une beauté qui dure.
+        Des intérieurs que l'on traverse sans s'en lasser, qui apaisent et
+        inspirent à la fois, et qui prennent de la valeur sur le long terme.</p>
+      <p class="reveal delay-4">Une résidence principale, un pied-à-terre parisien ou un projet
+        d'investissement : la même exigence à chaque fois, la même attention
+        au détail. Basé à Paris, j'interviens également en France et à
+        l'étranger, pour des intérieurs sobres, architecturaux, intemporels.</p>
     </div>
   </div>
 </section>
@@ -164,26 +190,23 @@
   <div class="container">
     <div class="manifeste-head">
       <span class="eyebrow reveal">Manifeste</span>
-      <h2 class="display reveal delay-1" style="max-width: 18ch;">Trois valeurs, tenues sans exception.</h2>
+      <h2 class="display reveal delay-1" style="max-width: 18ch;">Trois valeurs tenues sans exception.</h2>
     </div>
     <div class="manifeste-grid">
       <article class="value reveal">
         <span class="num">01</span>
         <h3>Sincérité <em>architecturale</em>.</h3>
-        <p>Ne jamais simuler ce qu'un bâtiment n'est pas. Une moulure restaurée plutôt qu'une moulure imitée. Un mur porteur respecté plutôt que masqué.</p>
-        <p style="opacity:.6; font-size: 14px;">Conséquence : nous refusons environ un tiers des projets qu'on nous propose.</p>
+        <p>Lire un lieu avant de le transformer. Un escalier en pierre garde l'empreinte des pas qui l'ont gravi. Une hauteur sous plafond garde son ampleur, jamais masquée. Le lieu se raconte, il ne se déguise pas.</p>
       </article>
       <article class="value reveal delay-1">
         <span class="num">02</span>
         <h3>Équilibre des <em>matières</em>.</h3>
-        <p>Quatre familles maximum par projet. Si une cinquième s'impose, c'est qu'une autre doit partir. La beauté d'un intérieur tient autant à ce qu'il refuse qu'à ce qu'il accepte.</p>
-        <p style="opacity:.6; font-size: 14px;">Conséquence : nous photographions chaque livraison sur film 4×5, jamais retouché.</p>
+        <p>Aucune matière ne s'invite par hasard. Chacune répond à un usage, à une lumière, à une intention précise. La beauté d'un intérieur tient autant à ce qu'il refuse qu'à ce qu'il accepte.</p>
       </article>
       <article class="value reveal delay-2">
         <span class="num">03</span>
         <h3>Évidence <em>spatiale</em>.</h3>
-        <p>Un projet réussi est celui qu'on ne remarque pas. Pas parce qu'il est neutre, mais parce que tout y est exactement à sa place — au point qu'on n'imagine plus le lieu autrement.</p>
-        <p style="opacity:.6; font-size: 14px;">Conséquence : 98 % des clients ne déplacent aucun meuble dans les six mois.</p>
+        <p>Un projet réussi est celui qu'on ne remarque pas. Pas parce qu'il est neutre, mais parce que tout y est exactement à sa place. Au point qu'on n'imagine plus le lieu autrement.</p>
       </article>
     </div>
   </div>
@@ -194,53 +217,26 @@
   <div class="container">
     <div class="eco-head">
       <span class="eyebrow reveal">L'écosystème</span>
-      <h2 class="display reveal delay-1" style="max-width: 18ch;">Une équipe à trois, un réseau à trente.</h2>
+      <h2 class="display reveal delay-1" style="max-width: 18ch;">Une équipe à trois, un seul objectif : le vôtre.</h2>
     </div>
     <div class="eco-grid">
       <div class="eco-col reveal">
-        <div class="img-hover"><img class="img-fill" alt="Chasseur immobilier dans le quartier de Monceau" src="assets/selection-web/57-25/61905-quai-de-grenelle-11.jpg"></div>
+        <div class="img-hover"><img class="img-fill" alt="Chasseur immobilier en repérage à Paris" src="assets/selection-web/22-11/IMG_4924.jpg"></div>
         <span class="eyebrow">01 · Sourcing</span>
         <h3 style="margin-top: 8px;">Les chasseurs.</h3>
-        <p>Quatre chasseurs partenaires, exclusivement parisiens, qui connaissent les rues mieux que les gardiens. 80 % de notre flux off-market vient d'eux.</p>
+        <p>Une équipe de chasseurs partenaires, parisiens et discrets. La plupart de nos opérations off-market viennent d'eux.</p>
       </div>
       <div class="eco-col reveal delay-1">
-        <div class="img-hover"><img class="img-fill" alt="Atelier d'ébéniste, mains travaillant le bois" src="assets/selection-web/banque/L_exigence%20technique.jpg"></div>
+        <div class="img-hover"><img class="img-fill" alt="Artisan au travail sur un projet Maison Maray" src="assets/selection-web/banque/pexels-jimmy-nilsson-masth-193596566-11427094.jpg"></div>
         <span class="eyebrow">02 · Réalisation</span>
         <h3 style="margin-top: 8px;">Les artisans.</h3>
-        <p>Un seul atelier d'ébénisterie. Un seul maçon. Un seul peintre. Tous à moins de 30 minutes de la maison. Tous travaillent avec nous depuis 2020.</p>
+        <p>Deux équipes d'artisans qui nous accompagnent depuis des années. Choisies pour leur exigence, leur précision, et le savoir-faire qu'elles signent sur chaque projet.</p>
       </div>
       <div class="eco-col reveal delay-2">
-        <div class="img-hover"><img class="img-fill" alt="Conciergerie, gestion d'un appartement parisien" src="assets/selection-web/57-25/61905-quai-de-grenelle-11.jpg"></div>
+        <div class="img-hover"><img class="img-fill" alt="Détail d'intérieur — gestion et maintenance des biens livrés" src="assets/selection-web/banque/kaboompics_arabescato-marble-table-metal-coffee-cup-calendar-candleholder-34188.jpg"></div>
         <span class="eyebrow">03 · Gestion</span>
         <h3 style="margin-top: 8px;">Les conciergeries.</h3>
-        <p>Deux conciergeries partenaires pour la gestion locative haut de gamme et la maintenance continue des biens livrés.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRESS -->
-<section class="press">
-  <div class="container">
-    <div class="press-head">
-      <span class="eyebrow reveal">Presse</span>
-      <h2 class="display reveal delay-1">Ce qu'on a écrit de nous.</h2>
-    </div>
-    <div class="press-rail">
-      <div class="press-card reveal">
-        <span class="src">AD Magazine — France</span>
-        <blockquote>« Maison Maray est l'une des rares maisons parisiennes à savoir conjuguer rigueur d'investisseur et œil de décorateur. »</blockquote>
-        <span class="date">Octobre 2024</span>
-      </div>
-      <div class="press-card reveal delay-1">
-        <span class="src">Milk Decoration</span>
-        <blockquote>« Une grammaire de quatre matières, tenue avec une discipline rare dans l'haussmannien d'aujourd'hui. »</blockquote>
-        <span class="date">Mars 2025</span>
-      </div>
-      <div class="press-card reveal delay-2">
-        <span class="src">Côté Paris</span>
-        <blockquote>« Mohamed Maray ne décore pas — il révèle. Et la nuance fait tout. »</blockquote>
-        <span class="date">Janvier 2026</span>
+        <p>Une équipe de conciergerie partenaire, dédiée à la gestion locative haut de gamme et à la maintenance continue des biens livrés.</p>
       </div>
     </div>
   </div>

@@ -26,6 +26,7 @@
 .inv-hero-v2 { padding: clamp(120px, 14vh, 160px) var(--gutter-d) clamp(56px, 7vw, 96px); }
 @media (max-width: 720px) { .inv-hero-v2 { padding-inline: var(--gutter-m); } }
 .inv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px); padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
+.inv-head .title { font-family: var(--font-display); font-style: italic; font-size: clamp(22px, 2.4vw, 32px); line-height: 1; margin: 0; font-weight: 400; }
 .inv-head .meta { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; }
 .inv-h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 88px); line-height: 1; letter-spacing: -.01em; margin: 0; max-width: 14ch; }
 .inv-h1 em { font-style: italic; color: var(--laiton-deep); }
@@ -107,6 +108,45 @@
 .inv-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 @media (max-width: 720px) { .inv-form .row2 { grid-template-columns: 1fr; } }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Investissement immobilier clé en main",
+  "name": "Investir — Maison Maray",
+  "description": "Sourcing off-market, faisabilité, transformation, valorisation, gestion locative. Une seule signature, de l'achat à la première quittance de loyer.",
+  "url": "https://maisonmaray.com/investir.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Maison Maray",
+    "url": "https://maisonmaray.com/",
+    "logo": "https://maisonmaray.com/assets/logo-mark.png",
+    "address": { "@type": "PostalAddress", "streetAddress": "58 rue de Monceau", "postalCode": "75008", "addressLocality": "Paris", "addressCountry": "FR" }
+  },
+  "areaServed": { "@type": "City", "name": "Paris" },
+  "inLanguage": "fr-FR",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prestations Investir",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sourcing off-market", "description": "Trois critères non-négociables. 80 % des biens présentés sont off-market." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Faisabilité", "description": "Étude technique : état des lieux structurel, faisabilité réglementaire, chiffrage figé, projection locative à 36 mois." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transformation", "description": "Conception, maîtrise d'œuvre et mobilier sur-mesure intégrés. Réception en propre, OPR, levée des réserves." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Valorisation et gestion", "description": "Mise sur le marché ou gestion locative haut de gamme par notre conciergerie partenaire." } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://maisonmaray.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Investir" }
+  ]
+}
+</script>
 </head>
 <body data-screen-label="Investir">
 
@@ -130,7 +170,7 @@
 <!-- HERO — Numbers first -->
 <section class="bg-ivoire inv-hero-v2">
   <div class="inv-head">
-    <span class="eyebrow">Parcours · Investir</span>
+    <p class="title">Parcours · Investir</p>
   </div>
 
   <h1 class="inv-h1">Acheter. Transformer.<br><em>Valoriser.</em></h1>

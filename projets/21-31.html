@@ -12,14 +12,26 @@
 <meta property="og:title" content="Projet 21-31 — Paris 15ᵉ — Maison Maray">
 <meta property="og:description" content="Quai André-Citroën. Un appartement reconfiguré pour la lumière du sud-ouest et la vue sur la Seine.">
 <meta property="og:url" content="https://maisonmaray.com/projets/21-31.html">
-<meta property="og:image" content="https://maisonmaray.com/projets/assets/selection-web/21-31/61903-quai-andre-citroen-26.jpg">
+<meta property="og:image" content="https://maisonmaray.com/projets/assets/selection-web/21-31/SEJOUR7.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maisonmaray.com/projets/assets/selection-web/21-31/61903-quai-andre-citroen-26.jpg">
+<meta name="twitter:image" content="https://maisonmaray.com/projets/assets/selection-web/21-31/SEJOUR7.jpg">
 <link rel="icon" href="../assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://maisonmaray.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Projets", "item": "https://maisonmaray.com/projets.html" },
+    { "@type": "ListItem", "position": 3, "name": "Projet 21-31" }
+  ]
+}
+</script>
+
 <style>
 .project-hero { position: relative; height: 100vh; min-height: 720px; }
 .project-hero .img-fill { filter: brightness(.78); }
@@ -36,25 +48,52 @@
 
 .story { display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); padding: clamp(72px, 9vw, 160px) 0; }
 .story h2.display { max-width: 14ch; }
-.story .body { display: grid; gap: 24px; max-width: 60ch; font-size: 17px; line-height: 1.65; }
+.story .body { display: grid; gap: 24px; max-width: 60ch; font-size: 17px; line-height: 1.65; text-align: justify; hyphens: auto; }
 .story .body p { margin: 0; }
 .story .body p:first-of-type::first-letter { font-family: var(--font-display); font-size: 4.5em; line-height: 0.85; float: left; padding: 6px 12px 0 0; font-style: italic; color: var(--laiton-deep); }
 @media (max-width: 880px) { .story { grid-template-columns: 1fr; } }
 
-.gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; padding-block: clamp(48px, 7vw, 120px); }
-.gallery .g { overflow: hidden; }
-.gallery .g img { width: 100%; height: 100%; object-fit: cover; }
-.g-1 { grid-column: 1 / 8; aspect-ratio: 4/3; }
-.g-2 { grid-column: 8 / 13; aspect-ratio: 4/5; align-self: end; }
-.g-3 { grid-column: 1 / 5; aspect-ratio: 4/5; }
-.g-4 { grid-column: 5 / 13; aspect-ratio: 16/9; align-self: center; }
-.g-5 { grid-column: 1 / 13; aspect-ratio: 21/9; }
-.g-6 { grid-column: 1 / 7; aspect-ratio: 1/1; }
-.g-7 { grid-column: 7 / 13; aspect-ratio: 1/1; }
-@media (max-width: 880px) { .gallery .g { grid-column: 1 / -1 !important; aspect-ratio: 4/3 !important; } }
+.gallery-rooms { padding-block: clamp(48px, 7vw, 120px); display: grid; gap: clamp(64px, 8vw, 120px); }
+.room { display: grid; gap: 24px; }
+.room-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; opacity: .55; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.room-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.room-grid .g { overflow: hidden; box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08); transition: box-shadow .5s var(--ease), transform .5s var(--ease); }
+.room-grid .g:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); transform: translateY(-2px); }
+.room-grid .g img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s var(--ease); cursor: zoom-in; }
+.room-grid .g:hover img { transform: scale(1.03); }
+.g-hero { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+.g-wide { grid-column: 1 / -1; aspect-ratio: 21 / 9; }
+.g-large { grid-column: span 8; aspect-ratio: 4 / 3; }
+.g-tall { grid-column: span 4; aspect-ratio: 4 / 5; }
+.g-half { grid-column: span 6; aspect-ratio: 4 / 3; }
+.g-third { grid-column: span 4; aspect-ratio: 1 / 1; }
+@media (max-width: 880px) { .room-grid .g { grid-column: 1 / -1 !important; aspect-ratio: 4/3 !important; } }
+
+/* ===== LIGHTBOX — fine art print aesthetic ===== */
+.lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(15, 10, 7, .96); display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity .35s var(--ease); }
+.lightbox.is-open { display: flex; opacity: 1; }
+.lightbox-stage { position: relative; display: flex; align-items: center; justify-content: center; max-width: 92vw; max-height: 82vh; }
+.lightbox-frame { background: var(--ivoire); padding: clamp(14px, 1.6vw, 22px) clamp(14px, 1.6vw, 22px) clamp(36px, 4vw, 56px); box-shadow: 0 60px 140px rgba(0,0,0,.55), 0 20px 40px rgba(0,0,0,.4); display: inline-block; max-width: 100%; max-height: 100%; }
+.lightbox-frame img { display: block; max-width: calc(92vw - 44px); max-height: calc(82vh - 92px); width: auto; height: auto; object-fit: contain; }
+.lightbox-caption { display: block; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--noyer); opacity: .55; margin-top: 14px; text-align: center; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lightbox-close, .lightbox-prev, .lightbox-next { position: absolute; background: transparent; border: 1px solid rgba(245, 241, 234, .28); color: var(--ivoire); cursor: pointer; transition: background .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease); font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.1em; display: flex; align-items: center; justify-content: center; }
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover { background: rgba(245, 241, 234, .08); border-color: var(--ivoire); }
+.lightbox-close { top: 24px; right: 24px; width: 44px; height: 44px; font-size: 22px; z-index: 2; }
+.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); width: 56px; height: 56px; }
+.lightbox-prev { left: 24px; } .lightbox-next { right: 24px; }
+.lightbox-counter { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.28em; color: var(--ivoire); opacity: .55; }
+.lightbox-counter .sep { margin: 0 8px; opacity: .55; }
+@media (max-width: 720px) {
+  .lightbox-prev, .lightbox-next { width: 44px; height: 44px; }
+  .lightbox-prev { left: 12px; } .lightbox-next { right: 12px; }
+  .lightbox-close { top: 12px; right: 12px; }
+  .lightbox-frame { padding: 10px 10px 28px; }
+  .lightbox-frame img { max-width: calc(92vw - 28px); max-height: calc(82vh - 68px); }
+}
 
 .before-after-block { padding-block: clamp(72px, 9vw, 140px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); }
-.before-after { position: relative; aspect-ratio: 16 / 10; user-select: none; cursor: ew-resize; overflow: hidden; }
+.before-after { position: relative; aspect-ratio: 16 / 10; user-select: none; cursor: ew-resize; overflow: hidden; border: 1px solid var(--noyer); box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08); transition: box-shadow .5s var(--ease); }
+.before-after:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); }
 .before-after img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .before-after .ba-after { clip-path: inset(0 0 0 50%); }
 .before-after .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--ivoire); transform: translateX(-50%); }
@@ -66,17 +105,10 @@
 .before-after .lab.r { right: 16px; }
 @media (max-width: 880px) { .before-after-block { grid-template-columns: 1fr; } }
 
-.client-quote { padding-block: clamp(72px, 9vw, 140px); }
-.client-quote blockquote { font-family: var(--font-display); font-style: italic; font-size: clamp(32px, 4.5vw, 64px); line-height: 1.1; max-width: 22ch; margin: 0; }
-.client-quote .who { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .65; margin-top: 24px; }
 
-.credits { padding-block: clamp(56px, 8vw, 120px); display: grid; grid-template-columns: 200px 1fr; gap: clamp(32px, 5vw, 96px); border-top: 1px solid var(--rule); }
-.credits ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px 48px; }
-.credits dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: .55; margin-bottom: 4px; }
-.credits dd { margin: 0; }
-@media (max-width: 880px) { .credits { grid-template-columns: 1fr; } .credits ul { grid-template-columns: 1fr; } }
-
-.next-project { display: block; position: relative; height: 70vh; overflow: hidden; color: var(--ivoire); text-decoration: none; }
+.next-project { display: block; position: relative; height: 70vh; overflow: hidden; color: var(--ivoire); text-decoration: none; border: 1px solid var(--noyer); box-shadow: 0 14px 40px rgba(42, 31, 24, 0.14), 0 4px 12px rgba(42, 31, 24, 0.08); margin: clamp(32px, 4vw, 64px) var(--gutter-d) clamp(48px, 6vw, 96px); transition: box-shadow .5s var(--ease); }
+.next-project:hover { box-shadow: 0 22px 60px rgba(42, 31, 24, 0.20), 0 6px 16px rgba(42, 31, 24, 0.10); }
+@media (max-width: 720px) { .next-project { margin-inline: var(--gutter-m); } }
 .next-project .img-fill { filter: brightness(.6); transition: transform 1.4s var(--ease), filter 1.4s var(--ease); }
 .next-project:hover .img-fill { transform: scale(1.03); filter: brightness(.7); }
 .next-project .nf { position: absolute; inset: auto 0 0 0; padding: clamp(48px, 6vw, 96px) var(--gutter-d); display: grid; gap: 14px; }
@@ -106,7 +138,7 @@
 
 <!-- HERO -->
 <section class="project-hero">
-  <img class="img-fill" alt="Projet 21-31 — vue d'ensemble" src="../assets/selection-web/21-31/61903-quai-andre-citroen-26.jpg">
+  <img class="img-fill" alt="Projet 21-31 — vue d'ensemble du séjour" src="../assets/selection-web/21-31/SEJOUR7.jpg">
   <div class="frame">
     <span class="eyebrow" style="color:var(--ivoire); opacity:.85">Projet · 21-31</span>
     <h1 class="display italic-mix">Projet <em>21-31.</em></h1>
@@ -143,17 +175,69 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY · pièce par pièce -->
 <section class="bg-ivoire">
   <div class="container">
-    <div class="gallery">
-      <div class="g g-1 img-hover reveal"><img alt="21-31 · vue 1" src="../assets/selection-web/21-31/IMG_8919.jpg" loading="lazy"></div>
-      <div class="g g-2 img-hover reveal delay-1"><img alt="21-31 · vue 2" src="../assets/selection-web/21-31/EFD6DCD8-7246-482C-8C09-5AEDEAB1D564.jpg" loading="lazy"></div>
-      <div class="g g-3 img-hover reveal"><img alt="21-31 · vue 3" src="../assets/selection-web/21-31/61903-quai-andre-citroen-11.jpg" loading="lazy"></div>
-      <div class="g g-4 img-hover reveal delay-1"><img alt="21-31 · vue 4" src="../assets/selection-web/21-31/61903-quai-andre-citroen-13.jpg" loading="lazy"></div>
-      <div class="g g-5 img-hover reveal"><img alt="21-31 · vue 5" src="../assets/selection-web/21-31/61903-quai-andre-citroen-5.jpg" loading="lazy"></div>
-      <div class="g g-6 img-hover reveal"><img alt="21-31 · vue 6" src="../assets/selection-web/21-31/61903-quai-andre-citroen-1.jpg" loading="lazy"></div>
-      <div class="g g-7 img-hover reveal delay-1"><img alt="21-31 · vue 7" src="../assets/selection-web/21-31/61903-quai-andre-citroen-6.jpg" loading="lazy"></div>
+    <div class="gallery-rooms">
+
+      <!-- ENTRÉE -->
+      <div class="room reveal">
+        <span class="room-label">— Entrée</span>
+        <div class="room-grid">
+          <div class="g g-half"><img alt="21-31 · entrée, vue 1" src="../assets/selection-web/21-31/ENTREE1.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · entrée, vue 2" src="../assets/selection-web/21-31/ENTREE2.jpg" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- SÉJOUR -->
+      <div class="room reveal">
+        <span class="room-label">— Séjour</span>
+        <div class="room-grid">
+          <div class="g g-hero"><img alt="21-31 · séjour, vue d'ensemble" src="../assets/selection-web/21-31/SEJOUR1.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · séjour, vue 2" src="../assets/selection-web/21-31/SEJOUR2.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · séjour, vue 3" src="../assets/selection-web/21-31/SEJOUR3.jpg" loading="lazy"></div>
+          <div class="g g-large"><img alt="21-31 · séjour, vue 4" src="../assets/selection-web/21-31/SEJOUR4.jpg" loading="lazy"></div>
+          <div class="g g-tall"><img alt="21-31 · séjour, vue 5" src="../assets/selection-web/21-31/SEJOUR5.jpg" loading="lazy"></div>
+          <div class="g g-wide"><img alt="21-31 · séjour, vue 6" src="../assets/selection-web/21-31/SEJOUR6.jpg" loading="lazy"></div>
+          <div class="g g-third"><img alt="21-31 · séjour, détail 1" src="../assets/selection-web/21-31/SEJOUR7.jpg" loading="lazy"></div>
+          <div class="g g-third"><img alt="21-31 · séjour, détail 2" src="../assets/selection-web/21-31/SEJOUR8.jpg" loading="lazy"></div>
+          <div class="g g-third"><img alt="21-31 · séjour, détail 3" src="../assets/selection-web/21-31/SEJOUR9.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · séjour, vue 10" src="../assets/selection-web/21-31/SEJOUR10.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · séjour, vue 11" src="../assets/selection-web/21-31/SEJOUR11.jpg" loading="lazy"></div>
+          <div class="g g-wide"><img alt="21-31 · séjour, vue 12" src="../assets/selection-web/21-31/SEJOUR12.jpg" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- CHAMBRES -->
+      <div class="room reveal">
+        <span class="room-label">— Chambres</span>
+        <div class="room-grid">
+          <div class="g g-large"><img alt="21-31 · chambre, vue d'ensemble" src="../assets/selection-web/21-31/CHAMBRE1.jpg" loading="lazy"></div>
+          <div class="g g-tall"><img alt="21-31 · chambre, vue 2" src="../assets/selection-web/21-31/CHAMBRE2.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · chambre, vue 3" src="../assets/selection-web/21-31/CHAMBRE3.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · chambre, vue 4" src="../assets/selection-web/21-31/CHAMBRE4.jpg" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- SALLE DE BAIN -->
+      <div class="room reveal">
+        <span class="room-label">— Salle de bain</span>
+        <div class="room-grid">
+          <div class="g g-large"><img alt="21-31 · salle de bain, vue d'ensemble" src="../assets/selection-web/21-31/SDB1.jpg" loading="lazy"></div>
+          <div class="g g-tall"><img alt="21-31 · salle de bain, vue 2" src="../assets/selection-web/21-31/SDB2.jpg" loading="lazy"></div>
+          <div class="g g-wide"><img alt="21-31 · salle de bain, vue 3" src="../assets/selection-web/21-31/SDB3.jpg" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- EXTÉRIEUR -->
+      <div class="room reveal">
+        <span class="room-label">— Extérieur</span>
+        <div class="room-grid">
+          <div class="g g-half"><img alt="21-31 · extérieur, vue 1" src="../assets/selection-web/21-31/EXT1.jpg" loading="lazy"></div>
+          <div class="g g-half"><img alt="21-31 · extérieur, vue 2" src="../assets/selection-web/21-31/EXT2.jpg" loading="lazy"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -166,40 +250,18 @@
       <h3 class="display reveal" style="margin-top: 16px; max-width: 14ch;">Avant le projet, après la livraison.</h3>
       <p class="reveal delay-1" style="margin-top: 16px; max-width: 36ch;">Faites glisser pour comparer deux moments du projet.</p>
     </div>
-    <div class="before-after reveal delay-1" data-ba>
-      <img class="ba-before" alt="Avant" src="../assets/selection-web/21-31/EFD6DCD8-7246-482C-8C09-5AEDEAB1D564.jpg" loading="lazy">
-      <img class="ba-after" alt="Après" src="../assets/selection-web/21-31/61903-quai-andre-citroen-11.jpg" loading="lazy">
+    <div class="before-after reveal delay-1" data-ba style="aspect-ratio: 4 / 5; max-width: 640px; width: 100%; justify-self: start;">
+      <img class="ba-before" alt="21-31 · 5 pièces Paris 15ᵉ avant transformation" src="../assets/selection-web/21-31/IMG_7201.jpg" style="object-position: 50% 50%;" loading="lazy">
+      <img class="ba-after" alt="21-31 · 5 pièces Paris 15ᵉ après transformation par Maison Maray" src="../assets/selection-web/21-31/IMG_8921.jpg" style="object-position: 40% 50%;" loading="lazy">
       <span class="lab l">Avant</span><span class="lab r">Après</span>
       <span class="ba-handle"></span>
     </div>
   </div>
 </section>
 
-<!-- CLIENT QUOTE -->
-<section class="bg-travertin">
-  <div class="container client-quote">
-    <span class="eyebrow reveal">Le mot du propriétaire</span>
-    <blockquote class="display reveal delay-1" style="margin-top: 24px;">« Le quai retrouve sa place dans notre quotidien. »</blockquote>
-    <p class="who reveal delay-2">— Propriétaire, livraison 2024</p>
-  </div>
-</section>
-
-<!-- CREDITS -->
-<section class="bg-ivoire">
-  <div class="container credits">
-    <span class="eyebrow">Crédits</span>
-    <ul>
-      <li><dt>Direction artistique</dt><dd>Mohamed Maray</dd></li>
-      <li><dt>Ébénisterie</dt><dd>Atelier partenaire</dd></li>
-      <li><dt>Maçonnerie</dt><dd>Entreprise partenaire</dd></li>
-      <li><dt>Photographie</dt><dd>—</dd></li>
-    </ul>
-  </div>
-</section>
-
 <!-- NEXT PROJECT -->
 <a class="next-project img-hover" href="22-11.html">
-  <img class="img-fill" alt="Projet 22-11" src="../assets/selection-web/22-11/DJI_20250727_185510_430.jpg" loading="lazy">
+  <img class="img-fill" alt="Projet 22-11" src="../assets/selection-web/22-11/SEJOUR7BIS.jpg" loading="lazy">
   <div class="nf">
     <span class="label">Projet suivant · 22-11</span>
     <h3 class="display">22-11.<span style="opacity:.6"> →</span></h3>
@@ -219,6 +281,76 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="projLightbox" role="dialog" aria-modal="true" aria-label="Visionneuse photo">
+  <button class="lightbox-close" aria-label="Fermer">×</button>
+  <button class="lightbox-prev" aria-label="Photo précédente">←</button>
+  <button class="lightbox-next" aria-label="Photo suivante">→</button>
+  <div class="lightbox-stage">
+    <figure class="lightbox-frame">
+      <img alt="">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+  <span class="lightbox-counter"><span class="cur">01</span><span class="sep">/</span><span class="tot">01</span></span>
+</div>
+
 <script src="../assets/site.js"></script>
+<script>
+(() => {
+  const triggers = Array.from(document.querySelectorAll('.room-grid .g img'));
+  if (!triggers.length) return;
+  const lb = document.getElementById('projLightbox');
+  const lbImg = lb.querySelector('.lightbox-frame img');
+  const lbCap = lb.querySelector('.lightbox-caption');
+  const lbCur = lb.querySelector('.cur');
+  const lbTot = lb.querySelector('.tot');
+  let idx = 0;
+  lbTot.textContent = String(triggers.length).padStart(2, '0');
+  function show(n) {
+    if (n < 0) n = triggers.length - 1;
+    if (n >= triggers.length) n = 0;
+    idx = n;
+    lbImg.src = triggers[n].src;
+    lbImg.alt = triggers[n].alt || '';
+    lbCap.textContent = triggers[n].alt || '';
+    lbCur.textContent = String(n + 1).padStart(2, '0');
+  }
+  function open(n) { show(n); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('is-open'); document.body.style.overflow = ''; }
+  triggers.forEach((img, i) => img.addEventListener('click', () => open(i)));
+  lb.querySelector('.lightbox-close').addEventListener('click', close);
+  lb.querySelector('.lightbox-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+  lb.querySelector('.lightbox-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+
+// Auto-sync next-project image with the target page's hero (server-fetched)
+(async () => {
+  const next = document.querySelector('.next-project');
+  if (!next) return;
+  const img = next.querySelector('img.img-fill');
+  if (!img) return;
+  try {
+    const res = await fetch(next.href, { cache: 'no-cache' });
+    if (!res.ok) return;
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const heroImg = doc.querySelector('.project-hero img.img-fill');
+    const src = heroImg && heroImg.getAttribute('src');
+    if (src) {
+      img.src = src;
+      const alt = heroImg.getAttribute('alt');
+      if (alt) img.alt = alt;
+    }
+  } catch (e) { /* fallback to hardcoded image */ }
+})();
+</script>
 </body>
 </html>

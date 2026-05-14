@@ -607,27 +607,23 @@
         <li>58 rue de Monceau, 75008 Paris</li>
       </ul>
     </div>
-    <div class="calendly reveal delay-2" aria-label="Sélectionner un créneau">
+    <div class="calendly reveal delay-2" data-cal aria-label="Sélectionner un créneau">
       <div class="cal-head">
-        <span class="eyebrow">Calendly · placeholder</span>
+        <span class="eyebrow">Réserver un rendez-vous</span>
         <h3>Sélectionner un créneau</h3>
       </div>
       <div class="cal-month">
-        <span>Mai 2026</span>
-        <div class="cal-arrows"><button aria-label="Précédent">‹</button><button aria-label="Suivant">›</button></div>
+        <span data-cal-label>—</span>
+        <div class="cal-arrows">
+          <button type="button" data-cal-prev aria-label="Mois précédent">‹</button>
+          <button type="button" data-cal-next aria-label="Mois suivant">›</button>
+        </div>
       </div>
-      <div class="cal-grid" role="grid">
-        <span class="dn">L</span><span class="dn">M</span><span class="dn">M</span><span class="dn">J</span><span class="dn">V</span><span class="dn">S</span><span class="dn">D</span>
-        <span class="d off">28</span><span class="d off">29</span><span class="d off">30</span><span class="d">1</span><span class="d">2</span><span class="d off">3</span><span class="d off">4</span>
-        <span class="d">5</span><span class="d">6</span><span class="d sel">7</span><span class="d">8</span><span class="d">9</span><span class="d off">10</span><span class="d off">11</span>
-        <span class="d">12</span><span class="d">13</span><span class="d">14</span><span class="d">15</span><span class="d">16</span><span class="d off">17</span><span class="d off">18</span>
-        <span class="d">19</span><span class="d">20</span><span class="d">21</span><span class="d">22</span><span class="d">23</span><span class="d off">24</span><span class="d off">25</span>
-        <span class="d">26</span><span class="d">27</span><span class="d">28</span><span class="d">29</span><span class="d">30</span><span class="d off">31</span><span class="d off">1</span>
+      <div class="cal-grid" data-cal-grid role="grid"></div>
+      <div class="cal-slots" data-cal-slots>
+        <button type="button">09:30</button><button type="button">11:00</button><button type="button">14:00</button><button type="button">15:30</button><button type="button">17:00</button>
       </div>
-      <div class="cal-slots">
-        <button>09:30</button><button>11:00</button><button class="on">14:00</button><button>15:30</button><button>17:00</button>
-      </div>
-      <button class="btn btn-solid cal-confirm">Confirmer le créneau <span class="arr"></span></button>
+      <button type="button" class="btn btn-solid cal-confirm" data-cal-confirm>Confirmer le créneau <span class="arr"></span></button>
     </div>
   </div>
 </section>
@@ -642,9 +638,10 @@
 .cal-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 24px; flex-wrap: wrap; gap: 8px; }
 .cal-head h3 { font-family: var(--font-display); font-size: 24px; margin: 0; font-weight: 400; }
 .cal-month { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
-.cal-arrows button { border: 0; background: none; font-size: 20px; padding: 0 8px; }
+.cal-arrows button { border: 0; background: none; font-size: 20px; padding: 0 8px; cursor: pointer; transition: opacity .2s var(--ease); }
+.cal-arrows button:disabled { opacity: .2; cursor: default; }
 .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 16px 0; text-align: center; font-size: 13px; }
-.cal-grid .dn { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .55; padding-bottom: 8px; }
+.cal-grid .dow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .55; padding-bottom: 8px; }
 .cal-grid .d { padding: 10px 0; cursor: pointer; transition: background .2s var(--ease); border: 1px solid transparent; }
 .cal-grid .d:hover { border-color: var(--noyer); }
 .cal-grid .d.off { opacity: .25; pointer-events: none; }
@@ -704,6 +701,7 @@
 </footer>
 
 <script src="assets/site.js"></script>
+<script src="assets/forms.js"></script>
 <script type="module">
   import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11.18.0/+esm";
 

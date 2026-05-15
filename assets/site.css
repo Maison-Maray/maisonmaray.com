@@ -576,9 +576,27 @@ section { position: relative; }
 .site-header:not(.scrolled):not(.solid) .lang-pill:hover,
 .site-header:not(.scrolled):not(.solid) .lang-pill.is-active { background: var(--ivoire); color: var(--noyer) !important; border-color: var(--ivoire); }
 @media (max-width: 880px) {
-  .lang-switch { margin-right: 12px; padding-right: 12px; }
-  .lang-pill { padding: 6px 10px; font-size: 11px; }
+  /* Hide desktop header pastilles on mobile — they crowd the brand+burger row.
+     The mobile-menu version (.lang-switch-mobile, below) takes over. */
+  .site-header .nav .lang-switch:not(.lang-switch-mobile) { display: none; }
 }
+
+/* ===== Mobile menu language switcher ===== */
+.lang-switch-mobile {
+  margin: 32px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--rule);
+  border-right: 0;
+  border-left: 0;
+  justify-content: center;
+  gap: 14px;
+}
+.lang-switch-mobile .lang-pill {
+  font-size: 13px;
+  padding: 12px 20px;
+  letter-spacing: 0.24em;
+}
+html[dir="rtl"] .lang-switch-mobile { margin-left: 0; padding-left: 0; }
 
 /* ===== RTL adjustments for Arabic pages =====
    Markazi Text + Noto Naskh Arabic render visually ~25-30% smaller
@@ -636,5 +654,5 @@ html[dir="rtl"] .btn { font-size: 16px !important; }
 html[dir="rtl"] .link-line { font-size: 16px !important; }
 html[dir="rtl"] .maison-role { font-size: 16px !important; }
 
-html[dir="rtl"] .lang-switch { margin-right: 0; margin-left: 18px; padding-right: 0; padding-left: 18px; border-right: 0; border-left: 1px solid var(--rule); }
+html[dir="rtl"] .lang-switch:not(.lang-switch-mobile) { margin-right: 0; margin-left: 18px; padding-right: 0; padding-left: 18px; border-right: 0; border-left: 1px solid var(--rule); }
 html[dir="rtl"] .lang-pill { font-size: 13px; padding: 8px 13px; }

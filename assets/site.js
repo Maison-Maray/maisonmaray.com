@@ -142,6 +142,7 @@
       return '<a class="lang-pill' + active + '" href="' + urlFor(lang) + '" aria-label="' + aria[lang] + '" hreflang="' + lang + '">' + labels[lang] + '</a>';
     }
 
+    // Desktop: pastilles in header nav
     const navs = document.querySelectorAll('.site-header .nav');
     navs.forEach(nav => {
       if (nav.querySelector('.lang-switch')) return;
@@ -150,6 +151,18 @@
       switcher.innerHTML = pill('fr') + pill('en') + pill('ar');
       const firstLink = nav.querySelector('.nav-link');
       if (firstLink) nav.insertBefore(switcher, firstLink); else nav.insertBefore(switcher, nav.firstChild);
+    });
+
+    // Mobile: pastilles inside the mobile menu (one extra tap but more prominent + tactile)
+    const mobileMenus = document.querySelectorAll('.mobile-menu');
+    mobileMenus.forEach(menu => {
+      if (menu.querySelector('.lang-switch-mobile')) return;
+      const switcher = document.createElement('div');
+      switcher.className = 'lang-switch lang-switch-mobile';
+      switcher.innerHTML = pill('fr') + pill('en') + pill('ar');
+      const links = menu.querySelector('.links');
+      if (links) links.insertAdjacentElement('afterend', switcher);
+      else menu.appendChild(switcher);
     });
   })();
 })();

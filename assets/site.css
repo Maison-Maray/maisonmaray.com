@@ -575,10 +575,46 @@ section { position: relative; }
 .site-header:not(.scrolled):not(.solid) .lang-pill { border-color: rgba(245, 241, 234, 0.4); color: var(--ivoire); }
 .site-header:not(.scrolled):not(.solid) .lang-pill:hover,
 .site-header:not(.scrolled):not(.solid) .lang-pill.is-active { background: var(--ivoire); color: var(--noyer) !important; border-color: var(--ivoire); }
+/* Compact pastilles on smaller widths — they stay visible next to the burger,
+   just smaller. The mobile-menu version (.lang-switch-mobile) is a backup
+   for tactile/big-finger access from the burger menu. */
 @media (max-width: 880px) {
-  /* Hide desktop header pastilles on mobile — they crowd the brand+burger row.
-     The mobile-menu version (.lang-switch-mobile, below) takes over. */
-  .site-header .nav .lang-switch:not(.lang-switch-mobile) { display: none; }
+  .site-header .nav .lang-switch:not(.lang-switch-mobile) {
+    gap: 4px;
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+  .site-header .nav .lang-switch:not(.lang-switch-mobile) .lang-pill {
+    padding: 5px 8px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+}
+@media (max-width: 540px) {
+  /* Phone-size: drop the right border separator to save horizontal space */
+  .site-header .nav .lang-switch:not(.lang-switch-mobile) {
+    gap: 3px;
+    margin-right: 6px;
+    padding-right: 6px;
+    border-right: 0;
+  }
+  .site-header .nav .lang-switch:not(.lang-switch-mobile) .lang-pill {
+    padding: 4px 7px;
+    font-size: 10px;
+  }
+}
+/* RTL mirror: margin/padding/border on the opposite side at compact sizes */
+@media (max-width: 880px) {
+  html[dir="rtl"] .site-header .nav .lang-switch:not(.lang-switch-mobile) {
+    margin-right: 0; margin-left: 10px;
+    padding-right: 0; padding-left: 10px;
+  }
+}
+@media (max-width: 540px) {
+  html[dir="rtl"] .site-header .nav .lang-switch:not(.lang-switch-mobile) {
+    margin-left: 6px; padding-left: 6px;
+    border-left: 0;
+  }
 }
 
 /* ===== Mobile menu language switcher ===== */

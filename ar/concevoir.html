@@ -1,33 +1,46 @@
 <!doctype html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Concevoir avec Maison Maray, Design d'intérieur & rénovation, Maison Maray</title>
-<meta name="description" content="Quatre temps, un seul interlocuteur. De la rencontre à la pose du dernier meuble.">
-<link rel="canonical" href="https://maisonmaray.com/concevoir.html">
+<title>التصميم مع Maison Maray, التصميم الداخلي والترميم, Maison Maray</title>
+<meta name="description" content="أربعة أزمنة، محاورٌ واحد. من اللقاء الأوّل إلى وضع آخر قطعة أثاث.">
+<link rel="canonical" href="https://maisonmaray.com/ar/concevoir.html">
 <link rel="alternate" hreflang="fr" href="https://maisonmaray.com/concevoir.html">
 <link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/concevoir.html">
 <link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/concevoir.html">
 <link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/concevoir.html">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
-<meta property="og:locale:alternate" content="ar_SA">
 <meta property="og:site_name" content="Maison Maray">
-<meta property="og:title" content="Concevoir avec Maison Maray, Design d'intérieur & rénovation">
-<meta property="og:description" content="Quatre temps, un seul interlocuteur. De la rencontre à la pose du dernier meuble.">
-<meta property="og:url" content="https://maisonmaray.com/concevoir.html">
+<meta property="og:title" content="التصميم مع Maison Maray, التصميم الداخلي والترميم">
+<meta property="og:description" content="أربعة أزمنة، محاورٌ واحد. من اللقاء الأوّل إلى وضع آخر قطعة أثاث.">
+<meta property="og:url" content="https://maisonmaray.com/ar/concevoir.html">
 <meta property="og:image" content="https://maisonmaray.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://maisonmaray.com/assets/og.jpg">
-<link rel="icon" href="assets/logo-mark.png">
+<link rel="icon" href="/assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Markazi+Text:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 
 <style>
+/* ============ RTL OVERRIDES ============ */
+html[dir="rtl"] {
+  --font-display: 'Markazi Text', 'Noto Naskh Arabic', 'Cormorant Garamond', Georgia, serif;
+}
+html[dir="rtl"] body, html[dir="rtl"] p, html[dir="rtl"] li, html[dir="rtl"] a,
+html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 { font-family: 'Markazi Text', 'Noto Naskh Arabic', 'Cormorant Garamond', Georgia, serif; }
+html[dir="rtl"] .eyebrow, html[dir="rtl"] .cv-eyebrow, html[dir="rtl"] .cv-when,
+html[dir="rtl"] .cv-top .meta, html[dir="rtl"] .cv-top .title .num,
+html[dir="rtl"] .cv-heading .lede, html[dir="rtl"] .cv-list { font-family: 'JetBrains Mono', 'Noto Naskh Arabic', monospace; letter-spacing: 0.12em; }
+html[dir="rtl"] .display, html[dir="rtl"] .cv-step h2, html[dir="rtl"] .cv-end h2,
+html[dir="rtl"] .cv-heading h1 { font-weight: 500; line-height: 1.25; }
+html[dir="rtl"] .arr { transform: scaleX(-1); }
+
 /* ============ TIMELINE, vertical zigzag ============ */
 
 /* Compact top bar */
@@ -39,10 +52,10 @@
 
 /* Heading */
 .cv-heading { padding: clamp(48px, 7vw, 96px) var(--gutter-d) clamp(24px, 4vw, 48px); text-align: center; }
-@media (max-width: 720px) { .cv-heading { padding-inline: var(--gutter-m); text-align: left; } }
-.cv-heading h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 5.4vw, 88px); line-height: 1; letter-spacing: -.01em; margin: 0 auto; max-width: 18ch; }
+@media (max-width: 720px) { .cv-heading { padding-inline: var(--gutter-m); text-align: right; } }
+.cv-heading h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(40px, 5.4vw, 88px); line-height: 1.15; letter-spacing: 0; margin: 0 auto; max-width: 22ch; }
 .cv-heading h1 em { font-style: italic; }
-.cv-heading .lede { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; opacity: .55; margin: clamp(20px, 3vw, 32px) auto 0; max-width: 56ch; }
+.cv-heading .lede { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; opacity: .55; margin: clamp(20px, 3vw, 32px) auto 0; max-width: 64ch; }
 
 /* Timeline frame */
 .cv-timeline { position: relative; max-width: 1100px; margin: 0 auto; padding: clamp(40px, 5vw, 80px) var(--gutter-d) clamp(48px, 6vw, 96px); }
@@ -67,7 +80,7 @@
   transition: height .12s linear;
 }
 @media (max-width: 880px) {
-  .cv-line { left: 22px; transform: none; }
+  .cv-line { left: auto; right: 22px; transform: none; }
 }
 
 /* Each step */
@@ -123,28 +136,27 @@
 .cv-eyebrow {
   font-family: var(--font-mono);
   font-size: 11.5px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
   opacity: .55;
 }
 
 .cv-step h2 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(28px, 3.4vw, 48px);
-  line-height: 1.05;
-  letter-spacing: -.01em;
+  line-height: 1.2;
+  letter-spacing: 0;
   margin: 0;
-  max-width: 14ch;
+  max-width: 18ch;
 }
 .cv-step h2 em { font-style: italic; color: var(--laiton-deep); }
 
 .cv-step p {
-  font-size: clamp(14px, 1vw, 16px);
-  line-height: 1.6;
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.75;
   margin: 4px 0 0;
   opacity: .85;
-  max-width: 38ch;
+  max-width: 44ch;
 }
 
 .cv-list {
@@ -168,8 +180,7 @@
 .cv-when {
   font-family: var(--font-mono);
   font-size: 10.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
   opacity: .45;
 }
 
@@ -193,21 +204,21 @@
   .cv-sketch svg * { stroke-dasharray: none; stroke-dashoffset: 0; transition: none; }
 }
 
-/* Mobile: collapse to single column with line on the left */
+/* Mobile: collapse to single column with line on the right (RTL) */
 @media (max-width: 880px) {
-  .cv-step { grid-template-columns: 44px 1fr; padding: clamp(40px, 8vw, 64px) 0; }
+  .cv-step { grid-template-columns: 1fr 44px; padding: clamp(40px, 8vw, 64px) 0; }
   .cv-step.left .cv-content,
-  .cv-step.right .cv-content { grid-column: 2; text-align: left; align-items: flex-start; padding-left: 24px; padding-right: 0; }
-  .cv-step .cv-node-wrap { grid-column: 1; justify-content: flex-start; padding-left: 13px; }
+  .cv-step.right .cv-content { grid-column: 1; text-align: right; align-items: flex-start; padding-right: 24px; padding-left: 0; }
+  .cv-step .cv-node-wrap { grid-column: 2; justify-content: flex-end; padding-right: 13px; }
   .cv-step.left .cv-list,
-  .cv-step.right .cv-list { text-align: left; }
-  .cv-step.left .cv-list li::before { margin-left: 0; margin-right: 8px; }
+  .cv-step.right .cv-list { text-align: right; }
+  .cv-step.right .cv-list li::before { margin-right: 0; margin-left: 8px; }
 }
 
 /* End CTA */
 .cv-end { padding: clamp(80px, 10vw, 140px) var(--gutter-d); text-align: center; border-top: 1px solid var(--rule); }
 @media (max-width: 720px) { .cv-end { padding-inline: var(--gutter-m); } }
-.cv-end h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; max-width: 22ch; margin: 0 auto 28px; }
+.cv-end h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(32px, 4vw, 56px); line-height: 1.25; max-width: 26ch; margin: 0 auto 28px; }
 .cv-end h2 em { font-style: italic; }
 .cv-end .ctas { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 </style>
@@ -215,30 +226,30 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Architecture d'intérieur et décoration",
-  "name": "Concevoir, Architecture d'intérieur Maison Maray",
-  "description": "Quatre temps, une seule signature : rencontre chez vous, conception, chantier, mobilier sur-mesure. De la première intention à la livraison.",
-  "url": "https://maisonmaray.com/concevoir.html",
+  "serviceType": "الهندسة الداخلية والديكور",
+  "name": "التصميم, الهندسة الداخلية لـ Maison Maray",
+  "description": "أربعة أزمنة، توقيعٌ واحد: لقاءٌ في بيتكم، تصميم، ورشة، أثاث مفصّل. من النيّة الأولى إلى التسليم.",
+  "url": "https://maisonmaray.com/ar/concevoir.html",
   "provider": {
     "@type": "Organization",
     "name": "Maison Maray",
     "url": "https://maisonmaray.com/",
     "logo": "https://maisonmaray.com/assets/logo-mark.png",
-    "address": { "@type": "PostalAddress", "streetAddress": "58 rue de Monceau", "postalCode": "75008", "addressLocality": "Paris", "addressCountry": "FR" }
+    "address": { "@type": "PostalAddress", "streetAddress": "58 rue de Monceau", "postalCode": "75008", "addressLocality": "باريس", "addressCountry": "FR" }
   },
   "areaServed": [
-    { "@type": "City", "name": "Paris" },
-    { "@type": "Country", "name": "France" }
+    { "@type": "City", "name": "باريس" },
+    { "@type": "Country", "name": "فرنسا" }
   ],
-  "inLanguage": "fr-FR",
+  "inLanguage": "ar",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Prestations Concevoir",
+    "name": "خدمات التصميم",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "La rencontre", "description": "Rendez-vous chez vous, relevé des dimensions, écoute des rituels." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "La conception", "description": "Plans, moodboards et rendus 3D immersifs." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Le chantier", "description": "Coordination des artisans, visite hebdomadaire, suivi photographique." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Le mobilier", "description": "Bibliothèques, dressings, cuisines sur-mesure. Carrelages, parquets, mobiliers : choix, commandes, réception." } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "اللقاء", "description": "موعدٌ في بيتكم، أخذ القياسات، إنصاتٌ لطقوسكم اليومية." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "التصميم", "description": "مخطّطات، ألواح أجواء، ورسوم ثلاثية الأبعاد غامرة." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "الورشة", "description": "تنسيق الحرفيّين، زيارات أسبوعية، ومتابعة فوتوغرافية." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "الأثاث", "description": "مكتبات، خزائن، مطابخ مفصّلة. بلاط، باركيه، أثاث: اختيار، طلب، استلام." } }
     ]
   }
 }
@@ -248,43 +259,43 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://maisonmaray.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Concevoir" }
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://maisonmaray.com/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "التصميم" }
   ]
 }
 </script>
 </head>
-<body data-screen-label="Concevoir">
+<body data-screen-label="التصميم">
 
 <div class="scroll-progress" aria-hidden="true"><span class="bar"></span></div>
 
 <header class="site-header scrolled" id="siteHeader">
   <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
   <nav class="nav">
-    <a href="concevoir.html" class="nav-link active">Concevoir</a>
-    <a href="investir.html" class="nav-link">Investir</a>
-    <a href="projets.html" class="nav-link">Projets</a>
-    <a href="maison.html" class="nav-link">La Maison</a>
-    <a href="blog.html" class="nav-link">Blog</a>
-    <a href="contact.html" class="cta">Prendre rendez-vous</a>
+    <a href="concevoir.html" class="nav-link active">التصميم</a>
+    <a href="investir.html" class="nav-link">الاستثمار</a>
+    <a href="projets.html" class="nav-link">المشاريع</a>
+    <a href="maison.html" class="nav-link">البيت</a>
+    <a href="blog.html" class="nav-link">المدوّنة</a>
+    <a href="contact.html" class="cta">احجز موعدًا</a>
     <button class="nav-toggle"><span></span><span></span><span></span></button>
   </nav>
 </header>
 <aside class="mobile-menu">
   <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
-  <nav class="links"><a href="concevoir.html">Concevoir</a><a href="investir.html">Investir</a><a href="projets.html">Projets</a><a href="maison.html">La Maison</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></nav>
+  <nav class="links"><a href="concevoir.html">التصميم</a><a href="investir.html">الاستثمار</a><a href="projets.html">المشاريع</a><a href="maison.html">البيت</a><a href="blog.html">المدوّنة</a><a href="contact.html">تواصل</a></nav>
 </aside>
 
 <!-- ============ TOP BAR ============ -->
 <header class="bg-ivoire cv-top">
-  <p class="title">Parcours · Concevoir<span class="num">— Méthode 2026</span></p>
-  <span class="meta">Quatre temps · Une seule signature</span>
+  <p class="title">المسار · التصميم<span class="num">— منهج 2026</span></p>
+  <span class="meta">أربعة أزمنة · توقيعٌ واحد</span>
 </header>
 
 <!-- ============ HEADING ============ -->
 <section class="bg-ivoire cv-heading">
-  <h1>De la rencontre à la <em>remise des clés.</em></h1>
-  <p class="lede">— Aucun relais. Aucun transfert. Aucun avenant surprise.</p>
+  <h1>من اللقاء الأوّل إلى <em>تسليم المفاتيح.</em></h1>
+  <p class="lede">— لا وسطاء. لا تحويلات. لا ملاحق مفاجئة.</p>
 </section>
 
 <!-- ============ TIMELINE ============ -->
@@ -303,14 +314,14 @@
         <ellipse cx="32" cy="56" rx="20" ry="2"/>
       </svg></span>
       <span class="cv-num">01</span>
-      <span class="cv-eyebrow">Premier temps</span>
-      <h2>La <em>rencontre.</em></h2>
-      <p>Avant le premier trait, rendez-vous chez vous. On relève les dimensions, on note vos rituels, on liste ce que vous tenez à garder.</p>
+      <span class="cv-eyebrow">الزمن الأوّل</span>
+      <h2><em>اللقاء.</em></h2>
+      <p>قبل أوّل خطّ، موعدٌ في بيتكم. نأخذ القياسات، نسجّل طقوسكم، ونُحصي ما تحرصون على الاحتفاظ به.</p>
       <ul class="cv-list">
-        <li>Visite des lieux et de la lumière</li>
-        <li>Brief d'usage et de style</li>
-        <li>Cadrage du budget</li>
-        <li>Avant-projet d'orientations</li>
+        <li>زيارة المكان والنور</li>
+        <li>تحديد الاستخدام والأسلوب</li>
+        <li>تأطير الميزانية</li>
+        <li>توجّهات أوّلية للمشروع</li>
       </ul>
     </div>
     <div class="cv-node-wrap"><span class="cv-node"></span></div>
@@ -329,14 +340,14 @@
         <line x1="46" y1="50" x2="50" y2="56"/>
       </svg></span>
       <span class="cv-num">02</span>
-      <span class="cv-eyebrow">Deuxième temps</span>
-      <h2>La <em>conception.</em></h2>
-      <p>Trois semaines plus tard, le projet existe, plans techniques, ambiances, rendus 3D photoréalistes. Vous traversez l'appartement avant qu'il existe.</p>
+      <span class="cv-eyebrow">الزمن الثاني</span>
+      <h2><em>التصميم.</em></h2>
+      <p>بعد ثلاثة أسابيع، يولد المشروع, مخطّطات تقنية، أجواء، رسوم ثلاثية الأبعاد واقعية. تجوبون الشقّة قبل أن توجد.</p>
       <ul class="cv-list">
-        <li>Plans techniques détaillés</li>
-        <li>Moodboards par pièce</li>
-        <li>3D immersives des pièces clés</li>
-        <li>Devis figé à la signature</li>
+        <li>مخطّطات تقنية مفصّلة</li>
+        <li>ألواح أجواء لكلّ غرفة</li>
+        <li>رسوم 3D غامرة للغرف الرئيسية</li>
+        <li>تسعيرة مثبَّتة عند التوقيع</li>
       </ul>
     </div>
   </article>
@@ -354,14 +365,14 @@
         <line x1="12" y1="56" x2="52" y2="56" stroke-dasharray="2 2"/>
       </svg></span>
       <span class="cv-num">03</span>
-      <span class="cv-eyebrow">Troisième temps</span>
-      <h2>Le <em>chantier.</em></h2>
-      <p>Coordination des artisans, visite hebdomadaire, récap photo le vendredi. Aucun avenant sans validation écrite.</p>
+      <span class="cv-eyebrow">الزمن الثالث</span>
+      <h2><em>الورشة.</em></h2>
+      <p>تنسيق الحرفيّين، زيارة أسبوعية، تقريرٌ مصوَّر كلّ جمعة. لا ملحق دون موافقة خطّية.</p>
       <ul class="cv-list">
-        <li>Coordination des corps de métier</li>
-        <li>Visite hebdomadaire + récap photo</li>
-        <li>Budget verrouillé contractuellement</li>
-        <li>Réception OPR et garantie 1 an</li>
+        <li>تنسيق جميع المهن</li>
+        <li>زيارة أسبوعية + تقرير مصوَّر</li>
+        <li>ميزانية مُحكَمة تعاقديًّا</li>
+        <li>تسليم رسمي وضمان لمدّة سنة</li>
       </ul>
     </div>
     <div class="cv-node-wrap"><span class="cv-node"></span></div>
@@ -380,14 +391,14 @@
         <line x1="42" y1="44" x2="42" y2="54"/>
       </svg></span>
       <span class="cv-num">04</span>
-      <span class="cv-eyebrow">Quatrième temps</span>
-      <h2>Le <em>mobilier.</em></h2>
-      <p>Bibliothèques, dressings, cuisines sur-mesure. Carrelages, parquets, mobiliers, choix, commandes, réception.</p>
+      <span class="cv-eyebrow">الزمن الرابع</span>
+      <h2><em>الأثاث.</em></h2>
+      <p>مكتبات، خزائن، مطابخ مفصّلة. بلاط، باركيه، أثاث, اختيار، طلب، استلام.</p>
       <ul class="cv-list">
-        <li>Carrelages, parquets, faïences</li>
-        <li>Mobiliers sur-mesure et luminaires</li>
-        <li>Textiles, tapis, rideaux</li>
-        <li>Du premier matériau à la dernière bougie</li>
+        <li>بلاط، باركيه، خزف</li>
+        <li>أثاث مفصّل وإضاءات</li>
+        <li>أقمشة، سجّاد، ستائر</li>
+        <li>من أوّل مادّة إلى آخر شمعة</li>
       </ul>
     </div>
   </article>
@@ -395,24 +406,24 @@
 
 <!-- ============ END CTA ============ -->
 <section class="bg-ivoire cv-end">
-  <h2>Prêt pour un <em>premier rendez-vous ?</em></h2>
+  <h2>هل أنتم مستعدّون <em>للقاءٍ أوّل؟</em></h2>
   <div class="ctas">
-    <a class="btn btn-solid" href="contact.html">Réserver 30 minutes <span class="arr"></span></a>
-    <a class="btn btn-ghost" href="projets.html">Voir les projets <span class="arr"></span></a>
+    <a class="btn btn-solid" href="contact.html">احجزوا ثلاثين دقيقة <span class="arr"></span></a>
+    <a class="btn btn-ghost" href="projets.html">شاهدوا المشاريع <span class="arr"></span></a>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="footer-cols">
-    <div class="footer-col"><h3>La Maison</h3><ul><li>58 rue de Monceau</li><li>75008 Paris</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
-    <div class="footer-col"><h3>Concevoir</h3><ul><li><a href="concevoir.html">Rencontre</a></li><li><a href="concevoir.html">Conception</a></li><li><a href="concevoir.html">Chantier</a></li><li><a href="concevoir.html">Mobilier</a></li></ul></div>
-    <div class="footer-col"><h3>Investir</h3><ul><li><a href="investir.html">Sourcing</a></li><li><a href="investir.html">Faisabilité</a></li><li><a href="investir.html">Valorisation</a></li><li><a href="investir.html">Gestion locative</a></li></ul></div>
-    <div class="footer-col"><h3>Blog</h3><ul><li><a href="blog.html">Matières</a></li><li><a href="blog.html">Lieux</a></li><li><a href="blog.html">Méthode</a></li><li><a href="#">Instagram ↗</a></li><li><a href="#">LinkedIn ↗</a></li></ul></div>
+    <div class="footer-col"><h3>البيت</h3><ul><li>58 rue de Monceau</li><li>75008 باريس</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
+    <div class="footer-col"><h3>التصميم</h3><ul><li><a href="concevoir.html">اللقاء</a></li><li><a href="concevoir.html">المفهوم</a></li><li><a href="concevoir.html">إدارة المشروع</a></li><li><a href="concevoir.html">أثاث مفصّل</a></li></ul></div>
+    <div class="footer-col"><h3>الاستثمار</h3><ul><li><a href="investir.html">البحث عن العقار</a></li><li><a href="investir.html">دراسة الجدوى</a></li><li><a href="investir.html">التثمين</a></li><li><a href="investir.html">الإدارة الإيجارية</a></li></ul></div>
+    <div class="footer-col"><h3>المدوّنة</h3><ul><li><a href="blog.html">مواد</a></li><li><a href="blog.html">أماكن</a></li><li><a href="blog.html">المنهج</a></li><li><a href="#">Instagram ↗</a></li><li><a href="#">LinkedIn ↗</a></li><li><a href="#">إنستغرام ↗</a></li><li><a href="#">لينكدإن ↗</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span><a href="#">Mentions légales</a></span></div>
+  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span><a href="#">إشعار قانوني</a></span></div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script src="/assets/site.js"></script>
 <script>
 (() => {
   const timeline = document.getElementById('cvTimeline');

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>المدوّنة, قراءات هادئة في المواد والأماكن والمنهج, Maison Maray</title>
+<meta name="description" content="مدوّنة Maison Maray. ثلاثة أبواب, مواد، أماكن، المنهج. مشروعٌ يُفكَّك كلّ شهر.">
+<link rel="canonical" href="https://maisonmaray.com/ar/blog.html">
+<link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog.html">
+<link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog.html">
+<link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog.html">
+<link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Maison Maray">
+<meta property="og:title" content="المدوّنة, قراءات هادئة في المواد والأماكن والمنهج">
+<meta property="og:description" content="مدوّنة Maison Maray. ثلاثة أبواب, مواد، أماكن، المنهج. مشروعٌ يُفكَّك كلّ شهر.">
+<meta property="og:url" content="https://maisonmaray.com/ar/blog.html">
+<meta property="og:image" content="https://maisonmaray.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maisonmaray.com/assets/og.jpg">
+<link rel="icon" href="/assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&family=Markazi+Text:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+html[dir="rtl"] {
+  --font-display: 'Markazi Text', 'Noto Naskh Arabic', 'Cormorant Garamond', Georgia, serif;
+}
+html[dir="rtl"] body, html[dir="rtl"] p, html[dir="rtl"] li, html[dir="rtl"] a,
+html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4 { font-family: 'Markazi Text', 'Noto Naskh Arabic', 'Cormorant Garamond', Georgia, serif; }
+html[dir="rtl"] .eyebrow, html[dir="rtl"] .cat, html[dir="rtl"] .date { font-family: 'JetBrains Mono', 'Noto Naskh Arabic', monospace; letter-spacing: 0.12em; }
+html[dir="rtl"] .display { font-weight: 500; line-height: 1.25; }
+html[dir="rtl"] .arr { transform: scaleX(-1); }
+
+/* ===== MAGAZINE COVER HERO ===== */
+.cover-bar { padding: clamp(110px, 13vh, 140px) var(--gutter-d) 16px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; border-bottom: 1px solid var(--rule); }
+@media (max-width: 720px) { .cover-bar { padding-inline: var(--gutter-m); grid-template-columns: 1fr; text-align: right; } }
+.cover-bar .issue { font-family: var(--font-display); font-style: italic; font-size: clamp(20px, 2vw, 28px); line-height: 1.3; margin: 0; font-weight: 500; }
+.cover-bar .issue .num { font-family: var(--font-mono); font-style: normal; font-size: 12px; letter-spacing: 0.12em; opacity: .55; margin-right: 12px; vertical-align: middle; }
+.cover-bar .title-center { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .65; text-align: center; }
+.cover-bar .date { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .55; text-align: left; }
+@media (max-width: 720px) { .cover-bar .title-center, .cover-bar .date { text-align: right; } }
+
+.cover { padding: clamp(40px, 5vw, 72px) var(--gutter-d) clamp(48px, 6vw, 88px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(40px, 5vw, 96px); align-items: stretch; }
+@media (max-width: 880px) { .cover { grid-template-columns: 1fr; padding-inline: var(--gutter-m); } }
+
+.cover-feature { position: relative; aspect-ratio: 4 / 5; overflow: hidden; box-shadow: 0 30px 80px -28px rgba(42,31,24,.28), 0 0 0 1px rgba(176,138,75,.08); display: block; color: var(--ivoire); text-decoration: none; }
+.cover-feature img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+.cover-feature:hover img { transform: scale(1.03); }
+.cover-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,10,7,.1) 0%, rgba(15,10,7,0) 30%, rgba(15,10,7,.75) 100%); pointer-events: none; }
+.cover-feature .feat-pad { position: absolute; inset: auto clamp(20px, 3vw, 40px) clamp(28px, 4vw, 48px); z-index: 1; }
+.cover-feature .cat { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .85; display: block; margin-bottom: 14px; }
+.cover-feature h2 { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: clamp(32px, 3.8vw, 56px); line-height: 1.15; letter-spacing: 0; margin: 0 0 18px; max-width: 22ch; }
+.cover-feature .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .85; }
+
+.cover-toc { display: flex; flex-direction: column; gap: 20px; }
+.cover-toc .toc-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .55; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+.cover-toc ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; counter-reset: toc; }
+.cover-toc a.toc-item { display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; transition: padding-right .35s var(--ease); }
+.cover-toc a.toc-item:hover { padding-right: 8px; }
+.cover-toc a.toc-item .toc-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; opacity: .55; padding-top: 6px; }
+.cover-toc a.toc-item .toc-cat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .55; display: block; margin-bottom: 6px; }
+.cover-toc a.toc-item .toc-title { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.35; margin: 0; }
+.cover-toc .toc-foot { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .55; padding-top: 14px; }
+
+.j-filters { display: flex; gap: 24px; padding: 24px var(--gutter-d); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); align-items: center; flex-wrap: wrap; }
+@media (max-width: 720px) { .j-filters { padding-inline: var(--gutter-m); } }
+.j-filters .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: .55; }
+.j-filters button { background: none; border: 1px solid transparent; padding: 6px 12px; font: inherit; font-size: 14px; cursor: pointer; color: inherit; }
+.j-filters button:hover { border-color: var(--rule-strong); }
+.j-filters button.on { background: var(--noyer); color: var(--ivoire); border-color: var(--noyer); }
+
+.article-grid { padding: 0 var(--gutter-d) clamp(72px, 9vw, 140px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px; }
+@media (max-width: 1024px) { .article-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) { .article-grid { grid-template-columns: 1fr; padding-inline: var(--gutter-m); gap: 56px; } }
+.article-grid .article { display: flex; flex-direction: column; }
+.article-grid .article .article-img { display: block; aspect-ratio: 4 / 3; margin-bottom: 20px; }
+.article-grid .cat { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase; opacity: .65; display: block; margin-bottom: 10px; }
+.article-grid h3 { font-family: var(--font-display); font-weight: 500; font-size: clamp(20px, 1.6vw, 24px); line-height: 1.35; margin: 0 0 12px; max-width: 28ch; }
+.article-grid .date { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.10em; opacity: .55; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://maisonmaray.com/ar/blog.html",
+  "name": "مدوّنة Maison Maray, قراءات في الهندسة الداخلية والديكور",
+  "description": "فسحة قراءة، لحظة في ثقافة الديكور. مقالات أسبوعية حول المواد، الأماكن، الشخصيات ونصائح الديكور.",
+  "url": "https://maisonmaray.com/ar/blog.html",
+  "inLanguage": "ar",
+  "publisher": { "@type": "Organization", "name": "Maison Maray", "url": "https://maisonmaray.com/", "logo": { "@type": "ImageObject", "url": "https://maisonmaray.com/assets/logo-mark.png" } },
+  "blogPost": [
+    { "@type": "BlogPosting", "headline": "الجوز المُدخَّن، ذاكرة دافئة لغرف الشمال", "url": "https://maisonmaray.com/ar/blog/noyer-fume.html", "datePublished": "2026-05-14", "author": { "@type": "Person", "name": "محمد ماري" } },
+    { "@type": "BlogPosting", "headline": "فيلا سافوا، عمل لو كوربوزييه البيان", "url": "https://maisonmaray.com/ar/blog/villa-savoye.html", "datePublished": "2026-05-07", "author": { "@type": "Person", "name": "محمد ماري" } },
+    { "@type": "BlogPosting", "headline": "لو كوربوزييه، المعماري الذي أعاد رسم الحياة", "url": "https://maisonmaray.com/ar/blog/le-corbusier.html", "datePublished": "2026-04-30", "author": { "@type": "Person", "name": "محمد ماري" } },
+    { "@type": "BlogPosting", "headline": "مطبخ مفتوح أم مغلق: كيف تحسم", "url": "https://maisonmaray.com/ar/blog/cuisine-ouverte-fermee.html", "datePublished": "2026-04-23", "author": { "@type": "Person", "name": "محمد ماري" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://maisonmaray.com/ar/" },
+    { "@type": "ListItem", "position": 2, "name": "المدوّنة" }
+  ]
+}
+</script>
+</head>
+<body data-screen-label="المدوّنة">
+
+<header class="site-header scrolled" id="siteHeader">
+  <a href="index.html" class="brand"><span class="mark"></span><span class="brand-name">Maison Maray</span></a>
+  <nav class="nav">
+    <a href="concevoir.html" class="nav-link">التصميم</a>
+    <a href="investir.html" class="nav-link">الاستثمار</a>
+    <a href="projets.html" class="nav-link">المشاريع</a>
+    <a href="maison.html" class="nav-link">البيت</a>
+    <a href="blog.html" class="nav-link active">المدوّنة</a>
+    <a href="contact.html" class="cta">احجز موعدًا</a>
+    <button class="nav-toggle"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<aside class="mobile-menu">
+  <div class="top"><span class="brand-name">Maison Maray</span><button class="mobile-close">×</button></div>
+  <nav class="links"><a href="concevoir.html">التصميم</a><a href="investir.html">الاستثمار</a><a href="projets.html">المشاريع</a><a href="maison.html">البيت</a><a href="blog.html">المدوّنة</a><a href="contact.html">تواصل</a></nav>
+</aside>
+
+<!-- Magazine cover header -->
+<header class="bg-ivoire cover-bar">
+  <h1 class="issue">العدد <em>04</em><span class="num">— إصدار 04</span></h1>
+  <span class="date">مايو 2026</span>
+</header>
+
+<!-- Cover spread: featured article (left) + table of contents (right) -->
+<section class="bg-ivoire cover">
+  <a class="cover-feature" href="blog/noyer-fume.html">
+    <img alt="لقطة قريبة على لوح من الجوز المُدخَّن المُرمَّم" src="/assets/selection-web/banque/kaboompics_ceramic-lamp-styled-on-a-commode-with-a-stone-top-28402.jpg">
+    <div class="feat-pad">
+      <span class="cat">مقال الأسبوع · مواد</span>
+      <h2>الجوز المُدخَّن، ذاكرة دافئة لغرف الشمال.</h2>
+      <span class="meta">14 مايو 2026 · محمد ماري</span>
+    </div>
+  </a>
+
+  <aside class="cover-toc">
+    <span class="toc-label">في هذا العدد</span>
+    <ol>
+      <li><a class="toc-item" href="blog/noyer-fume.html"><span class="toc-num">01</span><span><span class="toc-cat">مواد</span><span class="toc-title">الجوز المُدخَّن، ذاكرة دافئة لغرف الشمال.</span></span></a></li>
+      <li><a class="toc-item" href="blog/villa-savoye.html"><span class="toc-num">02</span><span><span class="toc-cat">أماكن</span><span class="toc-title">فيلا سافوا، عمل لو كوربوزييه البيان.</span></span></a></li>
+      <li><a class="toc-item" href="blog/le-corbusier.html"><span class="toc-num">03</span><span><span class="toc-cat">شخصية</span><span class="toc-title">لو كوربوزييه، المعماري الذي أعاد رسم الحياة.</span></span></a></li>
+      <li><a class="toc-item" href="blog/cuisine-ouverte-fermee.html"><span class="toc-num">04</span><span><span class="toc-cat">نصائح</span><span class="toc-title">مطبخ مفتوح أم مغلق: كيف تحسم.</span></span></a></li>
+    </ol>
+    <span class="toc-foot">— مقالٌ جديد كلّ أربعاء</span>
+  </aside>
+</section>
+
+<section class="bg-ivoire" data-filter>
+  <div class="j-filters">
+    <span class="label">الأبواب</span>
+    <button data-filter-btn="all" class="on">الكل</button>
+    <button data-filter-btn="matieres">مواد</button>
+    <button data-filter-btn="lieux">أماكن</button>
+    <button data-filter-btn="personnalite">شخصية</button>
+    <button data-filter-btn="tips">نصائح</button>
+    <button data-filter-btn="actualite">جديد</button>
+  </div>
+
+  <div class="article-grid">
+    <article class="article reveal" data-tag="lieux">
+      <a href="blog/villa-savoye.html" class="article-img img-hover">
+        <img class="img-fill" alt="فيلا سافوا في بواسي، عمل لو كوربوزييه البيان" src="/assets/selection-web/banque/pexels-antoine-gravier-468177967-27085000.jpg">
+      </a>
+      <span class="cat">أماكن</span>
+      <h3>فيلا سافوا، عمل لو كوربوزييه البيان.</h3>
+      <span class="date">7 مايو 2026</span>
+    </article>
+    <article class="article reveal delay-1" data-tag="personnalite">
+      <a href="blog/le-corbusier.html" class="article-img img-hover">
+        <img class="img-fill" alt="صورة للو كوربوزييه في مرسمه" src="/assets/selection-web/banque/le-corbusier.jpg">
+      </a>
+      <span class="cat">شخصية</span>
+      <h3>لو كوربوزييه، المعماري الذي أعاد رسم الحياة.</h3>
+      <span class="date">30 أبريل 2026</span>
+    </article>
+    <article class="article reveal delay-2" data-tag="tips">
+      <a href="blog/cuisine-ouverte-fermee.html" class="article-img img-hover">
+        <img class="img-fill" alt="مطبخ مفتوح يتّصل بالصالون عبر جزيرة مركزية" src="/assets/selection-web/banque/1eb441d1-d321-433b-84f2-2b317f4d1f2f.jpg">
+      </a>
+      <span class="cat">نصائح</span>
+      <h3>مطبخ مفتوح أم مغلق: كيف تحسم.</h3>
+      <span class="date">23 أبريل 2026</span>
+    </article>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-cols">
+    <div class="footer-col"><h3>البيت</h3><ul><li>58 rue de Monceau</li><li>75008 باريس</li><li><a href="tel:+33682327884">+33 6 82 32 78 84</a></li><li><a href="mailto:contact@maisonmaray.com">contact@maisonmaray.com</a></li></ul></div>
+    <div class="footer-col"><h3>التصميم</h3><ul><li><a href="concevoir.html">المفهوم</a></li><li><a href="concevoir.html">إدارة المشروع</a></li><li><a href="concevoir.html">أثاث مفصّل</a></li><li><a href="concevoir.html">المواد</a></li></ul></div>
+    <div class="footer-col"><h3>الاستثمار</h3><ul><li><a href="investir.html">البحث</a></li><li><a href="investir.html">دراسة الجدوى</a></li><li><a href="investir.html">التثمين</a></li><li><a href="investir.html">الإدارة</a></li></ul></div>
+    <div class="footer-col"><h3>المدوّنة</h3><ul><li><a href="blog.html">مواد</a></li><li><a href="blog.html">أماكن</a></li><li><a href="blog.html">المنهج</a></li><li><a href="#">إنستغرام ↗</a></li><li><a href="#">لينكدإن ↗</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Maison Maray</span><span><a href="#">إشعار قانوني</a></span></div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

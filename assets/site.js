@@ -115,4 +115,41 @@
       row.querySelector('.acc-h').addEventListener('click', () => row.classList.toggle('on'));
     });
   });
+
+  // --- language switcher (FR / EN / AR — static translated pages)
+  (function languageSwitch() {
+    const path = location.pathname;
+    let currentLang = 'fr';
+    if (/^\/en(\/|$)/.test(path)) currentLang = 'en';
+    else if (/^\/ar(\/|$)/.test(path)) currentLang = 'ar';
+
+    // Compute the equivalent URL in another language for the current page
+    function urlFor(lang) {
+      // Strip any leading /en or /ar
+      let p = path.replace(/^\/(en|ar)(\/|$)/, '/');
+      // Normalize: ensure leading slash, default to /
+      if (!p.startsWith('/')) p = '/' + p;
+      if (lang === 'fr') return p;
+      // For en/ar: prepend the language folder
+      return '/' + lang + (p === '/' ? '/' : p);
+    }
+
+    const labels = { fr: 'FR', en: 'EN', ar: 'AR' };
+    const aria   = { fr: 'Français', en: 'English', ar: 'العربية' };
+
+    function pill(lang) {
+      const active = lang === currentLang ? ' is-active' : '';
+      return '<a class="lang-pill' + active + '" href="' + urlFor(lang) + '" aria-label="' + aria[lang] + '" hreflang="' + lang + '">' + labels[lang] + '</a>';
+    }
+
+    const navs = document.querySelectorAll('.site-header .nav');
+    navs.forEach(nav => {
+      if (nav.querySelector('.lang-switch')) return;
+      const switcher = document.createElement('div');
+      switcher.className = 'lang-switch';
+      switcher.innerHTML = pill('fr') + pill('en') + pill('ar');
+      const firstLink = nav.querySelector('.nav-link');
+      if (firstLink) nav.insertBefore(switcher, firstLink); else nav.insertBefore(switcher, nav.firstChild);
+    });
+  })();
 })();

@@ -138,6 +138,49 @@ body::before {
 .reveal.in .eyebrow.with-leader::before,
 .eyebrow.reveal.with-leader.in::before { width: 32px; }
 
+/* ===== LTR long-paragraph justification (FR + EN) =====
+   Long-form prose feels more editorial when justified. Applied only
+   to FR/EN containers wide enough to handle it gracefully — narrow
+   blockquotes and short text are excluded (they'd create huge gaps
+   between words). AR is excluded — Arabic uses kashida.
+   Hyphenation is OFF: whole words always stay intact (Mohamed's
+   preference — no broken words even at the cost of slightly looser
+   spacing). */
+html:not([dir="rtl"]) .lede,
+html:not([dir="rtl"]) .bio-grid .body,
+html:not([dir="rtl"]) .bio-grid .body p,
+html:not([dir="rtl"]) .article-body p,
+html:not([dir="rtl"]) .article-body .body p,
+html:not([dir="rtl"]) .value p,
+html:not([dir="rtl"]) .eco-col p,
+html:not([dir="rtl"]) .act .lede,
+html:not([dir="rtl"]) .sig-overlay p,
+html:not([dir="rtl"]) .feat-overlay p,
+html:not([dir="rtl"]) .problem-grid .lede,
+html:not([dir="rtl"]) .maison-bio,
+html:not([dir="rtl"]) .body p {
+  text-align: justify;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  text-justify: inter-word;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Opt-out class for paragraphs that should stay non-justified */
+html:not([dir="rtl"]) .no-justify, html:not([dir="rtl"]) .no-justify p { text-align: inherit !important; }
+
+/* Hero vertical scroll cue — bigger and more present */
+.hero .hero-scroll-h .eyebrow { font-size: 13px !important; letter-spacing: .28em !important; opacity: .9; }
+.hero .hero-scroll-h { gap: 22px; }
+.hero .hero-scroll-h .line-h { height: clamp(96px, 11vw, 140px); }
+@media (max-width: 880px) {
+  .hero .hero-scroll-h .line-h { height: 72px; }
+  .hero .hero-scroll-h .eyebrow { font-size: 12px !important; }
+}
+html[dir="rtl"] .hero .hero-scroll-h .eyebrow { font-size: 15px !important; letter-spacing: .14em !important; }
+
 /* fixed scroll progress bar — top of viewport */
 .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 1px; z-index: 100; pointer-events: none; background: rgba(42,31,24,.08); }
 .scroll-progress .bar { display: block; height: 100%; background: var(--laiton); transform-origin: left; transform: scaleX(0); will-change: transform; }
@@ -304,29 +347,29 @@ section { position: relative; }
   text-transform: uppercase;
 }
 .brand .mark {
-  width: 22px; height: 28px; display: block;
+  width: 28px; height: 36px; display: block;
   -webkit-mask: url("logo-mark.png") center / contain no-repeat;
           mask: url("logo-mark.png") center / contain no-repeat;
   background: currentColor;
   transition: transform .6s var(--ease);
 }
 .brand:hover .mark { transform: rotate(360deg) scale(1.08); }
-.brand-name { font-size: 15px; letter-spacing: 0.32em; font-family: var(--font-body); font-weight: 500; }
+.brand-name { font-size: 17px; letter-spacing: 0.32em; font-family: var(--font-body); font-weight: 500; }
 @media (min-width: 1280px) {
-  .brand { gap: 16px; }
-  .brand .mark { width: 30px; height: 38px; }
-  .brand-name { font-size: 17px; letter-spacing: 0.36em; }
+  .brand { gap: 18px; }
+  .brand .mark { width: 36px; height: 46px; }
+  .brand-name { font-size: 19px; letter-spacing: 0.36em; }
 }
 @media (min-width: 1600px) {
-  .brand .mark { width: 36px; height: 46px; }
-  .brand-name { font-size: 18px; }
+  .brand .mark { width: 42px; height: 54px; }
+  .brand-name { font-size: 21px; }
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 36px;
-  font-size: 12.5px;
+  gap: 40px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -336,8 +379,9 @@ section { position: relative; }
 .nav .cta {
   background: var(--laiton);
   color: var(--ivoire);
-  padding: 12px 18px;
+  padding: 14px 22px;
   border: 1px solid var(--laiton);
+  font-size: 13px;
 }
 .site-header.scrolled .nav .cta:hover { background: var(--laiton-deep); border-color: var(--laiton-deep); }
 
@@ -483,3 +527,114 @@ section { position: relative; }
   border-color: #8a3b2e;
   background: rgba(138, 59, 46, 0.07);
 }
+
+/* ===== Language switcher (FR / EN / AR pastilles — real links to /en/ /ar/) ===== */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 18px;
+  padding-right: 18px;
+  border-right: 1px solid var(--rule);
+}
+.lang-pill {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid rgba(42, 31, 24, 0.32);
+  color: var(--noyer);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.22em;
+}
+.lang-pill:hover {
+  background: var(--noyer);
+  color: var(--ivoire);
+  border-color: var(--noyer);
+}
+.lang-pill.is-active {
+  background: var(--noyer);
+  color: var(--ivoire);
+  border-color: var(--noyer);
+}
+/* Header variants — set the *idle* color, then re-affirm active/hover with higher specificity so the cream text on the noyer pill stays readable. */
+.site-header.scrolled .lang-pill,
+.site-header.solid .lang-pill { border-color: rgba(42, 31, 24, 0.32); color: var(--noyer); }
+.site-header.scrolled .lang-pill.is-active,
+.site-header.solid .lang-pill.is-active,
+.site-header.scrolled .lang-pill:hover,
+.site-header.solid .lang-pill:hover { background: var(--noyer); color: var(--ivoire) !important; border-color: var(--noyer); }
+
+.site-header:not(.scrolled):not(.solid) .lang-pill { border-color: rgba(245, 241, 234, 0.4); color: var(--ivoire); }
+.site-header:not(.scrolled):not(.solid) .lang-pill:hover,
+.site-header:not(.scrolled):not(.solid) .lang-pill.is-active { background: var(--ivoire); color: var(--noyer) !important; border-color: var(--ivoire); }
+@media (max-width: 880px) {
+  .lang-switch { margin-right: 12px; padding-right: 12px; }
+  .lang-pill { padding: 6px 10px; font-size: 11px; }
+}
+
+/* ===== RTL adjustments for Arabic pages =====
+   Markazi Text + Noto Naskh Arabic render visually ~25-30% smaller
+   than Cormorant Garamond / Inter at the same px value (low x-height,
+   short ascenders/descenders). The size bumps below restore visual
+   parity with the FR/EN versions for a comfortable reading experience.
+   Uses absolute px (not em) to avoid cascade compounding. !important
+   on size where needed to defeat per-page inline overrides. */
+html[dir="rtl"] body { font-family: 'Noto Naskh Arabic', 'Amiri', Georgia, serif; font-size: 22px; line-height: 1.8; }
+
+/* Body text — paragraphs, list items, leads */
+html[dir="rtl"] p { font-size: 25px !important; line-height: 1.9 !important; }
+html[dir="rtl"] li { font-size: 24px !important; line-height: 1.85 !important; }
+html[dir="rtl"] .lede { font-size: clamp(26px, 1.95vw, 32px) !important; line-height: 1.7 !important; }
+html[dir="rtl"] .maison-bio { font-size: clamp(23px, 1.7vw, 27px) !important; line-height: 1.75 !important; }
+html[dir="rtl"] .bio-grid .body { font-size: 26px !important; line-height: 1.95 !important; }
+html[dir="rtl"] .bio-grid .body p { font-size: 26px !important; line-height: 1.95 !important; }
+html[dir="rtl"] .article-body p { font-size: 26px !important; line-height: 1.95 !important; }
+html[dir="rtl"] .value p { font-size: 21px !important; line-height: 1.8 !important; }
+html[dir="rtl"] .eco-col p { font-size: 21px !important; line-height: 1.8 !important; }
+html[dir="rtl"] .sig-overlay p { font-size: 20px !important; line-height: 1.7 !important; }
+html[dir="rtl"] .act .lede { font-size: clamp(22px, 1.7vw, 27px) !important; line-height: 1.7 !important; }
+html[dir="rtl"] .feat-overlay p { font-size: 20px !important; }
+html[dir="rtl"] .split-content .lede { font-size: clamp(22px, 1.7vw, 27px) !important; line-height: 1.65 !important; }
+
+/* Display headlines — Markazi reads tighter, larger bump + looser leading */
+html[dir="rtl"] .display { font-weight: 500; line-height: 1.3; }
+html[dir="rtl"] h1.display, html[dir="rtl"] h2.display, html[dir="rtl"] h3.display { letter-spacing: 0; }
+html[dir="rtl"] .hero-phrase { font-size: clamp(58px, 7.4vw, 120px) !important; line-height: 1.2 !important; }
+html[dir="rtl"] .hero-sub { font-size: 16px !important; }
+html[dir="rtl"] .maison-name { font-size: clamp(60px, 7.4vw, 120px) !important; line-height: 1.1 !important; }
+html[dir="rtl"] .testi-quote blockquote { font-size: clamp(40px, 5vw, 80px) !important; line-height: 1.4 !important; }
+html[dir="rtl"] .feat-overlay h4.display { font-size: clamp(64px, 9vw, 168px) !important; line-height: 1.2 !important; }
+html[dir="rtl"] .sig-overlay h4.display { font-size: clamp(64px, 7.2vw, 124px) !important; }
+html[dir="rtl"] .split-content .display { font-size: clamp(92px, 11.5vw, 240px) !important; }
+html[dir="rtl"] .act .display { font-size: clamp(48px, 5.6vw, 98px) !important; line-height: 1.25 !important; }
+html[dir="rtl"] .value h3 { font-size: 54px !important; line-height: 1.3 !important; }
+html[dir="rtl"] .eco-col h3 { font-size: 44px !important; line-height: 1.3 !important; }
+html[dir="rtl"] .article h4 { font-size: 40px !important; line-height: 1.35 !important; }
+
+/* Eyebrows / mono labels — bumped further for Arabic readability */
+html[dir="rtl"] .eyebrow { font-size: 16px !important; letter-spacing: 0.1em; }
+html[dir="rtl"] .nav-link { font-size: 17px !important; }
+html[dir="rtl"] .cta { font-size: 15px !important; }
+html[dir="rtl"] .feat-meta { font-size: 15px !important; }
+html[dir="rtl"] .feat-num { font-size: 15px !important; }
+html[dir="rtl"] .article .cat { font-size: 14px !important; }
+html[dir="rtl"] .article .date { font-size: 14px !important; }
+html[dir="rtl"] .testi-quote figcaption { font-size: 15px !important; }
+html[dir="rtl"] .room-label { font-size: 15px !important; }
+html[dir="rtl"] .footer-col h3 { font-size: 16px !important; }
+html[dir="rtl"] .footer-col li { font-size: 17px !important; line-height: 1.7; }
+html[dir="rtl"] .footer-bottom { font-size: 14px !important; }
+html[dir="rtl"] .btn { font-size: 16px !important; }
+html[dir="rtl"] .link-line { font-size: 16px !important; }
+html[dir="rtl"] .maison-role { font-size: 16px !important; }
+
+html[dir="rtl"] .lang-switch { margin-right: 0; margin-left: 18px; padding-right: 0; padding-left: 18px; border-right: 0; border-left: 1px solid var(--rule); }
+html[dir="rtl"] .lang-pill { font-size: 13px; padding: 8px 13px; }

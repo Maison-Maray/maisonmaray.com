@@ -134,6 +134,16 @@
 
   <!-- ========== BLOG (FR) ========== -->
   <url>
+    <loc>https://maisonmaray.com/blog/maison-de-verre.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/blog/capsules-printemps-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/capsules-printemps-2026.html" />
@@ -312,6 +322,26 @@
 
   <!-- ========== BLOG (EN) ========== -->
   <url>
+    <loc>https://maisonmaray.com/en/blog/maison-de-verre.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/en/blog/capsules-printemps-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/en/blog/noyer-fume.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/noyer-fume.html" />
@@ -479,6 +509,26 @@
   </url>
 
   <!-- ========== BLOG (AR) ========== -->
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/maison-de-verre.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/maison-de-verre.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/maison-de-verre.html" />
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/capsules-printemps-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/capsules-printemps-2026.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog/noyer-fume.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/noyer-fume.html" />

@@ -134,6 +134,16 @@
 
   <!-- ========== BLOG (FR) ========== -->
   <url>
+    <loc>https://maisonmaray.com/blog/eclairage-trois-sources.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/blog/maison-de-verre.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/maison-de-verre.html" />
@@ -543,15 +553,4 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-savoye.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-savoye.html" />
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://maisonmaray.com/ar/blog/le-corbusier.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/le-corbusier.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/le-corbusier.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/le-corbusier.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/le-corbusier.html" />
-    <changefreq>monthly</changefreq>
-    <priority>0.
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray

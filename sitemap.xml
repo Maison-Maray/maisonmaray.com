@@ -134,6 +134,16 @@
 
   <!-- ========== BLOG (FR) ========== -->
   <url>
+    <loc>https://maisonmaray.com/blog/charlotte-perriand.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/blog/eclairage-trois-sources.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/eclairage-trois-sources.html" />
@@ -544,13 +554,4 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/noyer-fume.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/noyer-fume.html" />
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://maisonmaray.com/ar/blog/villa-savoye.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-savoye.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-savoye.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-savoye.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray
+    <xhtml:link

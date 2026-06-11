@@ -131,6 +131,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://maisonmaray.com/projets/57-30-a.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/projets/57-30-a.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/projets/57-30-a.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/57-30-a.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/57-30-a.html" />
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ========== BLOG (FR) ========== -->
   <url>

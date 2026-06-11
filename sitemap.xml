@@ -134,6 +134,16 @@
 
   <!-- ========== BLOG (FR) ========== -->
   <url>
+    <loc>https://maisonmaray.com/blog/travertin.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/travertin.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/travertin.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/travertin.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/travertin.html" />
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/blog/charlotte-perriand.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/charlotte-perriand.html" />
@@ -179,8 +189,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/noyer-fume.html" />
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/blog/villa-savoye.html</loc>
@@ -188,8 +199,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-savoye.html" />
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/blog/le-corbusier.html</loc>
@@ -197,8 +209,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/le-corbusier.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/le-corbusier.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/le-corbusier.html" />
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/blog/cuisine-ouverte-fermee.html</loc>
@@ -206,8 +219,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/cuisine-ouverte-fermee.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/cuisine-ouverte-fermee.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/cuisine-ouverte-fermee.html" />
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- ========== ROOT (EN) ========== -->
@@ -218,7 +232,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/" />
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/concevoir.html</loc>
@@ -227,7 +241,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/concevoir.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/concevoir.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/investir.html</loc>
@@ -236,7 +250,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/investir.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/investir.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets.html</loc>
@@ -245,7 +259,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/maison.html</loc>
@@ -254,7 +268,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/maison.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/maison.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog.html</loc>
@@ -263,7 +277,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog.html" />
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/contact.html</loc>
@@ -272,7 +286,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/contact.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/contact.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- ========== PROJETS (EN) ========== -->
@@ -283,7 +297,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/123-05.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/123-05.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/21-31.html</loc>
@@ -292,7 +306,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/21-31.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/21-31.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/22-11.html</loc>
@@ -301,7 +315,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/22-11.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/22-11.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/35-17.html</loc>
@@ -310,7 +324,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/35-17.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/35-17.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/35-22.html</loc>
@@ -319,7 +333,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/35-22.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/35-22.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/57-19.html</loc>
@@ -328,7 +342,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/57-19.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/57-19.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/projets/57-25.html</loc>
@@ -337,10 +351,30 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/57-25.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/57-25.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- ========== BLOG (EN) ========== -->
+  <url>
+    <loc>https://maisonmaray.com/en/blog/charlotte-perriand.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/en/blog/eclairage-trois-sources.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/maison-de-verre.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
@@ -349,7 +383,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/maison-de-verre.html" />
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/capsules-printemps-2026.html</loc>
@@ -359,7 +393,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/noyer-fume.html</loc>
@@ -367,8 +401,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/noyer-fume.html" />
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/villa-savoye.html</loc>
@@ -376,8 +411,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-savoye.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-savoye.html" />
+    <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/le-corbusier.html</loc>
@@ -385,8 +421,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/le-corbusier.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/le-corbusier.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/le-corbusier.html" />
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/en/blog/cuisine-ouverte-fermee.html</loc>
@@ -394,8 +431,9 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/cuisine-ouverte-fermee.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/cuisine-ouverte-fermee.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/cuisine-ouverte-fermee.html" />
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- ========== ROOT (AR) ========== -->
@@ -406,7 +444,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/" />
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/concevoir.html</loc>
@@ -415,7 +453,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/concevoir.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/concevoir.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/investir.html</loc>
@@ -424,7 +462,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/investir.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/investir.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets.html</loc>
@@ -433,7 +471,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets.html" />
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/maison.html</loc>
@@ -442,7 +480,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/maison.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/maison.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog.html</loc>
@@ -451,7 +489,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog.html" />
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/contact.html</loc>
@@ -460,7 +498,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/contact.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/contact.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- ========== PROJETS (AR) ========== -->
@@ -471,7 +509,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/123-05.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/123-05.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/21-31.html</loc>
@@ -480,7 +518,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/21-31.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/21-31.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/22-11.html</loc>
@@ -489,7 +527,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/22-11.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/22-11.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/35-17.html</loc>
@@ -498,7 +536,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/35-17.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/35-17.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/35-22.html</loc>
@@ -507,7 +545,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/35-22.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/35-22.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/57-19.html</loc>
@@ -516,7 +554,7 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/57-19.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/57-19.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/projets/57-25.html</loc>
@@ -525,10 +563,30 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/projets/57-25.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/projets/57-25.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- ========== BLOG (AR) ========== -->
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/charlotte-perriand.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/charlotte-perriand.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/eclairage-trois-sources.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/eclairage-trois-sources.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/eclairage-trois-sources.html" />
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog/maison-de-verre.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/maison-de-verre.html" />
@@ -537,7 +595,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/maison-de-verre.html" />
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog/capsules-printemps-2026.html</loc>
@@ -547,11 +605,47 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/capsules-printemps-2026.html" />
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog/noyer-fume.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/noyer-fume.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/noyer-fume.html" />
-    <xhtml:link
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/noyer-fume.html" />
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/villa-savoye.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-savoye.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-savoye.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-savoye.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-savoye.html" />
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/le-corbusier.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/le-corbusier.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/le-corbusier.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/le-corbusier.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/le-corbusier.html" />
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/cuisine-ouverte-fermee.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/cuisine-ouverte-fermee.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/cuisine-ouverte-fermee.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/cuisine-ouverte-fermee.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/cuisine-ouverte-fermee.html" />
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

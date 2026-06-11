@@ -88,8 +88,8 @@ html[dir="rtl"] .proj-card .cta-line .arr::after { right: auto; left: 0; transfo
   transition: opacity .5s var(--ease), transform .5s var(--ease);
 }
 .proj-card:hover .cta-line { opacity: 1; transform: none; }
-.proj-card .cta-line .arr { width: 28px; height: 1px; background: currentColor; position: relative; }
-.proj-card .cta-line .arr::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-right: 1px solid currentColor; border-top: 1px solid currentColor; transform: rotate(45deg); transform-origin: right top; }
+.proj-card .cta-line .arr { width: 28px; height: 1px; background: currentColor; position: relative; flex-shrink: 0; }
+.proj-card .cta-line .arr::after { content: ""; position: absolute; right: -1px; top: 50%; width: 7px; height: 7px; border-right: 1px solid currentColor; border-top: 1px solid currentColor; transform: translateY(-50%) rotate(45deg); }
 
 /* aspect ratios, generous */
 .proj-card.hero { aspect-ratio: 17 / 9; }

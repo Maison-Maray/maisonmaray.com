@@ -144,6 +144,46 @@
 
   <!-- ========== BLOG (FR) ========== -->
   <url>
+    <loc>https://maisonmaray.com/blog/arabescato.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/arabescato.html" />
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/blog/tapis-bonne-taille.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/blog/jean-royere.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/blog/villa-tugendhat.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/blog/travertin.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/travertin.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/travertin.html" />
@@ -366,6 +406,46 @@
 
   <!-- ========== BLOG (EN) ========== -->
   <url>
+    <loc>https://maisonmaray.com/en/blog/arabescato.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/arabescato.html" />
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/en/blog/tapis-bonne-taille.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/en/blog/jean-royere.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/en/blog/villa-tugendhat.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://maisonmaray.com/en/blog/charlotte-perriand.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/charlotte-perriand.html" />
@@ -577,6 +657,46 @@
   </url>
 
   <!-- ========== BLOG (AR) ========== -->
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/arabescato.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/arabescato.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/arabescato.html" />
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/tapis-bonne-taille.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/tapis-bonne-taille.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/tapis-bonne-taille.html" />
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/jean-royere.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/jean-royere.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/jean-royere.html" />
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://maisonmaray.com/ar/blog/villa-tugendhat.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://maisonmaray.com/en/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://maisonmaray.com/ar/blog/villa-tugendhat.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://maisonmaray.com/blog/villa-tugendhat.html" />
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://maisonmaray.com/ar/blog/charlotte-perriand.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://maisonmaray.com/blog/charlotte-perriand.html" />
